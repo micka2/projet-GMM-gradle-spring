@@ -67,5 +67,12 @@ public class AuthContrl {
           Model model) {
       return null;
   }
+  
+  @RequestMapping(method=RequestMethod.GET, path="/archive")
+  public String archiveAccess(Model model){
+	  
+	  
+	  return "archive_view";
+  }
 
 }
