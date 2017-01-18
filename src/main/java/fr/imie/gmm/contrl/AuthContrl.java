@@ -1,21 +1,40 @@
 package fr.imie.gmm.contrl;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import fr.imie.gmm.entities.User;
+import fr.imie.gmm.repository.UserRepository;
+
+
+
 @Controller
 public class AuthContrl {
 
-	private static final String admin_username="admin";
+	/*private static final String admin_username="admin";
 	private static final String admin_password="mypass";
 	private static final String teach_username="teach";
 	private static final String teach_password="tpass";
 	private static final String stud_username="stud";
-	private static final String stud_password="stpass";
-
+	private static final String stud_password="stpass";*/
+	
+	protected UserRepository userRepo;
+	
+//******************* constructor ****************************************
+	public AuthContrl(){
+		
+	}
+	
+    @Autowired
+    public AuthContrl(UserRepository userRepository) {
+        this.userRepo = userRepository;
+    }
+    
+//**************************************************************************    
 
   @RequestMapping(method=RequestMethod.GET, path="/login")
   public String login(
@@ -30,20 +49,22 @@ public class AuthContrl {
           @RequestParam(name="view_password")
           String password,
           Model model) {
-
-	  if((admin_username.equals(username))&&(admin_password.equals(password))){
+	  User user = this.userRepo.findByLogin(username);
+	  
+	  /*(admin_username.equals(username))&&(admin_password.equals(password))*/
+	  if((user!=null)&&(user.getPassword().equals(password))&&(user.getCategoryId()==3)){
 			
 			model.addAttribute(username);
 			model.addAttribute(password);
 			return "admin_view";
 		}
-	  else if((teach_username.equals(username))&&(teach_password.equals(password))){
+	  else if((user!=null)&&(user.getPassword().equals(password))&&(user.getCategoryId()==1)){
 		  
 		  model.addAttribute(username);
 		  model.addAttribute(password);
 		  return "teacher_view";
 	  }
-	  else if((stud_username.equals(username))&&(stud_password.equals(password))){
+	  else if((user!=null)&&(user.getPassword().equals(password))&&(user.getCategoryId()==2)){
 		  
 		  model.addAttribute(username);
 		  model.addAttribute(password);
@@ -66,6 +87,13 @@ public class AuthContrl {
   public String resetPassword(
           Model model) {
       return null;
+  }
+  
+  @RequestMapping(method=RequestMethod.GET, path="/archive")
+  public String archiveAccess(Model model){
+	  
+	  
+	  return "archive_view";
   }
 
 }
