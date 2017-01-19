@@ -7,5 +7,5 @@ import fr.imie.gmm.entities.User;
 
 public interface UserRepository extends CrudRepository<User, Long> {
 
-	User findByLogin(String login);
+	User findByEmail(String email);
 }
