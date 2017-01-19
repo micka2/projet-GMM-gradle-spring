@@ -19,7 +19,7 @@ public class HomeworkContrl {
 	private static final Logger logger = LoggerFactory.getLogger(HomeworkContrl.class);
 
 	/**
-	 * Upload file using Spring Controller.
+	 * Upload file method.
 	 */
 	@RequestMapping(value = "/uploadFile", method = RequestMethod.POST)
 	public String uploadFile(@RequestParam("nom") String name,
@@ -46,9 +46,9 @@ public class HomeworkContrl {
 				logger.info("Chemin d'accès du fichier="
 						+ serverFile.getAbsolutePath());
 
-				return name + " Déposé avec succès!";
+				return "student-deposite_view";
 			} catch (Exception e) {
-				return "student_view";
+				return "échec !";
 			}
 		} else {
 			return "Impossible de déposer " + name

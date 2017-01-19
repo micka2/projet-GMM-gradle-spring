@@ -37,9 +37,12 @@
 				<h4>Algorithme de tri</h4>
 					
 				<div style="margin-top:4ex;" class="row" >
-					<button type="submit" value="upload" name="upload" id="upload style="background-color:#cf6824; border-color:#a7541d; border-style:groovy;">
-                                                   <b>Ajouter un fichier</b>
-                                               </button>
+                                    <form method="post" action="uploadFile" enctype="multipart/form-data" >
+                                        <input type="submit" value="Upload" name="upload" style="background-color:#cf6824; border-color:#a7541d; border-style:groovy; font-weight:bold;">
+                                    </form>
+					<!--<button action="uploadFile" type="submit" value="upload" name="upload" id="upload" style="background-color:#cf6824; border-color:#a7541d; border-style:groovy;">
+				                    <b>Ajouter un fichier</b>
+                                        </button>-->
 					<button type="submit" style="background-color:#cf6824; border-color:#a7541d; border-style:groovy; margin-left:5ex; ">
                                                    <b>Supprimer un fichier</b>
                                                </button>						
