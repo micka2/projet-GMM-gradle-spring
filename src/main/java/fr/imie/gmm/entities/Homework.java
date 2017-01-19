@@ -5,16 +5,13 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.Inheritance;
+
+import com.springapp.models.base.EntityBase;
 
 @Entity
-public class Homework {
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int id;
+@Inheritance
+public class Homework extends EntityBase {
 
 	@Column(name = "title", nullable = false, length = 100)
 	private String title;
@@ -27,18 +24,7 @@ public class Homework {
 	
 	
 	///// Initialize getters and setters. /////
-	/**
-	 * @return the id
-	 */
-	public int getId() {
-		return id;
-	}
-	/**
-	 * @param id the id to set
-	 */
-	public void setId(int id) {
-		this.id = id;
-	}
+	
 	/**
 	 * @return the title
 	 */

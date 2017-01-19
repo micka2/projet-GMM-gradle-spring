@@ -1,32 +1,55 @@
 package fr.imie.gmm.entities;
 
+import java.util.List;
+
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.Inheritance;
+
+import com.springapp.models.base.EntityBase;
 
 @Entity
-public class Archive {
+@Inheritance
+public class Archive extends EntityBase {
 	
-	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	private int id;
-	
-//	private Subject subjectReference;
-//	private Homework homeworkReference;
-//	private Storage urlReference;
-	
-	///// Initialize getters and setters. /////
+	private List<Subject> subjectReference;
+	private List<Homework> homeworkReference;
+	private List<Storage> urlReference;
 	/**
-	 * @return the id
+	 * @return the subjectReference
 	 */
-	public int getId() {
-		return id;
+	public List<Subject> getSubjectReference() {
+		return subjectReference;
 	}
 	/**
-	 * @param id the id to set
+	 * @param subjectReference the subjectReference to set
 	 */
-	public void setId(int id) {
-		this.id = id;
+	public void setSubjectReference(List<Subject> subjectReference) {
+		this.subjectReference = subjectReference;
 	}
+	/**
+	 * @return the homeworkReference
+	 */
+	public List<Homework> getHomeworkReference() {
+		return homeworkReference;
+	}
+	/**
+	 * @param homeworkReference the homeworkReference to set
+	 */
+	public void setHomeworkReference(List<Homework> homeworkReference) {
+		this.homeworkReference = homeworkReference;
+	}
+	/**
+	 * @return the urlReference
+	 */
+	public List<Storage> getUrlReference() {
+		return urlReference;
+	}
+	/**
+	 * @param urlReference the urlReference to set
+	 */
+	public void setUrlReference(List<Storage> urlReference) {
+		this.urlReference = urlReference;
+	}
+	
+
 }
