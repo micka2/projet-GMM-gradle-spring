@@ -3,7 +3,6 @@ package fr.imie.gmm.entities.base;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.MappedSuperclass;
 
 @MappedSupess
 public abstract class EntityBase {
