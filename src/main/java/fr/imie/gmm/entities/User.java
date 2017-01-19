@@ -8,7 +8,9 @@ import javax.persistence.Inheritance;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
-import com.springapp.models.base.EntityBase;
+import fr.imie.gmm.entities.base.EntityBase;
+
+
 
 @Inheritance
 @Entity

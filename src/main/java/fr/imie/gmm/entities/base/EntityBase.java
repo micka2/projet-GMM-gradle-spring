@@ -5,7 +5,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 
-@MappedSuperclass
+@MappedSupess
 public abstract class EntityBase {
 	
 	@Id

@@ -5,7 +5,8 @@ import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.Inheritance;
 
-import com.springapp.models.base.EntityBase;
+import fr.imie.gmm.entities.base.EntityBase;
+
 
 @Entity
 @Inheritance

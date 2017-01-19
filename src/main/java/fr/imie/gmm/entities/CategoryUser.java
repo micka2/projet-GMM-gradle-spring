@@ -2,7 +2,8 @@ package fr.imie.gmm.entities;
 
 import javax.persistence.Inheritance;
 
-import com.springapp.models.base.EntityBase;
+import fr.imie.gmm.entities.base.EntityBase;
+
 
 @Inheritance
 public class CategoryUser extends EntityBase {

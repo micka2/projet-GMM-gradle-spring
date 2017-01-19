@@ -4,7 +4,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Inheritance;
 
-package fr.imie.gmm.entities.base.EntityBase;
+import fr.imie.gmm.entities.base.EntityBase;
+
 
 @Entity
 @Inheritance
