@@ -1,16 +1,13 @@
 package fr.imie.gmm.entities;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.Inheritance;
+
 
 @Entity
-public class Administrator extends User{
+@Inheritance
+public class Administrator extends User {
 
-	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	private Long adminId;
 	private Teacher teach=null;
     private Student student=null;
     private User user=null;
@@ -19,21 +16,15 @@ public class Administrator extends User{
     //constructor
     
     public Administrator(String firstname,String lastname,String login,String password) {
-    	super (firstname, lastname,3, login, password);
+    	super (firstname, lastname,3, login, password, password);
     }
     
-    public Administrator(){
-    	
-    }  
+//    public Administrator(){
+//    	
+//    }  
 //***************************************************************************
 	// getters & setters
     
-    public Long getAdminId() {
-		return adminId;
-	}
-	public void setAdminId(Long adminId) {
-		this.adminId = adminId;
-	}
 	public Teacher getTeach() {
 		return teach;
 	}

@@ -2,6 +2,7 @@
 <classpath>
 	<classpathentry path="bin" kind="output"/>
 	<classpathentry kind="src" path="src/main/java"/>
+	<classpathentry kind="src" path="src/main/resources"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8/"/>
 	<classpathentry sourcepath="C:/Users/Guénaëlle/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-thymeleaf/1.4.3.RELEASE/79c7927a06568bbc91d4b30e60d501274fb489ae/spring-boot-starter-thymeleaf-1.4.3.RELEASE-sources.jar" kind="lib" path="C:/Users/Guénaëlle/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-thymeleaf/1.4.3.RELEASE/11a0672a16cf479faef287997ecde8e154c9713/spring-boot-starter-thymeleaf-1.4.3.RELEASE.jar"/>
 	<classpathentry sourcepath="C:/Users/Guénaëlle/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-data-jpa/1.4.3.RELEASE/e4a63ce3ec07d22f1f7e6c139cb052ce19598f3d/spring-boot-starter-data-jpa-1.4.3.RELEASE-sources.jar" kind="lib" path="C:/Users/Guénaëlle/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-data-jpa/1.4.3.RELEASE/ffda06c2144d10239014407333c223a237b73ad7/spring-boot-starter-data-jpa-1.4.3.RELEASE.jar"/>

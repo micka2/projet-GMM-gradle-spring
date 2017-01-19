@@ -4,17 +4,11 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 
 @Entity
 public class Teacher extends User {
 
 	
-	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	private Long teacherId;
 	@Column
 	private List<Subject> sujets;
 	@Column
@@ -26,22 +20,15 @@ public class Teacher extends User {
 //******************************************************************************************************************
     // constructor
 	
-	public Teacher() {
-		
-	}
+//	public Teacher() {
+//		
+//	}
 	public Teacher(String firstname,String lastname,int categoryId,String login,String password) {
-    	super(firstname, lastname, 1, login, password);
+    	super(firstname, lastname, 1, login, password, password);
     }
     
     
 //*****************************************************************************************************************
-	
-	public Long getTeacherId() {
-		return teacherId;
-	}
-	public void setTeacherId(Long teacherId) {
-		this.teacherId = teacherId;
-	}
 	
 	public List<Subject> getSujets() {
 		return sujets;
