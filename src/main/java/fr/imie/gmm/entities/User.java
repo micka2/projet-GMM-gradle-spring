@@ -21,9 +21,9 @@ import fr.imie.gmm.entities.base.EntityBase;
 
 	@NotNull
 	private String email;
-	@Column@NotNull
+	@Column(name="Prenom")@NotNull
 	protected String firstname;
-	@Column@NotNull
+	@Column(name="Nom")@NotNull
 	protected String lastname;
 	@Column@NotNull
 	protected int categoryId;
@@ -44,6 +44,11 @@ import fr.imie.gmm.entities.base.EntityBase;
 	public User() {
 
 	}
+	  public User (String email, String password){
+		  this.email=email;
+		  this.password=password;
+	  }
+	  
 	  
 	  public User(String firstname, String lastname, int categoryId,
 				String login, String password, String email) {
