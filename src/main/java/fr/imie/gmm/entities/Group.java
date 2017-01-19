@@ -43,16 +43,5 @@ public class Group extends EntityBase {
 		
 	}
    
-    // Fonctions de la Classe Group
-    
-    public void create() {
-        // TODO implement here
-    }
-
-    public void modify() {
-        // TODO implement here
-    }
-
-	
 
 }
