@@ -10,7 +10,14 @@ public class TeachContrl {
 
 	
 	@RequestMapping(method=RequestMethod.GET, path="/teacher")
-    public String Teacher(Model model) {
+    public String teacher(Model model) {
         return "teacher_view";
     }
+	
+	@RequestMapping("/editionSujetRecupDevoir")
+	public String editRecup(Model model){
+		
+		
+		return null;
+	}
 }
