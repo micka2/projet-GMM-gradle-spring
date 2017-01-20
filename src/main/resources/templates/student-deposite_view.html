@@ -37,10 +37,13 @@
 				<h4>Algorithme de tri</h4>
 					
 				<div style="margin-top:4ex;" class="row" >
-					<button type="submitted" style="background-color:#cf6824; border-color:#a7541d; border-style:groovy;">
-                                                   <b>Ajouter un fichier</b>
-                                               </button>
-					<button type="submitted" style="background-color:#cf6824; border-color:#a7541d; border-style:groovy; margin-left:5ex; ">
+                                    <form method="post" action="uploadFile" enctype="multipart/form-data" >
+                                        <input type="submit" value="Upload" name="upload" style="background-color:#cf6824; border-color:#a7541d; border-style:groovy; font-weight:bold;">
+                                    </form>
+					<!--<button action="uploadFile" type="submit" value="upload" name="upload" id="upload" style="background-color:#cf6824; border-color:#a7541d; border-style:groovy;">
+				                    <b>Ajouter un fichier</b>
+                                        </button>-->
+					<button type="submit" style="background-color:#cf6824; border-color:#a7541d; border-style:groovy; margin-left:5ex; ">
                                                    <b>Supprimer un fichier</b>
                                                </button>						
 				</div>
@@ -55,14 +58,14 @@
 			</div>
 			
 			<div  style="margin-top:3ex;" >
-			<button type="submitted" style="background-color:#cf6824; border-color:#a7541d; border-style:groovy;"><b>Soumettre le devoir</b></button>
+			<button type="submit" style="background-color:#cf6824; border-color:#a7541d; border-style:groovy;"><b>Soumettre le devoir</b></button>
                         </div>
                         
                 </td>
                 
 			
                 <td width="50%"> 
-			<button type="submitted" style="float:right; background-color:#194c9a; color:#eaeffa; margin-top:2ex; margin-right:-5ex;"><i>se déconnecter</i></button>
+			<button type="submit" style="float:right; background-color:#194c9a; color:#eaeffa; margin-top:2ex; margin-right:-5ex;"><i>se déconnecter</i></button>
 			
 		<div style="margin-top:12ex;">	
 			<div style="margin-top:6ex;">
@@ -70,7 +73,7 @@
 					<h4>Groupe de travail</h4>
 					
 					<div style="margin-top:4ex;" class="row" >
-						<button type="submitted" style="background-color:#cf6824; border-color:#a7541d; border-style:groovy;"><b>Créer un groupe</b></button>
+						<button type="submit" style="background-color:#cf6824; border-color:#a7541d; border-style:groovy;"><b>Créer un groupe</b></button>
                                         </div>
 				</div> 
 
@@ -92,8 +95,8 @@
 			</select>
                         </div>
 						
-			<button type="submitted" style="background-color:#cf6824; border-color:#a7541d; border-style:groovy; margin-top:3ex; "><b>Joindre le groupe</b></button>
-			<button type="submitted" style="background-color:#cf6824; border-color:#a7541d; border-style:groovy; margin-top:3ex; margin-left:5ex;"><b>Quitter le groupe</b></button>
+			<button type="submit" style="background-color:#cf6824; border-color:#a7541d; border-style:groovy; margin-top:3ex; "><b>Joindre le groupe</b></button>
+			<button type="submit" style="background-color:#cf6824; border-color:#a7541d; border-style:groovy; margin-top:3ex; margin-left:5ex;"><b>Quitter le groupe</b></button>
 		</div>	
 		
 		<div style="margin-top:5ex;">
