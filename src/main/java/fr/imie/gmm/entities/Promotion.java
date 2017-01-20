@@ -1,5 +1,6 @@
 package fr.imie.gmm.entities;
 
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Inheritance;
@@ -16,6 +17,21 @@ public class Promotion extends EntityBase {
     private String name;
     @Column 
     private Integer year;
+
+
+    /**
+     *  constructor
+     */
+    public Promotion(String Name, Integer Year) {
+        this.name= Name;
+        this.year= Year;
+    }
+
+    // empty constructor
+    
+    public Promotion (){
+       
+       } 
     
     /**
      * Getters and Setters
@@ -32,19 +48,5 @@ public class Promotion extends EntityBase {
 	public void setYear(Integer year) {
 		this.year = year;
 	}
-
-	  /**
-     *  constructor
-     */
-    public Promotion(String Name, Integer Year) {
-    	this.name= Name;
-    	this.year= Year;
-    }
-
-    // empty constructor
-    
-    public Promotion (){
-    	
-    }
     
 }

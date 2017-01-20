@@ -44,6 +44,7 @@ import fr.imie.gmm.entities.base.EntityBase;
 	public User() {
 
 	}
+
 	  public User (String login, String password){
 		  this.login=login;
 		  this.password=password;
@@ -182,9 +183,7 @@ import fr.imie.gmm.entities.base.EntityBase;
 	public void setHomeworks(List<Homework> homeworks) {
 		this.homeworks = homeworks;
 	}
-
-
 	
-	  
-	}
+	
+}
 

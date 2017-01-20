@@ -18,12 +18,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class TeacherController {
 
 	
-	@RequestMapping(method=RequestMethod.GET, path="/teacher")
-    public String Teacher(Model model) {
-        return "teacher_view";
-    }
-
-	
 	/**
      * Size of a byte buffer to read/write file.
      */
@@ -88,4 +82,14 @@ public class TeacherController {
 
 	}
 
+
+
+	
+	@RequestMapping("/editionSujetRecupDevoir")
+	public String editRecup(Model model){
+		
+		
+		return null;
+	}
 }
+

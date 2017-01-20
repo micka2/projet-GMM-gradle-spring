@@ -8,4 +8,5 @@ import fr.imie.gmm.entities.Student;
 @Repository
 public interface StudentRepository extends CrudRepository<Student, Long>{
 
+	Student findByFirstname(String firstname);
 }
