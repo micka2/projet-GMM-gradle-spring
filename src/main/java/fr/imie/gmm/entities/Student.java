@@ -41,4 +41,11 @@ public class Student extends User{
 	public void setPromotion_id(int promotion_id) {
 		this.promotion_id = promotion_id;
 	}
+	
+	@Override
+    public String toString() {
+        return String.format("User[id=%d, username='%s'",
+                
+                this.login);
+        }
 }
