@@ -7,5 +7,6 @@ import fr.imie.gmm.entities.Subject;
 public interface SubjectRepository extends CrudRepository<Subject, Long>{
 
 	
-	Subject findByTitle(String title);
+//	Subject findByTitle(String title);
+	
 }
