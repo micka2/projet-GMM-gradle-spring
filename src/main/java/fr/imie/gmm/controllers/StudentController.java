@@ -1,4 +1,4 @@
-package fr.imie.gmm.contrl;
+package fr.imie.gmm.controllers;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,7 +15,7 @@ import fr.imie.gmm.repository.SubjectRepo;
 
 
 @Controller
-public class StudContrl {
+public class StudentController {
 
 	List<Subject>listsujets= new ArrayList<Subject>();
 	Subject sujet= new Subject(); 

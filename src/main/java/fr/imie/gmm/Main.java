@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
 import fr.imie.gmm.entities.User;
-import fr.imie.gmm.repository.UserRepository;
+import fr.imie.gmm.repositories.UserRepository;
 
 @SpringBootApplication
 public class Main //implements CommandLineRunner

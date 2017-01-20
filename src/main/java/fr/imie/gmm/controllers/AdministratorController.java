@@ -1,4 +1,4 @@
-package fr.imie.gmm.contrl;
+package fr.imie.gmm.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 
 @Controller
-public class AdminContrl {
+public class AdministratorController {
 
 	@RequestMapping(method=RequestMethod.GET, path="/admin")
     public String Admin(Model model) {
