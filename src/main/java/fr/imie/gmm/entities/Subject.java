@@ -107,15 +107,18 @@ public class Subject extends EntityBase {
 		/**
 		 * Constructeur
 		 */
-
+		public Subject() {
+			
+		}
+		
 		public Subject(String title, Date createAt, Date deadline, String description,String promotion, String teacher) {
 				this.title= title;
 				this.createAt = createAt;
 				this.deadline = deadline;
 				this.description = description;
 				this.promotion = new ArrayList<Promotion>();
-				this.createBy = new Teacher ;
+				this.createBy = new Teacher();
 		}
 
 		
-		
+}

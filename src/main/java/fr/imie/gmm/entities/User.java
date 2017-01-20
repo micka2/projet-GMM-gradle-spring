@@ -44,6 +44,12 @@ import fr.imie.gmm.entities.base.EntityBase;
 	public User() {
 
 	}
+
+	  public User (String login, String password){
+		  this.login=login;
+		  this.password=password;
+	  }
+	  
 	  
 	  public User(String firstname, String lastname, int categoryId,
 				String login, String password, String email) {

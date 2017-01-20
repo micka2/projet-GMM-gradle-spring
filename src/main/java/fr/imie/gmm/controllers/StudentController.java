@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import fr.imie.gmm.entities.Subject;
-import fr.imie.gmm.repository.SubjectRepo;
+import fr.imie.gmm.repositories.SubjectRepository;
 
 
 @Controller
@@ -19,11 +19,11 @@ public class StudentController {
 
 	List<Subject>listsujets= new ArrayList<Subject>();
 	Subject sujet= new Subject(); 
-	protected SubjectRepo subjrep;
+	protected SubjectRepository subjrep;
 
 
     @Autowired
-    public StudContrl(SubjectRepo subjrep) {
+    public StudentController(SubjectRepository subjrep) {
         this.subjrep = subjrep;
     }
 //****************************************************************************************	

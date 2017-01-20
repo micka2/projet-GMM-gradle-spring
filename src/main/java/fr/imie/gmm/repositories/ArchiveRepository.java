@@ -6,5 +6,5 @@ import fr.imie.gmm.entities.Archive;
 
 public interface ArchiveRepository extends CrudRepository<Archive, Long> {
 
-	Archive findByTitle(String title);
+//	Archive findByTitle(String title);
 }
