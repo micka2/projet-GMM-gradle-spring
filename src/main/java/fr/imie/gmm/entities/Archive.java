@@ -4,6 +4,8 @@ import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.Inheritance;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 
 import fr.imie.gmm.entities.base.EntityBase;
 
@@ -12,8 +14,11 @@ import fr.imie.gmm.entities.base.EntityBase;
 @Inheritance
 public class Archive extends EntityBase {
 	
+	@ManyToMany
 	private List<Subject> subjectReference;
+	@ManyToMany
 	private List<Homework> homeworkReference;
+	@ManyToMany
 	private List<Storage> urlReference;
 	/**
 	 * @return the subjectReference

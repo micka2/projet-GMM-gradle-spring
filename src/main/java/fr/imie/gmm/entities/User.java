@@ -5,6 +5,8 @@ import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Inheritance;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
@@ -24,17 +26,17 @@ import fr.imie.gmm.entities.base.EntityBase;
 	@Column(name="Prenom")@NotNull
 	protected String firstname;
 	@Column(name="Nom")@NotNull
+	@JoinColumn(name="userName")
 	protected String lastname;
 	@Column@NotNull
+	@ManyToOne
+	@JoinColumn(name="category")
 	protected int categoryId;
 	@Column@NotNull
 	protected String login;
 	@Column@NotNull
 	protected String password;
-	private List<Subject> sujets;
-	@Column
-	protected List<Archive> archives;
-	private List<Homework> homeworks;
+	
 	
 	
 
@@ -146,42 +148,6 @@ import fr.imie.gmm.entities.base.EntityBase;
 	 */
 	public void setPassword(String password) {
 		this.password = password;
-	}
-	/**
-	 * @return the sujets
-	 */
-	public List<Subject> getSujets() {
-		return sujets;
-	}
-	/**
-	 * @param sujets the sujets to set
-	 */
-	public void setSujets(List<Subject> sujets) {
-		this.sujets = sujets;
-	}
-	/**
-	 * @return the archives
-	 */
-	public List<Archive> getArchives() {
-		return archives;
-	}
-	/**
-	 * @param archives the archives to set
-	 */
-	public void setArchives(List<Archive> archives) {
-		this.archives = archives;
-	}
-	/**
-	 * @return the homeworks
-	 */
-	public List<Homework> getHomeworks() {
-		return homeworks;
-	}
-	/**
-	 * @param homeworks the homeworks to set
-	 */
-	public void setHomeworks(List<Homework> homeworks) {
-		this.homeworks = homeworks;
 	}
 	
 	

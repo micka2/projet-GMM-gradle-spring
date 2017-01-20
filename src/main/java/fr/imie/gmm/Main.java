@@ -13,8 +13,8 @@ import fr.imie.gmm.repositories.UserRepository;
 public class Main //implements CommandLineRunner
 {
 
-	@Autowired
-	private UserRepository repository;
+//	@Autowired
+//	private UserRepository repository;
 	
 	public static void main(String[] args) {
 		SpringApplication.run(Main.class, args);

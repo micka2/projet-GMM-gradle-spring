@@ -22,7 +22,7 @@ public class HomeworkController {
 	 * Upload file method.
 	 */
 	@RequestMapping(value = "/uploadFile", method = RequestMethod.POST)
-	public String uploadFile(@RequestParam("nom") String name, Model model,
+	public String uploadFile(@RequestParam("editHomework") String name, Model model,
 			@RequestParam("fichier") MultipartFile file) {
 
 		if (!file.isEmpty()) {

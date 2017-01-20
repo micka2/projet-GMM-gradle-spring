@@ -39,7 +39,7 @@ public class AuthentificationController {
   @RequestMapping(method=RequestMethod.GET, path="/login")
   public String login(
           Model model) {
-      return "auth_view";
+      return "authentification_view";
   }
 
   @RequestMapping(method=RequestMethod.POST, path="/loginCheck")
@@ -56,7 +56,7 @@ public class AuthentificationController {
 			
 			model.addAttribute(username);
 			model.addAttribute(password);
-			return "admin_view";
+			return "administator_view";
 		}
 	  else if((user!=null)&&(user.getPassword().equals(password))&&(user.getCategoryId()==1)){
 		  
@@ -72,7 +72,7 @@ public class AuthentificationController {
 	  }
 		else{
 			model.addAttribute("fail", true);
-			return "auth_view";
+			return "authentification_view";
 		}
   
   }

@@ -4,6 +4,10 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 
 
@@ -12,10 +16,13 @@ public class Teacher extends User {
 
 	
 	@Column
-	private List<Subject> sujets;
+	@ManyToMany(targetEntity=Subject.class, fetch=FetchType.LAZY)
+	private List<Subject> subjects;
 	@Column
+	@ManyToMany(targetEntity=Homework.class, fetch=FetchType.LAZY)
 	private List<Homework> homeworks;
 	@Column
+	@ManyToMany(targetEntity=Promotion.class, fetch=FetchType.LAZY)
 	private List<Integer>promotion;
 	
 	
@@ -35,10 +42,10 @@ public class Teacher extends User {
 //*****************************************************************************************************************
 	
 	public List<Subject> getSujets() {
-		return sujets;
+		return subjects;
 	}
-	public void setSujets(List<Subject> sujets) {
-		this.sujets = sujets;
+	public void setSujets(List<Subject> subjects) {
+		this.subjects = subjects;
 	}
 	public List<Homework> getHomeworks() {
 		return homeworks;
