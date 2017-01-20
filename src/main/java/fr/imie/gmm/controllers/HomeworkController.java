@@ -1,4 +1,4 @@
-package fr.imie.gmm.contrl;
+package fr.imie.gmm.controllers;
 
 import java.io.BufferedOutputStream;
 import java.io.File;
@@ -14,15 +14,15 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 @Controller
-public class HomeworkContrl {
+public class HomeworkController {
 	
-	private static final Logger logger = LoggerFactory.getLogger(HomeworkContrl.class);
+	private static final Logger logger = LoggerFactory.getLogger(HomeworkController.class);
 
 	/**
 	 * Upload file method.
 	 */
 	@RequestMapping(value = "/uploadFile", method = RequestMethod.POST)
-	public String uploadFile(@RequestParam("nom") String name,
+	public String uploadFile(@RequestParam("nom") String name, Model model,
 			@RequestParam("fichier") MultipartFile file) {
 
 		if (!file.isEmpty()) {
@@ -42,9 +42,15 @@ public class HomeworkContrl {
 						new FileOutputStream(serverFile));
 				stream.write(bytes);
 				stream.close();
-
+				
 				logger.info("Chemin d'accès du fichier="
 						+ serverFile.getAbsolutePath());
+				
+				// Get the current time.
+				java.util.Date date = new java.util.Date();
+				
+				model.addAttribute("fileName", name);
+				model.addAttribute("createAt", date);
 
 				return "student-deposite_view";
 			} catch (Exception e) {

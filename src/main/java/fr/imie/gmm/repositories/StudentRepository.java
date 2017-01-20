@@ -1,4 +1,4 @@
-package fr.imie.gmm.repository;
+package fr.imie.gmm.repositories;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import fr.imie.gmm.entities.Student;
 
 @Repository
-public interface StudentRepo extends CrudRepository<Student, Long>{
+public interface StudentRepository extends CrudRepository<Student, Long>{
 
 }

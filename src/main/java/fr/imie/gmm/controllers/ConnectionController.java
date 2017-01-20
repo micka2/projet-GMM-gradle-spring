@@ -1,4 +1,4 @@
-package fr.imie.gmm.contrl;
+package fr.imie.gmm.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -8,11 +8,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import fr.imie.gmm.entities.User;
-import fr.imie.gmm.repository.UserRepository;
+import fr.imie.gmm.repositories.UserRepository;
 
 
 @Controller
-public class ConnectController {
+public class ConnectionController {
 
 	protected UserRepository userRepo;
 	
@@ -21,7 +21,7 @@ public class ConnectController {
 
 	
 	@Autowired
-	public ConnectController (UserRepository userRepo){
+	public ConnectionController (UserRepository userRepo){
 		this.userRepo= userRepo;
 	}
 	
