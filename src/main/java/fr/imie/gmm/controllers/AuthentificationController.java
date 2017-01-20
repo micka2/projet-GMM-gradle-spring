@@ -1,4 +1,4 @@
-package fr.imie.gmm.contrl;
+package fr.imie.gmm.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -8,12 +8,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import fr.imie.gmm.entities.User;
-import fr.imie.gmm.repository.UserRepository;
+import fr.imie.gmm.repositories.UserRepository;
 
 
 
 @Controller
-public class AuthContrl {
+public class AuthentificationController {
 
 	/*private static final String admin_username="admin";
 	private static final String admin_password="mypass";
@@ -25,12 +25,12 @@ public class AuthContrl {
 	protected UserRepository userRepo;
 	
 //******************* constructor ****************************************
-	public AuthContrl(){
+	public AuthentificationController(){
 		
 	}
 	
     @Autowired
-    public AuthContrl(UserRepository userRepository) {
+    public AuthentificationController(UserRepository userRepository) {
         this.userRepo = userRepository;
     }
     

@@ -1,4 +1,4 @@
-package fr.imie.gmm.repository;
+package fr.imie.gmm.repositories;
 
 import org.springframework.data.repository.CrudRepository;
 

@@ -1,10 +1,10 @@
-package fr.imie.gmm.repository;
+package fr.imie.gmm.repositories;
 
 import org.springframework.data.repository.CrudRepository;
 
 import fr.imie.gmm.entities.Archive;
 
-public interface ArchiveRepo extends CrudRepository<Archive, Long> {
+public interface ArchiveRepository extends CrudRepository<Archive, Long> {
 
 	Archive findByTitle(String title);
 }

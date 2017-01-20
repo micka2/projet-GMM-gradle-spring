@@ -1,12 +1,12 @@
 package fr.imie.gmm.entities;
 
+
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.Inheritance;
-
+import java.util.Date;
 import fr.imie.gmm.entities.base.EntityBase;
 
 
@@ -14,6 +14,7 @@ import fr.imie.gmm.entities.base.EntityBase;
 @Inheritance
 @Entity
 public class Subject extends EntityBase {
+
 
 	    
 	
@@ -118,4 +119,3 @@ public class Subject extends EntityBase {
 
 		
 		
-}
