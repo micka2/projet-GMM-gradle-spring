@@ -28,7 +28,9 @@ public class Teacher extends User {
 	public Teacher(String firstname,String lastname,int categoryId,String login,String password) {
     	super(firstname, lastname, 1, login, password, password);
     }
-    
+    public Teacher(){
+    	
+    }
     
 //*****************************************************************************************************************
 	
