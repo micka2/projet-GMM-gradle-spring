@@ -1,11 +1,9 @@
 package fr.imie.gmm.entities;
 
-import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Inheritance;
-import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
@@ -23,14 +21,12 @@ import fr.imie.gmm.entities.base.EntityBase;
 
 	@NotNull
 	private String email;
-	@Column(name="Prenom")@NotNull
+	@Column(name="fistName")@NotNull
 	protected String firstname;
-	@Column(name="Nom")@NotNull
-	@JoinColumn(name="userName")
+	@Column(name="lastName")@NotNull
 	protected String lastname;
-	@Column@NotNull
+	@Column(name="category")@NotNull
 	@ManyToOne
-	@JoinColumn(name="category")
 	protected int categoryId;
 	@Column@NotNull
 	protected String login;

@@ -5,7 +5,6 @@ import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.Inheritance;
 import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
 
 import fr.imie.gmm.entities.base.EntityBase;
 

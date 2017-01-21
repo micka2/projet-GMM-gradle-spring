@@ -3,7 +3,6 @@ package fr.imie.gmm.entities;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Inheritance;
-import javax.persistence.JoinColumn;
 
 import fr.imie.gmm.entities.base.EntityBase;
 

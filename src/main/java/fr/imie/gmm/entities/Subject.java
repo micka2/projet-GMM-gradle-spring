@@ -1,19 +1,10 @@
 package fr.imie.gmm.entities;
 
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Inheritance;
-import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-
-import org.hibernate.annotations.ManyToAny;
-
 import java.util.Date;
 import fr.imie.gmm.entities.base.EntityBase;
 
@@ -31,10 +22,10 @@ public class Subject extends EntityBase {
 	    private Date deadline;
 	    private String description;
 	    private int groupSize;
-	    @ManyToMany(targetEntity=Teacher.class, fetch=FetchType.LAZY)
+	    @ManyToMany(targetEntity=Teacher.class)
 	    private Teacher createBy;
-	    @ManyToMany(mappedBy="promotionName", targetEntity=Promotion.class, fetch=FetchType.LAZY)
-	    private List <Promotion> promotion;
+	    @ManyToMany(mappedBy="name", fetch=FetchType.LAZY)
+	    private Promotion promotion;
 	    
 	    
 	    /**
@@ -103,13 +94,6 @@ public class Subject extends EntityBase {
 
 
 
-		public List<Promotion> getPromotion() {
-			return promotion;
-		}
-
-		public void setPromotion(List<Promotion> promotion) {
-			this.promotion = promotion;
-		}
 	    
 	    
 	    
@@ -126,8 +110,22 @@ public class Subject extends EntityBase {
 				this.createAt = createAt;
 				this.deadline = deadline;
 				this.description = description;
-				this.promotion = new ArrayList<Promotion>();
+				this.promotion = new Promotion();
 				this.createBy = new Teacher();
+		}
+
+		/**
+		 * @return the promotion
+		 */
+		public Promotion getPromotion() {
+			return promotion;
+		}
+
+		/**
+		 * @param promotion the promotion to set
+		 */
+		public void setPromotion(Promotion promotion) {
+			this.promotion = promotion;
 		}
 
 		
