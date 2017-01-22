@@ -28,14 +28,14 @@
 <body>
         <div class="container">
         
-		<div class="alert alert-danger" role="alert">
-   		 <p th:if="${fail}" > Bad Mail or password !!!</p></div>
+		<div th:if="${fail}" class="alert alert-danger" role="alert">
+   		 <p> Bad Mail or password !!!</p></div>
    		 
       <form method="POST" action="/checklogin">
-        <h2 class="form-signin-heading">Please sign in</h2>
+        <h2 align= "center" class="form-signin-heading">Please sign in</h2>
         <br/>
-        <label for="inputemail" class="sr-only">Mail</label>
-        <input type="text" name="email"  id="inputemail" class="form-control" placeholder="email"/>
+        <label for="inputlogin" class="sr-only">login</label>
+        <input type="text" name="login"  id="inputlogin" class="form-control" placeholder="login"/>
         <label for="inputPassword" class="sr-only">Password</label>
         <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password"/>
         <br/>
