@@ -13,7 +13,7 @@ import fr.imie.gmm.entities.base.EntityBase;
 public class Promotion extends EntityBase {
 
   
-     @Column(nullable = false, length = 20)
+    @Column(nullable = false, length = 20, name = "promotionName")
     private String name;
     @Column 
     private Integer year;

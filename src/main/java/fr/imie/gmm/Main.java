@@ -8,7 +8,9 @@ public class Main //implements CommandLineRunner
 {
 
 //	@Autowired
-	//private UserRepository repository;
+
+//	private UserRepository repository;
+
 	
 	public static void main(String[] args) {
 		SpringApplication.run(Main.class, args);

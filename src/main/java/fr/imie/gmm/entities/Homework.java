@@ -5,7 +5,10 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Inheritance;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 
 import fr.imie.gmm.entities.base.EntityBase;
 
@@ -21,7 +24,9 @@ public class Homework extends EntityBase {
 	@Column(name = "date", nullable = false)
 	private Date deposedAt;
 
+	@ManyToMany(targetEntity=Student.class, fetch=FetchType.EAGER)
 	private Student author;
+	@ManyToOne(targetEntity=Subject.class, fetch=FetchType.EAGER)
 	private Subject subjectReference;
 	
 	
