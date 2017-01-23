@@ -3,7 +3,6 @@ package fr.imie.gmm;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import fr.imie.gmm.entities.User;
 
 @SpringBootApplication
 public class Main //implements CommandLineRunner
@@ -26,7 +25,5 @@ public class Main //implements CommandLineRunner
 //		
 //			
 		}
-
-	}
 
 }
