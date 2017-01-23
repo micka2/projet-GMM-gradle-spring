@@ -39,7 +39,7 @@ public class ConnectionController {
 			String password, 
 			Model model) {
 		
-		User user = this.userRepo.findByEmail(login);
+		User user = this.userRepo.findByLogin(login);
 		
 		model.addAttribute("login", login);
 		//model.addAttribute("password", password);
