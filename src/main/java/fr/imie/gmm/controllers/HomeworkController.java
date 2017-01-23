@@ -6,6 +6,7 @@ import java.io.FileOutputStream;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,10 +14,25 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
+import fr.imie.gmm.entities.Homework;
+import fr.imie.gmm.repositories.HomeworkRepository;
+import fr.imie.gmm.repositories.UserRepository;
+
 @Controller
 public class HomeworkController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(HomeworkController.class);
+	
+	private HomeworkRepository homeworkRepo;
+	
+	public HomeworkController() {
+		
+	}
+	
+	@Autowired
+    public HomeworkController(HomeworkRepository homeworkRepository) {
+        this.homeworkRepo = homeworkRepository;
+    }
 
 	/**
 	 * Upload file method.
@@ -43,6 +59,8 @@ public class HomeworkController {
 				stream.write(bytes);
 				stream.close();
 				
+				Homework homework = this.homeworkRepo.save(serverFile);
+				
 				logger.info("Chemin d'accès du fichier="
 						+ serverFile.getAbsolutePath());
 				
@@ -51,7 +69,7 @@ public class HomeworkController {
 				
 				model.addAttribute("fileName", name);
 				model.addAttribute("createAt", date);
-
+				
 				return "student-deposite_view";
 			} catch (Exception e) {
 				return "échec !";
