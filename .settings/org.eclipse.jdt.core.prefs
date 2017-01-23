@@ -1,7 +1,5 @@
-
-#Fri Jan 20 13:47:55 CET 2017
-
-
+#
+#Mon Jan 23 10:03:34 CET 2017
 org.eclipse.jdt.core.compiler.debug.localVariable=generate
 org.eclipse.jdt.core.compiler.compliance=1.8
 org.eclipse.jdt.core.compiler.codegen.unusedLocal=preserve
