@@ -26,10 +26,16 @@ public class StudentController {
     public StudentController(SubjectRepository subjrep) {
         this.subjrep = subjrep;
     }
+    
+
+    public StudentController() {
+		// TODO Auto-generated constructor stub
+	}
+
 //****************************************************************************************	
     
 
-    @RequestMapping(method=RequestMethod.GET, path="/student")
+	@RequestMapping(method=RequestMethod.GET, path="/student")
 	public String affichListSujet(
 			Model model){		
 		listsujets = this.subjrep.findAll();	
@@ -62,7 +68,7 @@ public class StudentController {
 	
 	@RequestMapping("/depotDevoirs")
 	public String depot(Model model){
-		return "depotDevoirs_view";
+		return "student-deposite_view";
 	}
 	//******************************************************************************************
 }

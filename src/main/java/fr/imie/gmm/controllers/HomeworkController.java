@@ -18,12 +18,22 @@ public class HomeworkController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(HomeworkController.class);
 
+	
+	@RequestMapping("/studentdepot")
+	public String studentDeposite(Model model){
+		
+		return "student-deposite_view";
+	}
+	
 	/**
 	 * Upload file method.
 	 */
 	@RequestMapping(value = "/uploadFile", method = RequestMethod.POST)
-	public String uploadFile(@RequestParam("nom") String name, Model model,
-			@RequestParam("fichier") MultipartFile file) {
+	public String uploadFile(@RequestParam("nom") 
+							String name,
+							Model model,
+							@RequestParam("fichier") 
+							MultipartFile file) {
 
 		if (!file.isEmpty()) {
 			try {
