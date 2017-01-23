@@ -1,0 +1,60 @@
+body {
+	background-color: #4db5f4;
+}
+
+
+#identifiant {
+	border-style: solid;
+	border-color: blue;
+	float: left;
+	margin-left: 50px;
+	margin-top: -60px
+}
+#deconnexion{
+	margin-right: 50px;
+	margin-top: 40px;
+}
+#prom{
+	margin-top: 40px;
+	margin-left: 150px;
+	
+}
+
+#content div.input-group{
+	margin-left: 150px;
+	margin-right: -200px;
+	margin-bottom: 20px;
+	margin-top: -10px;
+
+}
+#content select.select-1{
+	margin-left: 150px;
+	width: 45%;
+}
+#subject{
+	margin-top: 80px;
+	margin-bottom: 50px;
+
+}
+
+#content div.input-group2{
+	margin-left: 100px;
+	margin-right: -30px;
+	margin-bottom: 20px;
+}
+#content select.select-2{
+	margin-left: 100px;
+	width: 45%;
+}
+#b1{
+	margin-left: 100px;
+	margin-top: 15px;
+}
+#b2{
+	margin-left: 150px;
+	margin-top: 15px;
+}
+#archives{
+	margin-right: 50px;
+	margin-top: 50px;
+}

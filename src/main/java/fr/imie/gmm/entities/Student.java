@@ -2,14 +2,19 @@ package fr.imie.gmm.entities;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 
 
 @Entity
 public class Student extends User{
 
 	@Column
+	@ManyToMany(targetEntity=Group.class, fetch=FetchType.LAZY)
 	private int group_id;
 	@Column
+	@ManyToOne(targetEntity=Promotion.class, fetch=FetchType.EAGER)
     private int promotion_id;
 	
 	//************************************************************************************************************

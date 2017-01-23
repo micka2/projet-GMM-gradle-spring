@@ -4,7 +4,8 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-
+import javax.persistence.FetchType;
+import javax.persistence.ManyToMany;
 
 
 @Entity
@@ -12,11 +13,14 @@ public class Teacher extends User {
 
 	
 	@Column
-	private List<Subject> sujets;
+	@ManyToMany(targetEntity=Subject.class, fetch=FetchType.LAZY)
+	private List<Subject> subjects;
 	@Column
+	@ManyToMany(targetEntity=Homework.class, fetch=FetchType.LAZY)
 	private List<Homework> homeworks;
 	@Column
-	private List<Integer>promotion;
+	@ManyToMany(mappedBy="name")
+	private List<Promotion> promotion;
 	
 	
 //******************************************************************************************************************
@@ -32,26 +36,45 @@ public class Teacher extends User {
     	
     }
     
-//*****************************************************************************************************************
-	
-	public List<Subject> getSujets() {
-		return sujets;
+  //*****************************************************************************************************************
+
+	/**
+	 * @return the subjects
+	 */
+	public List<Subject> getSubjects() {
+		return subjects;
 	}
-	public void setSujets(List<Subject> sujets) {
-		this.sujets = sujets;
+	/**
+	 * @param subjects the subjects to set
+	 */
+	public void setSubjects(List<Subject> subjects) {
+		this.subjects = subjects;
 	}
+	/**
+	 * @return the homeworks
+	 */
 	public List<Homework> getHomeworks() {
 		return homeworks;
 	}
+	/**
+	 * @param homeworks the homeworks to set
+	 */
 	public void setHomeworks(List<Homework> homeworks) {
 		this.homeworks = homeworks;
 	}
-	public List<Integer> getPromotion() {
+	/**
+	 * @return the promotion
+	 */
+	public List<Promotion> getPromotion() {
 		return promotion;
 	}
-	public void setPromotion(List<Integer> promotion) {
+	/**
+	 * @param promotion the promotion to set
+	 */
+	public void setPromotion(List<Promotion> promotion) {
 		this.promotion = promotion;
 	}
+    
 	
 //*****************************************************************************************************************	
 

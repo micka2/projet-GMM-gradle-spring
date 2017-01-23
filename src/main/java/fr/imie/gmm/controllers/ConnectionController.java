@@ -33,15 +33,15 @@ public class ConnectionController {
 	}
 
 	@RequestMapping(method = RequestMethod.POST, path = "/checklogin")
-	public String checklogin(@RequestParam(value = "email", required = false) 
-			String email,
+	public String checklogin(@RequestParam(value = "login", required = false) 
+			String login,
 			@RequestParam(value = "password", required = false) 
 			String password, 
 			Model model) {
 		
-		User user = this.userRepo.findByEmail(email);
+		User user = this.userRepo.findByEmail(login);
 		
-		model.addAttribute("email", email);
+		model.addAttribute("login", login);
 		//model.addAttribute("password", password);
 		if (user!= null
 			//user.getLogin().equals(login)
