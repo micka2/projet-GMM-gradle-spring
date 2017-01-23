@@ -25,6 +25,7 @@ hs_err_pid*
 .project
 .settings/
 .springBeans
+.prefs
 
 ### IntelliJ IDEA ###
 .idea

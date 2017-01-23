@@ -49,7 +49,7 @@ public class AuthentificationController {
           @RequestParam(name="view_password")
           String password,
           Model model) {
-	  User user = this.userRepo.findByEmail(username);
+	  User user = this.userRepo.findByLogin(username);
 	  
 	  /*(admin_username.equals(username))&&(admin_password.equals(password))*/
 	  if((user!=null)&&(user.getPassword().equals(password))&&(user.getCategoryId()==3)){
