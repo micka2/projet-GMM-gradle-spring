@@ -6,22 +6,20 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
+import javax.persistence.Table;
 
 @Entity
 @Inheritance
+@Table(name="Storage")
 public class Storage {
 	
-	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	private Long id;
-	
-	@Column(name = "url", nullable = false, length = 100)
+//	@Column(name = "url", nullable = false, length = 100)
 	private String url;
 	
-	@Column(nullable = false)
+//	@Column(nullable = false)
 	private int size;
 	
-	@Column(nullable=true)
+//	@Column(nullable=true)
 	private int quota;
 	
 	///// Initialize getters and setters. /////

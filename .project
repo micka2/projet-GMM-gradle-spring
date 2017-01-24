@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
+	<natures>
+		<nature>org.eclipse.jdt.core.javanature</nature>
+		<nature>org.eclipse.buildship.core.gradleprojectnature</nature>
+	</natures>
 	<name>projet-GMM-gradle-spring</name>
 	<comment></comment>
 	<projects/>

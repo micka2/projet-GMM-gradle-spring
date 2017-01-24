@@ -1,21 +1,20 @@
 package fr.imie.gmm.entities;
 
-import javax.persistence.Column;
+
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
 
 
 @Entity
+@Table(name="Student")
 public class Student extends User{
 
-	@Column
-	@ManyToMany(targetEntity=Group.class, fetch=FetchType.LAZY)
-	private int group_id;
-	@Column
-	@ManyToOne(targetEntity=Promotion.class, fetch=FetchType.EAGER)
-    private int promotion_id;
+	@ManyToOne
+	private WorkingGroup groupId;
+	@ManyToOne
+    private Grade promotionId;
 	
 	//************************************************************************************************************
     //redefinition du(des) constructeur(s) de la classe Student
@@ -23,29 +22,39 @@ public class Student extends User{
     public Student() {
     	
     }
-    public Student(String firstname,String lastname,String login,int categoryId,String password){
-    	super(firstname, lastname, 2, login, password, password);
-    }
+    
     
     //************************************************************************************************************
     //getters et setters
     
- 
-	public int getGroup_id() {
-		return group_id;
+    /**
+	 * @return the groupId
+	 */
+	public WorkingGroup getGroupId() {
+		return groupId;
 	}
-
-	public void setGroup_id(int group_id) {
-		this.group_id = group_id;
+	/**
+	 * @param groupId the groupId to set
+	 */
+	public void setGroupId(WorkingGroup groupId) {
+		this.groupId = groupId;
 	}
-
-	public int getPromotion_id() {
-		return promotion_id;
+	/**
+	 * @return the promotionId
+	 */
+	public Grade getPromotionId() {
+		return promotionId;
 	}
-
-	public void setPromotion_id(int promotion_id) {
-		this.promotion_id = promotion_id;
+	/**
+	 * @param promotionId the promotionId to set
+	 */
+	public void setPromotionId(Grade promotionId) {
+		this.promotionId = promotionId;
 	}
+	public Student(String firstname,String lastname,String login,int categoryId,String password){
+    	super(firstname, lastname, login, password, password, 2);
+    }
+	
 	
 	@Override
     public String toString() {

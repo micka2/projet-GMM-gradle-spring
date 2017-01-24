@@ -30,7 +30,7 @@ public class DbConfiguration {
     dataSource.setUrl(env.getProperty("db.url"));
     dataSource.setUsername(env.getProperty("db.username"));
     dataSource.setPassword(env.getProperty("db.password"));
-    return (DataSource) dataSource;
+    return dataSource;
   }
 
   /**

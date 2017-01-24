@@ -1,6 +1,8 @@
 package fr.imie.gmm.entities;
 
 
+import java.util.Locale.Category;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Inheritance;
@@ -11,27 +13,25 @@ import javax.validation.constraints.NotNull;
 import fr.imie.gmm.entities.base.EntityBase;
 
 
-
-@Inheritance
-@Entity
-	@Table(name = "users")	// porte le create de la table dans la DB
+	@Entity
+	@Inheritance
+	@Table(name = "User")
 	public class User extends EntityBase {
 
 	  // The entity fields (private)  
 
-	@NotNull
-	private String email;
-	@Column(name="firstName", nullable=false)
+
+//	@Column(name="fistName")@NotNull
 	protected String firstname;
-	@Column(name="lastName", nullable=false)
+//	@Column(name="lastName")@NotNull
 	protected String lastname;
-	@Column(name="category")
-	@ManyToOne
-	protected int categoryId;
-	@Column@NotNull
+//	@Column@NotNull
 	protected String login;
-	@Column@NotNull
+//	@Column@NotNull
 	protected String password;
+//	@NotNull
+	private String email;
+	protected int category;
 	
 	
 	
@@ -49,25 +49,25 @@ import fr.imie.gmm.entities.base.EntityBase;
 	  }
 	  
 	  
-	  public User(String firstname, String lastname, int categoryId,
-				String login, String password, String email) {
+	  public User(String firstname, String lastname, String login, 
+			  String password, String email, int category) {
 					
 			this.firstname = firstname;
 			this.lastname = lastname;
-			this.categoryId = categoryId;
 			this.login = login;
 			this.password = password;
 			this.email = email;
+			this.category = category;
 			
 		}
 	    public User(long id) {
 			
 			this.firstname ="";
 			this.lastname ="";
-			this.categoryId =0;
 			this.login ="";
 			this.password ="";
 			this.email="";
+			this.category=0;
 		}
 	  
 	  // Getters and setters methods
@@ -110,18 +110,6 @@ import fr.imie.gmm.entities.base.EntityBase;
 		this.lastname = lastname;
 	}
 	/**
-	 * @return the categoryId
-	 */
-	public int getCategoryId() {
-		return categoryId;
-	}
-	/**
-	 * @param categoryId the categoryId to set
-	 */
-	public void setCategoryId(int categoryId) {
-		this.categoryId = categoryId;
-	}
-	/**
 	 * @return the login
 	 */
 	public String getLogin() {
@@ -145,7 +133,20 @@ import fr.imie.gmm.entities.base.EntityBase;
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
+
+	/**
+	 * @return the category
+	 */
+	public int getCategory() {
+		return category;
+	}
+
+	/**
+	 * @param category the category to set
+	 */
+	public void setCategory(int category) {
+		this.category = category;
+	}
 	
 }
 

@@ -4,32 +4,34 @@ package fr.imie.gmm.entities;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Inheritance;
+import javax.persistence.Table;
 
 import fr.imie.gmm.entities.base.EntityBase;
 
 
 @Entity
 @Inheritance
-public class Promotion extends EntityBase {
+@Table(name="Promotion")
+public class Grade extends EntityBase {
 
   
-    @Column(nullable = false, length = 20, name = "promotionName")
+//    @Column(nullable = false, length = 20, name = "promotionName")
     private String name;
-    @Column 
+//    @Column 
     private Integer year;
 
 
     /**
      *  constructor
      */
-    public Promotion(String Name, Integer Year) {
+    public Grade(String Name, Integer Year) {
         this.name= Name;
         this.year= Year;
     }
 
     // empty constructor
     
-    public Promotion (){
+    public Grade (){
        
        } 
     

@@ -1,7 +1,10 @@
 package fr.imie.gmm;
 
+<<<<<<< HEAD
 
 import org.springframework.beans.factory.annotation.Autowired;
+=======
+>>>>>>> micka
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -19,6 +22,7 @@ public class Main implements CommandLineRunner {
 		SpringApplication.run(Main.class, args);
 	}
 		
+<<<<<<< HEAD
 
 
 	@Override
@@ -33,6 +37,15 @@ public class Main implements CommandLineRunner {
 		user.setFirstname("Toto");
 			 this.repository.save(user);
 			 }*/
+=======
+	}
+	
+	
+		@Override
+		public void run(String...args) throws Exception {
+			
+		}
+>>>>>>> micka
 
 
 }

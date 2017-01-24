@@ -52,19 +52,19 @@ public class AuthentificationController {
 	  User user = this.userRepo.findByLogin(username);
 	  
 	  /*(admin_username.equals(username))&&(admin_password.equals(password))*/
-	  if((user!=null)&&(user.getPassword().equals(password))&&(user.getCategoryId()==3)){
+	  if((user!=null)&&(user.getPassword().equals(password))&&(user.getCategory()==3)){
 			
 			model.addAttribute(username);
 			model.addAttribute(password);
 			return "administator_view";
 		}
-	  else if((user!=null)&&(user.getPassword().equals(password))&&(user.getCategoryId()==1)){
+	  else if((user!=null)&&(user.getPassword().equals(password))&&(user.getCategory()==1)){
 		  
 		  model.addAttribute(username);
 		  model.addAttribute(password);
 		  return "teacher_view";
 	  }
-	  else if((user!=null)&&(user.getPassword().equals(password))&&(user.getCategoryId()==2)){
+	  else if((user!=null)&&(user.getPassword().equals(password))&&(user.getCategory()==2)){
 		  
 		  model.addAttribute(username);
 		  model.addAttribute(password);
