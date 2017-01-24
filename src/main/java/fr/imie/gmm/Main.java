@@ -28,7 +28,13 @@ public class Main implements CommandLineRunner
 		SpringApplication.run(Main.class, args);
 	}
 
-	
+	@Override
+	public void run(String...args) throws Exception {
+//		User user = new User ("admin", "pass");
+//		user.setFirstName("Administrator");
+		
+		//this.repository.save(user);
+	}
 }	
 			
 
