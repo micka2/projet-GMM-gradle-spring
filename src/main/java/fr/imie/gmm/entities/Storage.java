@@ -1,6 +1,7 @@
 package fr.imie.gmm.entities;
 
 import javax.persistence.Column;
+import javax.persistence.Embeddable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -8,33 +9,25 @@ import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.Table;
 
+import fr.imie.gmm.entities.base.EntityBase;
+
 @Entity
 @Inheritance
 @Table(name="Storage")
-public class Storage {
+public class Storage extends EntityBase{
 	
-//	@Column(name = "url", nullable = false, length = 100)
+	@Column(name = "url", nullable = false, length = 100)
 	private String url;
 	
-//	@Column(nullable = false)
+	@Column(nullable = false)
 	private int size;
 	
-//	@Column(nullable=true)
+	@Column(nullable=true)
 	private int quota;
 	
 	///// Initialize getters and setters. /////
-	/**
-	 * @return the id
-	 */
-	public Long getId() {
-		return id;
-	}
-	/**
-	 * @param id the id to set
-	 */
-	public void setId(Long id) {
-		this.id = id;
-	}
+	
+	
 	/**
 	 * @return the url
 	 */
