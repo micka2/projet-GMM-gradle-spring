@@ -1,20 +1,11 @@
-#
-<<<<<<< HEAD
-#Mon Jan 23 10:03:34 CET 2017
-=======
-<<<<<<< HEAD
-#Mon Jan 23 12:12:47 CET 2017
->>>>>>> 5ce212d846a37eaae754a563d30443816ce97501
-org.eclipse.jdt.core.compiler.debug.localVariable=generate
->>>>>>>=d1adb50f7adc4a27a093190b9399ecbfbd9822fe
-=======
+
+
 #Mon Jan 23 12:07:35 CET 2017
 org.eclipse.jdt.core.compiler.debug.localVariable=generate
->>>>>>>=master
->>>>>>> mick
+
 org.eclipse.jdt.core.compiler.compliance=1.8
 org.eclipse.jdt.core.compiler.codegen.unusedLocal=preserve
-<<<<<<<=HEAD
+
 org.eclipse.jdt.core.compiler.debug.sourceFile=generate
 org.eclipse.jdt.core.compiler.codegen.targetPlatform=1.8
 org.eclipse.jdt.core.compiler.problem.enumIdentifier=error
