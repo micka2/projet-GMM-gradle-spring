@@ -1,7 +1,13 @@
 #
+<<<<<<< HEAD
 #Mon Jan 23 12:12:47 CET 2017
 org.eclipse.jdt.core.compiler.debug.localVariable=generate
 >>>>>>>=d1adb50f7adc4a27a093190b9399ecbfbd9822fe
+=======
+#Mon Jan 23 12:07:35 CET 2017
+org.eclipse.jdt.core.compiler.debug.localVariable=generate
+>>>>>>>=master
+>>>>>>> mick
 org.eclipse.jdt.core.compiler.compliance=1.8
 org.eclipse.jdt.core.compiler.codegen.unusedLocal=preserve
 <<<<<<<=HEAD

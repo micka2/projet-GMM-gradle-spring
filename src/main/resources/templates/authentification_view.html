@@ -17,18 +17,17 @@
 
 </head>
 <body style="background-color:#9caec9; font-family:sans-serif, helvetica">
-<div class="container" style="float:left; position: relative; left: 38%;">
-
-
-                
+<div class="container" style="float:left; position: relative; left: 38%;">           
 	
-        <form name="login" style="background-color:#dfeafa; margin-top: 50ex; width: 50ex;">
-            <div>Identifiant:  <input type="text" name="userid" style="margin-left:7ex"/> <br/></div>
-           <div style="margin-top:2ex"> Mot de passe : <input type="password" name="pswrd" style="margin-left:3ex"/> <br/></div>
-            <input type="button" onclick="check(this.form)" value="Login" style="background-color:#cf6824; border-color:#a7541d; border-style:groovy; margin-top:5ex; margin-left: 8ex;"/> 
-            <input type="reset" value="Cancel" style="background-color:#cf6824; border-color:#a7541d; border-style:groovy; margin-top:5ex; margin-left:20ex;"/>
+		<div class="alert alert-danger" role="alert">
+    	<p th:if="${fail}">Mauvais mot de passe ou identifiant !!!</p></div>
+        <form method="post" action="/loginCheck" style="background-color:#dfeafa; margin-top: 50ex; width: 50ex;">
+            <div>Identifiant:  <input type="text" name="view_username" style="margin-left:7ex"/> <br/></div>
+           <div style="margin-top:2ex"> Mot de passe : <input type="password" name="view_password" style="margin-left:3ex"/> <br/></div>
+           <input type="submit" class="btn btn-default" style="background-color:#cf6824; border-color:#a7541d; border-style:groovy; margin-top:5ex; margin-left: 8ex;"/> 
+           <!-- <input type="reset" value="Cancel" style="background-color:#cf6824; border-color:#a7541d; border-style:groovy; margin-top:5ex; margin-left:20ex;"/> -->
         </form>
-        <script language="javascript">
+        <!-- <script language="javascript">
             function check(form) { /*function to check userid & password*/
                 /*the following code checkes whether the entered userid and password are matching*/
                 if(form.userid.value == "th:text{$login}" && form.pswrd.value == "th:text{$pass}") {
@@ -38,7 +37,7 @@
                     alert("Erreur d'authentification")/*displays error message*/
                 }
             }
-        </script>
+        </script> -->
  	
 
 
