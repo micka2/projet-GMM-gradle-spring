@@ -20,6 +20,7 @@ import fr.imie.gmm.entities.base.EntityBase;
 
 	  // The entity fields (private)  
 
+<<<<<<< HEAD
 
 //	@Column(name="fistName")@NotNull
 	protected String firstname;

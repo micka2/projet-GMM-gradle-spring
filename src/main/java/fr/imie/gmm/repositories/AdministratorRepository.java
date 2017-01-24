@@ -7,5 +7,5 @@ import fr.imie.gmm.entities.Administrator;
 
 @Repository
 public interface AdministratorRepository extends CrudRepository<Administrator, Long>{
-
+	
 }
