@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-
-
-
-
-
-	0
-					<classpathentry path="bin" kind="output"/>
 	<classpathentry kind="src" path="src/main/java"/>
 	<classpathentry kind="src" path="src/main/resources"/>
+	<classpathentry kind="con" path="org.eclipse.buildship.core.gradleclasspathcontainer"/>
+	<classpathentry path="bin" kind="output"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8/"/>
 	<classpathentry sourcepath="C:/Users/Guénaëlle/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-freemarker/1.4.3.RELEASE/e294f885fd033514cdce130a182859ebf5b6af62/spring-boot-starter-freemarker-1.4.3.RELEASE-sources.jar" kind="lib" path="C:/Users/Guénaëlle/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-freemarker/1.4.3.RELEASE/e8719dfe6d4f19eb67e1cb8780060902f1635768/spring-boot-starter-freemarker-1.4.3.RELEASE.jar"/>
 	<classpathentry sourcepath="C:/Users/Guénaëlle/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-thymeleaf/1.4.3.RELEASE/79c7927a06568bbc91d4b30e60d501274fb489ae/spring-boot-starter-thymeleaf-1.4.3.RELEASE-sources.jar" kind="lib" path="C:/Users/Guénaëlle/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-thymeleaf/1.4.3.RELEASE/11a0672a16cf479faef287997ecde8e154c9713/spring-boot-starter-thymeleaf-1.4.3.RELEASE.jar"/>
