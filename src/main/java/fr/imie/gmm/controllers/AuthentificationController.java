@@ -39,35 +39,37 @@ public class AuthentificationController {
   @RequestMapping(method=RequestMethod.GET, path="/login")
   public String login(
           Model model) {
-      return "authentification_view";
+      return "connection_view";
   }
 
   @RequestMapping(method=RequestMethod.POST, path="/loginCheck")
   public String loginCheck(
-          @RequestParam(name="view_username")
-          String username,
-          @RequestParam(name="view_password")
+          @RequestParam(name="login")
+          String login,
+          @RequestParam(name="password")
           String password,
           Model model) {
-	  User user = this.userRepo.findByLogin(username);
-	  
+
+	  User user = this.userRepo.findByLogin(login);
+
+
 	  /*(admin_username.equals(username))&&(admin_password.equals(password))*/
 	  if((user!=null)&&(user.getPassword().equals(password))&&(user.getCategory()==3)){
 			
-			model.addAttribute(username);
-			model.addAttribute(password);
-			return "administator_view";
+			model.addAttribute("login", login);
+			//model.addAttribute(password);
+			return "home";
 		}
 	  else if((user!=null)&&(user.getPassword().equals(password))&&(user.getCategory()==1)){
 		  
-		  model.addAttribute(username);
-		  model.addAttribute(password);
-		  return "teacher_view";
+		  model.addAttribute("login", login);
+		 // model.addAttribute(password);
+		  return "teacher_view1";
 	  }
 	  else if((user!=null)&&(user.getPassword().equals(password))&&(user.getCategory()==2)){
 		  
-		  model.addAttribute(username);
-		  model.addAttribute(password);
+		  model.addAttribute("login", login);
+		  //model.addAttribute(password);
 		  return "student_view";
 	  }
 		else{
@@ -80,7 +82,7 @@ public class AuthentificationController {
   @RequestMapping(method=RequestMethod.GET, path="/logout")
   public String logout(
           Model model) {
-      return "auth_view";
+      return "connection_view";
   }
 
   @RequestMapping(method=RequestMethod.GET, path="/reset")

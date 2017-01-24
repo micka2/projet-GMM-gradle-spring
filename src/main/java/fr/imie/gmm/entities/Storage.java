@@ -1,21 +1,17 @@
 package fr.imie.gmm.entities;
 
-import javax.persistence.Column;
+
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+
 import javax.persistence.Inheritance;
 import javax.persistence.Table;
+
+import fr.imie.gmm.entities.base.EntityBase;
 
 @Entity
 @Inheritance
 @Table(name="Storage")
-public class Storage {
-	
-	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	private Long id;
+public class Storage extends EntityBase {
 	
 //	@Column(name = "url", nullable = false, length = 100)
 	private String url;
@@ -27,18 +23,6 @@ public class Storage {
 	private int quota;
 	
 	///// Initialize getters and setters. /////
-	/**
-	 * @return the id
-	 */
-	public Long getId() {
-		return id;
-	}
-	/**
-	 * @param id the id to set
-	 */
-	public void setId(Long id) {
-		this.id = id;
-	}
 	/**
 	 * @return the url
 	 */

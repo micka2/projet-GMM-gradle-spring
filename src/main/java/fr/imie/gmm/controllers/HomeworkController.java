@@ -16,18 +16,14 @@ import org.springframework.web.multipart.MultipartFile;
 
 import fr.imie.gmm.entities.Homework;
 import fr.imie.gmm.repositories.HomeworkRepository;
-import fr.imie.gmm.repositories.UserRepository;
+
 
 @Controller
 public class HomeworkController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(HomeworkController.class);
 	
-	private HomeworkRepository homeworkRepo;
-	
-	public HomeworkController() {
-		
-	}
+	protected HomeworkRepository homeworkRepo;
 	
 	@Autowired
     public HomeworkController(HomeworkRepository homeworkRepository) {
@@ -74,12 +70,13 @@ public class HomeworkController {
 				logger.info("Chemin d'accès du fichier="
 						+ serverFile.getAbsolutePath());
 				
-				// Get the current time.
-				java.util.Date date = new java.util.Date();
+//				// Get the current time.
+//				java.util.Date date = new java.util.Date();
 				
 				model.addAttribute("fileName", name);
-				model.addAttribute("createAt", date);
+				model.addAttribute(bytes);
 				
+								
 				return "student-deposite_view";
 			} catch (Exception e) {
 				return "échec !";

@@ -1,27 +1,21 @@
 package fr.imie.gmm.entities;
 
 
-import java.util.Locale.Category;
-
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Inheritance;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import javax.validation.constraints.NotNull;
+
 
 import fr.imie.gmm.entities.base.EntityBase;
 
 
-	@Entity
+	
 	@Inheritance
 	@Table(name = "User")
 	public class User extends EntityBase {
 
-	  // The entity fields (private)  
 
-//	@NotNull
-	private String email;
+
 //	@Column(name="fistName")@NotNull
 	protected String firstname;
 //	@Column(name="lastName")@NotNull
@@ -30,6 +24,8 @@ import fr.imie.gmm.entities.base.EntityBase;
 	protected String login;
 //	@Column@NotNull
 	protected String password;
+//	@NotNull
+	private String email;
 	protected int category;
 	
 	

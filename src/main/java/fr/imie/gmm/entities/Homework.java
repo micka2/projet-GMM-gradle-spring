@@ -25,6 +25,8 @@ public class Homework extends EntityBase {
 
 //	@Column(name = "date", nullable = false)
 	private Date deposedAt;
+	
+	private byte[] data;
 
 //	@ManyToMany(targetEntity=Student.class, fetch=FetchType.EAGER)
 	@ManyToOne
@@ -82,6 +84,18 @@ public class Homework extends EntityBase {
 	 */
 	public void setSubjectReference(Subject subjectReference) {
 		this.subjectReference = subjectReference;
+	}
+	/**
+	 * @return the data
+	 */
+	public byte[] getData() {
+		return data;
+	}
+	/**
+	 * @param data the data to set
+	 */
+	public void setData(byte[] data) {
+		this.data = data;
 	}
 	
 	
