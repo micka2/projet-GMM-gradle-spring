@@ -49,7 +49,11 @@ public class AuthentificationController {
           @RequestParam(name="password")
           String password,
           Model model) {
+<<<<<<< HEAD
 	  User user = this.userRepo.findByLogin(login);
+=======
+	  User user = this.userRepo.findByLogin(username);
+>>>>>>> 5ce212d846a37eaae754a563d30443816ce97501
 	  
 	  /*(admin_username.equals(login))&&(admin_password.equals(password))*/
 	  if((user!=null)&&(user.getPassword().equals(password))&&(user.getCategoryId()==3)){

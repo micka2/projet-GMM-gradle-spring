@@ -2,11 +2,16 @@
 <projectDescription>
 	<name>projet-GMM-gradle-spring</name>
 	<comment></comment>
+<<<<<<< HEAD
 	<projects/>
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 		<nature>org.eclipse.buildship.core.gradleprojectnature</nature>
 	</natures>
+=======
+	<projects>
+	</projects>
+>>>>>>> mick
 	<buildSpec>
 		<buildCommand>
 			<name>org.eclipse.jdt.core.javabuilder</name>
