@@ -11,18 +11,20 @@ import fr.imie.gmm.entities.base.EntityBase;
 @Entity
 @Inheritance
 @Table(name="Storage")
+
 public class Storage extends EntityBase {
+
 	
-//	@Column(name = "url", nullable = false, length = 100)
 	private String url;
 	
-//	@Column(nullable = false)
+	
 	private int size;
 	
-//	@Column(nullable=true)
+	
 	private int quota;
 	
 	///// Initialize getters and setters. /////
+
 	/**
 	 * @return the url
 	 */

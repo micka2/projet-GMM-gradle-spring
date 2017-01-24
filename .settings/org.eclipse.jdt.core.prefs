@@ -1,6 +1,7 @@
 <<<<<<< HEAD
 #
 <<<<<<< HEAD
+<<<<<<< HEAD
 #Tue Jan 24 10:16:45 CET 2017
 =======
 #Tue Jan 24 14:12:26 CET 2017
@@ -14,14 +15,19 @@ org.eclipse.jdt.core.compiler.debug.localVariable=generate
 org.eclipse.jdt.core.compiler.debug.localVariable=generate
 
 >>>>>>> c7a563534841477adce7c67267f7a6e6ba513fe9
+=======
+#Tue Jan 24 16:27:51 CET 2017
+org.eclipse.jdt.core.compiler.debug.localVariable=generate
+>>>>>>>=c7a563534841477adce7c67267f7a6e6ba513fe9
+>>>>>>> master
 org.eclipse.jdt.core.compiler.compliance=1.8
 org.eclipse.jdt.core.compiler.codegen.unusedLocal=preserve
 
 org.eclipse.jdt.core.compiler.debug.sourceFile=generate
 org.eclipse.jdt.core.compiler.codegen.targetPlatform=1.8
 org.eclipse.jdt.core.compiler.problem.enumIdentifier=error
-eclipse.preferences.version=1
 org.eclipse.jdt.core.compiler.debug.lineNumber=generate
+eclipse.preferences.version=1
 org.eclipse.jdt.core.compiler.codegen.inlineJsrBytecode=enabled
 org.eclipse.jdt.core.compiler.source=1.8
 org.eclipse.jdt.core.compiler.problem.assertIdentifier=error

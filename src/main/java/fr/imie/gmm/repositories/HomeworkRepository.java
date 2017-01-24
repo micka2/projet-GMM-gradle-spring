@@ -16,7 +16,8 @@ public interface HomeworkRepository extends CrudRepository<Homework, Long> {
 	
 	<S extends Homework> S save(File serverFile);
 	
-	Homework delete(File serverFile);
+	//Homework delete(File serverFile);
+
 	
 	
 	

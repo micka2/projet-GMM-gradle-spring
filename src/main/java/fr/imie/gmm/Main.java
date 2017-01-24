@@ -3,19 +3,19 @@ package fr.imie.gmm;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
-
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
-import fr.imie.gmm.entities.User;
+
 import fr.imie.gmm.repositories.UserRepository;
 
 @SpringBootApplication
-public class Main implements CommandLineRunner
-{
+public class Main implements CommandLineRunner {
+
 
 	@Autowired
 
@@ -24,30 +24,24 @@ public class Main implements CommandLineRunner
 
 
 
-
-
-
 	
 	public static void main(String[] args) {
 		SpringApplication.run(Main.class, args);
+
 	}
 
 
 
-	
-	/*@Override
+	@Override
 	public void run(String...args) throws Exception {
-			User user = new User ("toto.toto@toto.com", "pass");
-		user.setFirstname("Toto");
-			 this.repository.save(user);
-			 }*/
+//		User user = new User ("admin", "pass");
+//		user.setFirstName("Administrator");
+		
+		//this.repository.save(user);
+	}
+	
 
-	
-	
-		@Override
-		public void run(String...args) throws Exception {
 			
-		}
 
 }	
 			
