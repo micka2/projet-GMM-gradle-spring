@@ -8,36 +8,37 @@
 *.jar
 *.war
 *.ear
+*.project
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
-/bin/
+/bin
 
 
 .gradle
-/build/
+/build
 !gradle/wrapper/gradle-wrapper.jar
 
 ### STS ###
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings/
-.springBeans
-.prefs
+*.apt_generated
+*.classpath
+*.factorypath
+*.project
+*.settings
+*.springBeans
+*.prefs
 
 ### IntelliJ IDEA ###
-.idea
+*.idea
 *.iws
 *.iml
 *.ipr
 
 ### NetBeans ###
-nbproject/private/
-build/
-nbbuild/
-dist/
-nbdist/
-.nb-gradle/
+nbproject/private
+build
+nbbuild
+dist
+nbdist
+*.nb-gradle
 

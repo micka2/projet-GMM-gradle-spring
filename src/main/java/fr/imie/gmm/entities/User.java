@@ -21,11 +21,11 @@ import fr.imie.gmm.entities.base.EntityBase;
 
 	@NotNull
 	private String email;
-	@Column(name="fistName")@NotNull
+	@Column(name="firstName", nullable=false)
 	protected String firstname;
-	@Column(name="lastName")@NotNull
+	@Column(name="lastName", nullable=false)
 	protected String lastname;
-	@Column(name="category")@NotNull
+	@Column(name="category")
 	@ManyToOne
 	protected int categoryId;
 	@Column@NotNull

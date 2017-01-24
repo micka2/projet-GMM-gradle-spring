@@ -9,8 +9,8 @@ import org.springframework.stereotype.Repository;
 import fr.imie.gmm.entities.Homework;
 
 
-@Repository
-public interface HomeworkRepository  extends CrudRepository<Homework, Long> {
+
+public interface HomeworkRepository extends CrudRepository<Homework, Long> {
 
 	Homework findByTitle(String title);
 	
