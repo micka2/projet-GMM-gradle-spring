@@ -9,7 +9,7 @@ import javax.persistence.Table;
 import fr.imie.gmm.entities.base.EntityBase;
 
 
-	
+	@Entity
 	@Inheritance
 	@Table(name = "User")
 	public class User extends EntityBase {

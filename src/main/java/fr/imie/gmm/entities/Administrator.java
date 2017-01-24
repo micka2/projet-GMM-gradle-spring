@@ -6,7 +6,6 @@ import javax.persistence.Inheritance;
 
 
 @Entity
-@Inheritance
 public class Administrator extends User {
 	
 
