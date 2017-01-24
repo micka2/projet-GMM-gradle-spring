@@ -19,6 +19,7 @@ public class StudentController {
 
 	List<Subject>listsujets= new ArrayList<Subject>();
 	Subject sujet= new Subject(); 
+	
 	protected SubjectRepository subjrep;
 
 
