@@ -1,26 +1,29 @@
 package fr.imie.gmm.entities;
 
 import java.util.List;
+import java.util.Locale.Category;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.ManyToMany;
+import javax.persistence.Table;
 
 
 @Entity
+@Table(name="Teacher")
 public class Teacher extends User {
 
 	
-	@Column
-	@ManyToMany(targetEntity=Subject.class, fetch=FetchType.LAZY)
+	
+	@ManyToMany
 	private List<Subject> subjects;
-	@Column
-	@ManyToMany(targetEntity=Homework.class, fetch=FetchType.LAZY)
+	
+	@ManyToMany
 	private List<Homework> homeworks;
-	@Column
-	@ManyToMany(mappedBy="name")
-	private List<Promotion> promotion;
+	
+	@ManyToMany
+	private List<Grade> promotion;
 	
 	
 //******************************************************************************************************************
@@ -29,8 +32,9 @@ public class Teacher extends User {
 //	public Teacher() {
 //		
 //	}
-	public Teacher(String firstname,String lastname,int categoryId,String login,String password) {
-    	super(firstname, lastname, 1, login, password, password);
+	public Teacher(String firstname, String lastname, String login, 
+			  String password, String email, Category category) {
+    	super(firstname, lastname, login, password, email, 1);
     }
     public Teacher(){
     	
@@ -65,13 +69,13 @@ public class Teacher extends User {
 	/**
 	 * @return the promotion
 	 */
-	public List<Promotion> getPromotion() {
+	public List<Grade> getPromotion() {
 		return promotion;
 	}
 	/**
 	 * @param promotion the promotion to set
 	 */
-	public void setPromotion(List<Promotion> promotion) {
+	public void setPromotion(List<Grade> promotion) {
 		this.promotion = promotion;
 	}
     

@@ -3,6 +3,7 @@ package fr.imie.gmm.entities;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Inheritance;
+import javax.persistence.Table;
 
 import fr.imie.gmm.entities.base.EntityBase;
 
@@ -10,35 +11,50 @@ import fr.imie.gmm.entities.base.EntityBase;
 
 @Entity
 @Inheritance
+@Table(name="Notification")
 public class Notification extends EntityBase {
 
-	@Column (nullable = false, length = 300)
-    private String Message;
-	@Column (nullable =  false, length = 50)
+//	@Column (nullable = false, length = 300)
+    private String message;
+//	@Column (nullable =  false, length = 50)
     private String titleMessage;
     
     
-    /**
-     *Getters and Setters
-     */
+    
+
+	   /**
+	 * @return the message
+	 */
 	public String getMessage() {
-		return Message;
+		return message;
 	}
+
+	/**
+	 * @param message the message to set
+	 */
 	public void setMessage(String message) {
-		Message = message;
+		this.message = message;
 	}
+
+	/**
+	 * @return the titleMessage
+	 */
 	public String getTitleMessage() {
 		return titleMessage;
 	}
+
+	/**
+	 * @param titleMessage the titleMessage to set
+	 */
 	public void setTitleMessage(String titleMessage) {
 		this.titleMessage = titleMessage;
 	}
 
-	   /**
+	/**
      * constructor
      */
     public Notification(String message, String titleMessage) {
-    	this.Message= message;
+    	this.message= message;
     	this.titleMessage= titleMessage;
     }
     

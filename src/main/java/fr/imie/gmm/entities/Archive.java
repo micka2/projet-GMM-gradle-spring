@@ -5,12 +5,14 @@ import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.Inheritance;
 import javax.persistence.ManyToMany;
+import javax.persistence.Table;
 
 import fr.imie.gmm.entities.base.EntityBase;
 
 
 @Entity
 @Inheritance
+@Table(name="Archive")
 public class Archive extends EntityBase {
 	
 	@ManyToMany

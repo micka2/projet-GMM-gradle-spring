@@ -5,6 +5,9 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Inheritance;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
 import java.util.Date;
 import fr.imie.gmm.entities.base.EntityBase;
 
@@ -12,6 +15,7 @@ import fr.imie.gmm.entities.base.EntityBase;
 
 @Inheritance
 @Entity
+@Table(name="Subject")
 public class Subject extends EntityBase {
 
 
@@ -22,10 +26,10 @@ public class Subject extends EntityBase {
 	    private Date deadline;
 	    private String description;
 	    private int groupSize;
-	    @ManyToMany(targetEntity=Teacher.class)
+	    @ManyToOne
 	    private Teacher createBy;
-	    @ManyToMany(mappedBy="name", fetch=FetchType.LAZY)
-	    private Promotion promotion;
+	    @ManyToOne
+	    private Grade promotion;
 	    
 	    
 	    /**
@@ -110,21 +114,21 @@ public class Subject extends EntityBase {
 				this.createAt = createAt;
 				this.deadline = deadline;
 				this.description = description;
-				this.promotion = new Promotion();
+				this.promotion = new Grade();
 				this.createBy = new Teacher();
 		}
 
 		/**
 		 * @return the promotion
 		 */
-		public Promotion getPromotion() {
+		public Grade getPromotion() {
 			return promotion;
 		}
 
 		/**
 		 * @param promotion the promotion to set
 		 */
-		public void setPromotion(Promotion promotion) {
+		public void setPromotion(Grade promotion) {
 			this.promotion = promotion;
 		}
 

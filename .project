@@ -1,26 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
+	<natures>
+		<nature>org.eclipse.jdt.core.javanature</nature>
+		<nature>org.eclipse.buildship.core.gradleprojectnature</nature>
+	</natures>
 	<name>projet-GMM-gradle-spring</name>
 	<comment></comment>
-<<<<<<< HEAD
-	<projects>
-	</projects>
-=======
 	<projects/>
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 		<nature>org.eclipse.buildship.core.gradleprojectnature</nature>
 	</natures>
->>>>>>> d1adb50f7adc4a27a093190b9399ecbfbd9822fe
 	<buildSpec>
 		<buildCommand>
 			<name>org.eclipse.jdt.core.javabuilder</name>
-			<arguments>
-			</arguments>
+			<arguments/>
 		</buildCommand>
 	</buildSpec>
-	<natures>
-		<nature>org.eclipse.jdt.core.javanature</nature>
-		<nature>org.eclipse.buildship.core.gradleprojectnature</nature>
-	</natures>
+	<linkedResources/>
 </projectDescription>

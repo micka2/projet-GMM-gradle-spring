@@ -9,6 +9,7 @@ import javax.persistence.FetchType;
 import javax.persistence.Inheritance;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 import fr.imie.gmm.entities.base.EntityBase;
 
@@ -16,17 +17,19 @@ import fr.imie.gmm.entities.base.EntityBase;
 
 @Entity
 @Inheritance
+@Table(name="Homework")
 public class Homework extends EntityBase {
 
-	@Column(name = "title", nullable = false, length = 100)
+//	@Column(name = "title", nullable = false, length = 100)
 	private String title;
 
-	@Column(name = "date", nullable = false)
+//	@Column(name = "date", nullable = false)
 	private Date deposedAt;
 
-	@ManyToMany(targetEntity=Student.class, fetch=FetchType.EAGER)
+//	@ManyToMany(targetEntity=Student.class, fetch=FetchType.EAGER)
+	@ManyToOne
 	private Student author;
-	@ManyToOne(targetEntity=Subject.class, fetch=FetchType.EAGER)
+	@ManyToOne
 	private Subject subjectReference;
 	
 	
