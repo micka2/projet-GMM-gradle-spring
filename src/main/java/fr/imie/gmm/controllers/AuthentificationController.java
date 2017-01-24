@@ -58,7 +58,7 @@ public class AuthentificationController {
 			
 			model.addAttribute("login", login);
 			//model.addAttribute(password);
-			return "home";
+			return "admin_view";
 		}
 	  else if((user!=null)&&(user.getPassword().equals(password))&&(user.getCategory()==1)){
 		  
@@ -74,7 +74,7 @@ public class AuthentificationController {
 	  }
 		else{
 			model.addAttribute("fail", true);
-			return "authentification_view";
+			return "connection_view";
 		}
   
   }
