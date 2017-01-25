@@ -42,7 +42,7 @@ public class AuthentificationController {
       return "connection_view";
   }
 
-  @RequestMapping(method=RequestMethod.POST, path="/loginCheck")
+  @RequestMapping(method=RequestMethod.POST, path="/checklogin")
   public String loginCheck(
           @RequestParam(name="login")
           String login,
@@ -60,13 +60,13 @@ public class AuthentificationController {
 			//model.addAttribute(password);
 			return "home";
 		}
-	  else if((user!=null)&&(user.getPassword().equals(password))&&(user.getCategory()==1)){
+	  else if((user!=null)&&(user.getPassword().equals(password))&&(user.getCategory()==2)){
 		  
 		  model.addAttribute("login", login);
 		 // model.addAttribute(password);
 		  return "teacher_view1";
 	  }
-	  else if((user!=null)&&(user.getPassword().equals(password))&&(user.getCategory()==2)){
+	  else if((user!=null)&&(user.getPassword().equals(password))&&(user.getCategory()==1)){
 		  
 		  model.addAttribute("login", login);
 		  //model.addAttribute(password);
@@ -74,7 +74,7 @@ public class AuthentificationController {
 	  }
 		else{
 			model.addAttribute("fail", true);
-			return "authentification_view";
+			return "connection_view";
 		}
   
   }

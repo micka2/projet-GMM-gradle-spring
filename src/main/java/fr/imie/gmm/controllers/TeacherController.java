@@ -42,7 +42,7 @@ public class TeacherController {
 	/**
 	 * Method for handling file download request from client.
 	 */
-	@RequestMapping(method = RequestMethod.GET, path="/teacher")
+	@RequestMapping(method = RequestMethod.GET, path="/download")
 	public String downloadFile(HttpServletRequest request,
 			HttpServletResponse response)
 		throws IOException {

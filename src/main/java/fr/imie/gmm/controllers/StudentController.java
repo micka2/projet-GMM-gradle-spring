@@ -58,7 +58,7 @@ public class StudentController {
 		
 		model.addAttribute("monSujet",sujet);
 		
-		return "student_view";
+		return "student";
 		}
 		else {
 			model.addAttribute("aucun sujets ne correspond à votre recherche", true);
