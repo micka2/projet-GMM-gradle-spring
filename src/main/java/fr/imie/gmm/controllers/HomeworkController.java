@@ -65,7 +65,7 @@ public class HomeworkController {
 				stream.write(bytes);
 				stream.close();
 				
-				Homework homework = this.homeworkRepo.save(serverFile);
+//				Homework homework = this.homeworkRepo.save(serverFile);
 				
 				logger.info("Chemin d'accès du fichier="
 						+ serverFile.getAbsolutePath());

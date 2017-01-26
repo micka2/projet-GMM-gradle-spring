@@ -3,25 +3,32 @@ package fr.imie.gmm.entities;
 
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+
 
 
 
 @Entity
-@Table(name="Student")
+//@Table(name="Student")
 public class Student extends User{
-
+	
+	
+	
 	@ManyToOne
 	private WorkingGroup groupId;
 	@ManyToOne
-    private Grade promotionId;
+    private Grade gradeId;
 	
 	//************************************************************************************************************
     //redefinition du(des) constructeur(s) de la classe Student
     
     public Student() {
-    	
+    	super();   	
     }
+    
+    public Student(String firstname,String lastname,String login,String password,int category){
+    	super(firstname, lastname, login, password, password, 2);
+    }
+	
     
     
     //************************************************************************************************************
@@ -42,18 +49,16 @@ public class Student extends User{
 	/**
 	 * @return the promotionId
 	 */
-	public Grade getPromotionId() {
-		return promotionId;
+	public Grade getGradeId() {
+		return gradeId;
 	}
 	/**
 	 * @param promotionId the promotionId to set
 	 */
-	public void setPromotionId(Grade promotionId) {
-		this.promotionId = promotionId;
+	public void setPromotionId(Grade gradeId) {
+		this.gradeId = gradeId;
 	}
-	public Student(String firstname,String lastname,String login,int categoryId,String password){
-    	super(firstname, lastname, login, password, password, 2);
-    }
+	
 	
 	
 	@Override

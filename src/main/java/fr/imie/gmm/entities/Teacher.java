@@ -6,16 +6,14 @@ import java.util.Locale.Category;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.Inheritance;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 
 @Entity
-@Table(name="Teacher")
 public class Teacher extends User {
 
-	
-	
 	@ManyToMany
 	private List<Subject> subjects;
 	
@@ -23,7 +21,7 @@ public class Teacher extends User {
 	private List<Homework> homeworks;
 	
 	@ManyToMany
-	private List<Grade> promotion;
+	private List<Grade> grades;
 	
 	
 //******************************************************************************************************************
@@ -33,7 +31,7 @@ public class Teacher extends User {
 //		
 //	}
 	public Teacher(String firstname, String lastname, String login, 
-			  String password, String email, Category category) {
+			  String password, String email, int category) {
     	super(firstname, lastname, login, password, email, 1);
     }
     public Teacher(){
@@ -69,14 +67,14 @@ public class Teacher extends User {
 	/**
 	 * @return the promotion
 	 */
-	public List<Grade> getPromotion() {
-		return promotion;
+	public List<Grade> getGrades() {
+		return grades;
 	}
 	/**
 	 * @param promotion the promotion to set
 	 */
-	public void setPromotion(List<Grade> promotion) {
-		this.promotion = promotion;
+	public void setGrades(List<Grade> grades) {
+		this.grades = grades;
 	}
     
 	
