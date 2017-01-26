@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import fr.imie.gmm.entities.User;
 import fr.imie.gmm.repositories.UserRepository;
@@ -42,7 +43,7 @@ public class AuthentificationController {
       return "connection_view";
   }
 
-  @RequestMapping(method=RequestMethod.POST, path="/loginCheck")
+  @RequestMapping(method=RequestMethod.POST, path="/checklogin")
   public String loginCheck(
           @RequestParam(name="login")
           String login,
@@ -50,23 +51,23 @@ public class AuthentificationController {
           String password,
           Model model) {
 
-	  User user = this.userRepo.findByLogin(login);
+	 User user = this.userRepo.findByLogin(login);
 
 
 	  /*(admin_username.equals(username))&&(admin_password.equals(password))*/
-	  if((user!=null)&&(user.getPassword().equals(password))&&(user.getCategory()==3)){
+	  if((user!=null)&&(user.getPassword().equals(password))&&(user.getCategoryId()==3)){
 			
 			model.addAttribute("login", login);
 			//model.addAttribute(password);
-			return "home";
+			return "admin_view";
 		}
-	  else if((user!=null)&&(user.getPassword().equals(password))&&(user.getCategory()==1)){
+	  else if((user!=null)&&(user.getPassword().equals(password))&&(user.getCategoryId()==1)){
 		  
 		  model.addAttribute("login", login);
 		 // model.addAttribute(password);
 		  return "teacher_view1";
 	  }
-	  else if((user!=null)&&(user.getPassword().equals(password))&&(user.getCategory()==2)){
+	  else if((user!=null)&&(user.getPassword().equals(password))&&(user.getCategoryId()==2)){
 		  
 		  model.addAttribute("login", login);
 		  //model.addAttribute(password);
@@ -74,7 +75,7 @@ public class AuthentificationController {
 	  }
 		else{
 			model.addAttribute("fail", true);
-			return "authentification_view";
+			return "connection_view";
 		}
   
   }
@@ -97,5 +98,21 @@ public class AuthentificationController {
 	  
 	  return "archive_view";
   }
-
+  
+  ///////////////////////////////////////////////////////
+  
+//  @RequestMapping(value="/create")
+//  @ResponseBody
+//  public String create(String firstname, String lastname, String login,String password, String email, int categoryId ) {
+//    try {
+//      User user = new User(firstname, lastname, login, password, email, categoryId) {
+//	};
+//      userRepo.save(user);
+//    }
+//    catch (Exception ex) {
+//      return "Error creating the user: " + ex.toString();
+//    }
+//    return "User succesfully created!";
+//  }
+  
 }

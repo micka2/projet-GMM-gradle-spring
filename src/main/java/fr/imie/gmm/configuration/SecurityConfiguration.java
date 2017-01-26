@@ -17,7 +17,13 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
 		.anonymous().and()
 		.authorizeRequests()
 		.antMatchers ("/create").permitAll()
-		.antMatchers("/**").authenticated()
+		//.antMatchers("/**").authenticated()
+		.antMatchers ("/login/**").permitAll()
+		.antMatchers ("/createSubject").permitAll()
+		.antMatchers ("/teacher").permitAll()
+		
+		
+		
 		;
 	}
 }

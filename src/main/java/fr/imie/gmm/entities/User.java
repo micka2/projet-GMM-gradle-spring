@@ -1,22 +1,19 @@
 package fr.imie.gmm.entities;
 
 
-import java.util.Locale.Category;
-
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Inheritance;
-import javax.persistence.ManyToOne;
+import javax.persistence.InheritanceType;
 import javax.persistence.Table;
-import javax.validation.constraints.NotNull;
 
 import fr.imie.gmm.entities.base.EntityBase;
 
 
-	@Entity
-	@Inheritance
-	@Table(name = "User")
-	public class User extends EntityBase {
+	
+@Entity
+@Table(name="user")
+@Inheritance(strategy=InheritanceType.TABLE_PER_CLASS)
+ public abstract class User extends EntityBase {
 
 	  // The entity fields (private)  
 
@@ -32,7 +29,7 @@ import fr.imie.gmm.entities.base.EntityBase;
 	protected String password;
 //	@NotNull
 	private String email;
-	protected int category;
+	protected int categoryId;
 	
 	
 	
@@ -41,35 +38,28 @@ import fr.imie.gmm.entities.base.EntityBase;
 	  // Public methods
 	
 	public User() {
-
+		super();
 	}
 
 	  public User (String login, String password){
+		  super();
 		  this.login=login;
 		  this.password=password;
 	  }
 	  
 	  
 	  public User(String firstname, String lastname, String login, 
-			  String password, String email, int category) {
-					
+			  String password, String email, int categoryId) {
+				super();	
 			this.firstname = firstname;
 			this.lastname = lastname;
 			this.login = login;
 			this.password = password;
 			this.email = email;
-			this.category = category;
+			this.categoryId = categoryId;
 			
 		}
-	    public User(long id) {
-			
-			this.firstname ="";
-			this.lastname ="";
-			this.login ="";
-			this.password ="";
-			this.email="";
-			this.category=0;
-		}
+	    
 	  
 	  // Getters and setters methods
 	  // ...
@@ -138,15 +128,15 @@ import fr.imie.gmm.entities.base.EntityBase;
 	/**
 	 * @return the category
 	 */
-	public int getCategory() {
-		return category;
+	public int getCategoryId() {
+		return categoryId;
 	}
 
 	/**
 	 * @param category the category to set
 	 */
-	public void setCategory(int category) {
-		this.category = category;
+	public void setCategoryId(int categoryId) {
+		this.categoryId = categoryId;
 	}
 	
 }

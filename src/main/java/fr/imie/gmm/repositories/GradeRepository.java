@@ -10,7 +10,7 @@ import fr.imie.gmm.entities.Grade;
 
 public interface GradeRepository extends CrudRepository<Grade, Long>{
 
-	Grade findByName(String promotionName);
+	Grade findByName(String Name);
 	List<Grade> findAll();
 
 }

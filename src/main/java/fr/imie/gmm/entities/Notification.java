@@ -10,7 +10,6 @@ import fr.imie.gmm.entities.base.EntityBase;
 
 
 @Entity
-@Inheritance
 @Table(name="Notification")
 public class Notification extends EntityBase {
 
