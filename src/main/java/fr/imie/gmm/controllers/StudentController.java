@@ -51,7 +51,8 @@ public class StudentController {
 	public String affichSujet(
 			@RequestParam(name="titre_sujet")
 			String titre,
-			Model model){	
+			Model model){		
+        
 		sujet = this.subjrep.findByTitle(titre);
 		
 		if(sujet!=null){

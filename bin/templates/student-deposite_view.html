@@ -37,29 +37,40 @@
 				<h4>Algorithme de tri</h4>
 					
 				<div style="margin-top:4ex;" class="row" >
-                                    <form method="post" action="uploadFile" enctype="multipart/form-data" >
-                                        <input type="submit" value="Upload" name="upload" style="background-color:#cf6824; border-color:#a7541d; border-style:groovy; font-weight:bold;"/>
-                                    </form>
-					<!--<button action="uploadFile" type="submit" value="upload" name="upload" id="upload" style="background-color:#cf6824; border-color:#a7541d; border-style:groovy;">
-				                    <b>Ajouter un fichier</b>
-                                        </button>-->
-					<button type="submit" style="background-color:#cf6824; border-color:#a7541d; border-style:groovy; margin-left:5ex; ">
-                                                   <b>Supprimer un fichier</b>
-                                               </button>						
+                                   
+           			<h5>Ajouter un fichier :</h5>                        
+
+							<form method="POST" action="/upload" enctype="multipart/form-data">
+								<input type="file" name="file" id="file" /> <br />
+								<input type="submit" value="Upload" name="upload" id="file"
+								style="background-color:#cf6824; border-color:#a7541d; border-style:groovy; font-weight:bold;"/>
+							</form>
+							
+<!-- 							<button type="submit" style="background-color:#cf6824; border-color:#a7541d; border-style:groovy; margin-left:5ex; "> -->
+<!--                                                    <b>Supprimer un fichier</b> -->
+<!--                                                </button>						 -->
 				</div>
-                        </div> 
-			
-			<div>
-                        <select size="10" style="border-style:solid; border-color:#002776; margin-top:3ex; width:60%;">
- 				<option value="selectedsubject">th:each="$fileName"</option>
-				<option value="subject2">tri.py</option>
-				<option value="subject3">compte-rendu.pdf</option>
-			</select>
-			</div>
-			
-			<div  style="margin-top:3ex;" >
-			<button type="submit" style="background-color:#cf6824; border-color:#a7541d; border-style:groovy;"><b>Soumettre le devoir</b></button>
                         </div>
+
+					<div>
+						<ul>
+							<li th:each="file : ${fileName}"><a th:href="${fileName}"
+								th:text="${fileName}"></a></li>
+						</ul>
+					</div> <!-- 			<div> -->
+<!--                         <select size="10" style="border-style:solid; border-color:#002776; margin-top:3ex; width:60%;"> -->
+<!--  				<option value="selectedsubject">th:each="$fileName"</option> -->
+<!-- 				<option value="subject2">tri.py</option> -->
+<!-- 				<option value="subject3">compte-rendu.pdf</option> -->
+<!-- 			</select> -->
+<!-- 			</div> -->
+
+
+
+
+<!-- 							<div  style="margin-top:3ex;" > -->
+<!-- 			<button type="submit" style="background-color:#cf6824; border-color:#a7541d; border-style:groovy;"><b>Soumettre le devoir</b></button> -->
+<!--                         </div> -->
                         
                 </td>
                 

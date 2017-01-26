@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import fr.imie.gmm.entities.Homework;
+import fr.imie.gmm.entities.Student;
 import fr.imie.gmm.repositories.HomeworkRepository;
 
 
@@ -40,11 +41,11 @@ public class HomeworkController {
 	/**
 	 * Upload file method.
 	 */
-	@RequestMapping(value = "/uploadFile", method = RequestMethod.POST)
-	public String uploadFile(@RequestParam("nom") 
+	@RequestMapping(value = "/upload", method = RequestMethod.POST)
+	public String uploadFile(@RequestParam("upload") 
 							String name,
 							Model model,
-							@RequestParam("fichier") 
+							@RequestParam("file") 
 							MultipartFile file) {
 
 		if (!file.isEmpty()) {
@@ -52,8 +53,8 @@ public class HomeworkController {
 				byte[] bytes = file.getBytes();
 
 				// Creating the directory to store file.
-				String rootPath = System.getProperty("catalina.home");
-				File dir = new File(rootPath + File.separator + "tmpFiles");
+				String rootPath = "./files";
+				File dir = new File(rootPath + File.separator);
 				if (!dir.exists())
 					dir.mkdirs();
 
@@ -70,11 +71,12 @@ public class HomeworkController {
 				logger.info("Chemin d'accès du fichier="
 						+ serverFile.getAbsolutePath());
 				
-//				// Get the current time.
-//				java.util.Date date = new java.util.Date();
+				// Get the current time.
+				java.util.Date date = new java.util.Date();
 				
 				model.addAttribute("fileName", name);
 				model.addAttribute(bytes);
+				model.addAttribute(date);
 				
 								
 				return "student-deposite_view";
