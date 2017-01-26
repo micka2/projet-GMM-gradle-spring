@@ -12,6 +12,7 @@ import javax.persistence.Table;
 
 
 @Entity
+@Table(name="Teacher")
 public class Teacher extends User {
 
 	@ManyToMany

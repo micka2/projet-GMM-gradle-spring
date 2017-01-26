@@ -1,13 +1,11 @@
 package fr.imie.gmm.entities;
 
 import javax.persistence.Entity;
-import javax.persistence.Inheritance;
 import javax.persistence.Table;
 
 
-
 @Entity
-@Table(name="administrator")
+@Table(name="Administrator")
 public class Administrator extends User {
 	
 

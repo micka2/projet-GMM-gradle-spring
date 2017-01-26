@@ -12,9 +12,9 @@ import fr.imie.gmm.entities.base.EntityBase;
 
 	
 @Entity
-@Table(name="user")
+@Table(name="User")
 @Inheritance(strategy=InheritanceType.TABLE_PER_CLASS)
- public abstract class User extends EntityBase {
+ public class User extends EntityBase {
 
 
 //	@Column(name="fistName")@NotNull

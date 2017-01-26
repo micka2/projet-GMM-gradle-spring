@@ -13,7 +13,7 @@ import fr.imie.gmm.entities.base.EntityBase;
 
 
 @Entity
-@Table(name="Promotion")
+@Table(name="Grade")
 public class Grade extends EntityBase {
 
 	
