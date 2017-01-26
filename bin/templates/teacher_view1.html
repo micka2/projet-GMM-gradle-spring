@@ -1,29 +1,27 @@
- 
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
-<script type="text/javascript" src="connection.js"></script>
 <title>GMM - plateforme d'échange sujets-devoirs de l'IMIE</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
 <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
 <!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"/>
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-<div style="border-style:inset; background-color:#02468b; color:white" >
+<div style="border-style:inset; background-color:#02468b; color:white;">
     <h3 style="padding-left :10ex;"> GMM - plateforme d'échange sujets-devois de l'IMIE </h3>
 </div>
-<head>
-	<link rel="stylesheet" type="text/css" href="teacher_view1.css">
-	<title>teacher</title>
+
+<link rel="stylesheet" type="text/css" href="teacher_view1.css"/>
+
 </head>
-<body>
-	
-	<table width="100%">
+<body style="background-color:#9caec9; font-family:sans-serif, helvetica">
+
+<table width="100%">
 
 		 <tr id="content">
             <td class="column-left" width="50%">
@@ -33,27 +31,19 @@
 <div class="row">
  <div class="col-lg-4">
     <div class="input-group" >
-      <input type="text" class="form-control" placeholder="Rechercher...">
+      <input type="text" class="form-control" placeholder="Rechercher..."/>
       <span class="input-group-btn">
         <button class="btn btn-default" type="button">Go!</button>
       </span>
     </div><!-- /input-group -->
   </div><!-- /.col-lg-6 -->
 </div><!-- /.row -->
-<select class="select-1" multiple size="10">
+<select class="select-1" size="10">
 <!-- 				<option value="selectedsubject">th:text="$subject"</option> -->
 				<option value="promo1">POE 2016-2017</option>
-				<option value="promo2">Design CSS</option>
-				<option value="promo3">Gestion d'utilisateurs HIBERNATE</option>
-				<option value="subject6">TP 4 Json</option>
-				<option value="subject7">Zoo - Java</option>
-				<option value="subject8">MonSuperGarage</option>
-				<option value="subject9">MCD - TP La Fnak</option>
-				<option value="subject10">Aéroport : diagramme de classes</option>
-				<option value="subject11">TP JQuery</option>
-				<option value="subject12">Page html Pokemon</option>
-				<option value="subject13">TP 1 - apprentissage de Git</option>
-				<option value="subject14">TP2 Spring Build avec Gradle</option>
+				<option value="promo2">BTS Infrastrucutre Réseaux</option>
+				<option value="promo3">Master Java</option>
+				<option value="subject6">BTS PHP</option>
 			</select>
 	            </td>
 
@@ -61,19 +51,19 @@
 
 
             	<td class="column-right" width="50%">
-            	<div id="deconnexion" align="right">Se déconnecter</div>
-            		<p id="subject" align=center> Sujet</p>
+            	<button type="submitted" style="float:right; background-color:#194c9a; color:#eaeffa; margin-top:2ex; margin-right:3ex;"><i>Se déconnecter</i></button>
+            		<p id="subject" align="center"> Sujet</p>
             		<div class="row">
  <div class="col-lg-3">
     <div class="input-group" >
-      <input type="text" class="form-control" placeholder="Search for...">
+      <input type="text" class="form-control" placeholder="Search for..."/>
       <span class="input-group-btn">
         <button class="btn btn-default" type="button">Go!</button>
       </span>
     </div><!-- /input-group -->
   </div><!-- /.col-lg-6 -->
 </div><!-- /.row -->
-<select class="select-2" multiple size="10">
+<select class="select-2" size="10">
 <!-- 				<option value="selectedsubject">th:text="$subject"</option> -->
 				<option value="subject2">Algorithme de tri</option>
 				<option value="subject3">Design CSS</option>

@@ -60,13 +60,13 @@ public class AuthentificationController {
 			//model.addAttribute(password);
 			return "home";
 		}
-	  else if((user!=null)&&(user.getPassword().equals(password))&&(user.getCategory()==2)){
+	  else if((user!=null)&&(user.getPassword().equals(password))&&(user.getCategory()==1)){
 		  
 		  model.addAttribute("login", login);
 		 // model.addAttribute(password);
 		  return "teacher_view1";
 	  }
-	  else if((user!=null)&&(user.getPassword().equals(password))&&(user.getCategory()==1)){
+	  else if((user!=null)&&(user.getPassword().equals(password))&&(user.getCategory()==2)){
 		  
 		  model.addAttribute("login", login);
 		  //model.addAttribute(password);
