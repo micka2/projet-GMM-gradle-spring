@@ -12,7 +12,6 @@ import fr.imie.gmm.entities.base.EntityBase;
 
 
 @Entity
-@Inheritance
 @Table(name="Archive")
 public class Archive extends EntityBase {
 	

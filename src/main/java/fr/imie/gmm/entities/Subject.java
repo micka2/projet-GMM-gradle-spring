@@ -1,19 +1,16 @@
 package fr.imie.gmm.entities;
 
 
+import java.util.Date;
+
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.Inheritance;
-import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import java.util.Date;
 import fr.imie.gmm.entities.base.EntityBase;
 
 
 
-@Inheritance
 @Entity
 @Table(name="Subject")
 public class Subject extends EntityBase {
@@ -25,6 +22,7 @@ public class Subject extends EntityBase {
 	    private Date createAt;
 	    private Date deadline;
 	    private String description;
+	    private String contsraint;
 	    private int groupSize;
 	    @ManyToOne
 	    private Teacher createBy;
@@ -109,15 +107,16 @@ public class Subject extends EntityBase {
 			
 		}
 		
-		public Subject(String title, Date createAt, Date deadline, String description,String promotion, String teacher) {
+		public Subject(String title, Date deadline, String description,String constraint) {
 				this.title= title;
-				this.createAt = createAt;
 				this.deadline = deadline;
 				this.description = description;
-				this.promotion = new Grade();
-				this.createBy = new Teacher();
+				this.contsraint = constraint;
+				
 		}
 
+		
+		
 		/**
 		 * @return the promotion
 		 */
@@ -130,6 +129,14 @@ public class Subject extends EntityBase {
 		 */
 		public void setPromotion(Grade promotion) {
 			this.promotion = promotion;
+		}
+
+		public String getContsraint() {
+			return contsraint;
+		}
+
+		public void setContsraint(String contsraint) {
+			this.contsraint = contsraint;
 		}
 
 		

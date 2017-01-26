@@ -8,5 +8,6 @@ import fr.imie.gmm.entities.User;
 @Repository
 public interface UserRepository extends CrudRepository<User, Long> {
 
+	
 	User findByLogin(String login);
 }

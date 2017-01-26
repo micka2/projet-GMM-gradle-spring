@@ -12,7 +12,6 @@ import javax.persistence.Table;
 import fr.imie.gmm.entities.base.EntityBase;
 
 @Entity
-@Inheritance
 @Table(name="Storage")
 public class Storage extends EntityBase{
 	
