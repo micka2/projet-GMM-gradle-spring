@@ -1,12 +1,7 @@
 package fr.imie.gmm.entities;
 
 import java.util.List;
-import java.util.Locale.Category;
-
-import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.Inheritance;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
