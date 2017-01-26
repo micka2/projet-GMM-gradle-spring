@@ -33,8 +33,8 @@ public class Teacher extends User {
 //		
 //	}
 	public Teacher(String firstname, String lastname, String login, 
-			  String password, String email, Category category) {
-    	super(firstname, lastname, login, password, email, 1);
+			  String password,String email, int categoryId) {
+    	super(firstname, lastname, login, password,email, 1);
     }
     public Teacher(){
     	

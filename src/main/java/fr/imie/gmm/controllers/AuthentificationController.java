@@ -1,5 +1,7 @@
 package fr.imie.gmm.controllers;
 
+import java.util.Date;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -8,7 +10,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import fr.imie.gmm.entities.Subject;
+import fr.imie.gmm.entities.Teacher;
 import fr.imie.gmm.entities.User;
+import fr.imie.gmm.repositories.SubjectRepository;
+import fr.imie.gmm.repositories.TeacherRepository;
 import fr.imie.gmm.repositories.UserRepository;
 
 
@@ -101,18 +107,20 @@ public class AuthentificationController {
   
   ///////////////////////////////////////////////////////
   
-//  @RequestMapping(value="/create")
-//  @ResponseBody
-//  public String create(String firstname, String lastname, String login,String password, String email, int categoryId ) {
-//    try {
-//      User user = new User(firstname, lastname, login, password, email, categoryId) {
-//	};
-//      userRepo.save(user);
-//    }
-//    catch (Exception ex) {
-//      return "Error creating the user: " + ex.toString();
-//    }
-//    return "User succesfully created!";
-//  }
-  
-}
+  @Autowired
+	protected TeacherRepository teacherRepo;
+	
+	@RequestMapping("/createTeacher")
+	@ResponseBody
+	public String createTeacher(String firstname,String lastname, String login, String password, String email, int categoryId){
+	 try {
+		Teacher teacher = new Teacher (firstname, lastname, login, password, email, 1);
+		teacherRepo.save(teacher);
+	 }
+	 catch (Exception ex) {
+	      return "Error creating the teacher: " + ex.toString();
+	    }
+	    return "Teacher succesfully created!";
+	  }
+}	
+

@@ -13,7 +13,7 @@ import fr.imie.gmm.entities.base.EntityBase;
 @Entity
 @Table(name="user")
 @Inheritance(strategy=InheritanceType.TABLE_PER_CLASS)
- public abstract class User extends EntityBase {
+ public class User extends EntityBase {
 
 	  // The entity fields (private)  
 
