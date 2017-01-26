@@ -1,16 +1,13 @@
 package fr.imie.gmm.entities.base;
 
-import java.io.Serializable;
-
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Inheritance;
 import javax.persistence.MappedSuperclass;
 
 @MappedSuperclass
 
-public abstract class EntityBase implements Serializable{
+public abstract class EntityBase{
 	
 	@Id
 	@GeneratedValue(strategy= GenerationType.AUTO)

@@ -17,6 +17,7 @@ import fr.imie.gmm.entities.base.EntityBase;
  public class User extends EntityBase {
 
 
+
 //	@Column(name="fistName")@NotNull
 	protected String firstname;
 //	@Column(name="lastName")@NotNull

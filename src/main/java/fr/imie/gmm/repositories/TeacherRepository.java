@@ -8,4 +8,5 @@ import fr.imie.gmm.entities.Teacher;
 @Repository
 public interface TeacherRepository extends CrudRepository<Teacher, Long> {
 
+	Teacher findByLogin (String login);
 }
