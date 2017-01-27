@@ -185,6 +185,8 @@ public class TeacherController {
 			String title,
 			@RequestParam (name="deadline")
 			Date deadline,
+			@RequestParam (name="createAt")
+			Date createAt,
 			@RequestParam (name="description")
 			String description,
 			@RequestParam (name="constraint")
@@ -192,19 +194,23 @@ public class TeacherController {
 			Model model){
 	
 		Subject subject = this.subjectRepo.findByTitle(title);
-
+		
 	 
 		if ((title!= null)&&(deadline!=null)&&(description!=null)){
 			model.addAttribute("subject", subject);
 			model.addAttribute("succes", true);
 			subjectRepo.save(subject);
 	      return "teacher_view1";
+	      
+	     
 	    }
 	else{
 		model.addAttribute("fail2",true);
 	    return "teacher_view2";
+	    
 }
-	  }
+			
+	}
 		
 	
 
