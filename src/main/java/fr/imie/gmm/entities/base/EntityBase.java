@@ -35,4 +35,9 @@ public abstract class EntityBase{
 		this.id = id;
 	}
 
+	public static Object createQuery(String string) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

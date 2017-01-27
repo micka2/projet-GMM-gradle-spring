@@ -5,6 +5,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.util.Date;
+import java.util.List;
 
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
@@ -20,6 +21,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import fr.imie.gmm.entities.Grade;
 import fr.imie.gmm.entities.Subject;
+import fr.imie.gmm.entities.Teacher;
+import fr.imie.gmm.entities.base.EntityBase;
 import fr.imie.gmm.repositories.GradeRepository;
 import fr.imie.gmm.repositories.SubjectRepository;
 import fr.imie.gmm.repositories.TeacherRepository;
@@ -49,6 +52,20 @@ public class TeacherController {
   	  return "teacher_view1";
     }
 
+    ////////////////////////////////
+//    
+//    @RequestMapping(method=RequestMethod.GET, path="teacherlist")
+//    public List getAll() {
+//		return EntityBase.createQuery(
+//				"select e from " + Teacher.getFirstname() + " e")
+//				.getResultList();
+//    	
+//    }
+    
+    
+    
+    
+    
     /////////cliquer sur le bouton creer un sujet///////////
     
     @RequestMapping(method=RequestMethod.GET, path="/teacher/creationdesujet")
