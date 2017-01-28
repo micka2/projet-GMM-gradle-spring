@@ -153,7 +153,7 @@ public class TeacherController {
 	 catch (Exception ex) {
 	      return "Error creating the subject: " + ex.toString();
 	    }
-	    return "Subject succesfully created!";
+	    return "s";
 	  }
 		
 	
