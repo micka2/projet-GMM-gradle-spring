@@ -35,4 +35,7 @@ public abstract class EntityBase{
 		this.id = id;
 	}
 
+
+	
+
 }
