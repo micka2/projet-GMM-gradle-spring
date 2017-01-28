@@ -23,7 +23,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import fr.imie.gmm.entities.Grade;
 import fr.imie.gmm.entities.Subject;
 import fr.imie.gmm.entities.Teacher;
-
+import fr.imie.gmm.entities.User;
 import fr.imie.gmm.entities.base.EntityBase;
 import fr.imie.gmm.repositories.GradeRepository;
 import fr.imie.gmm.repositories.SubjectRepository;
@@ -73,18 +73,18 @@ public class TeacherController {
     /////////////////////////////////////
 
     
-//    @Autowired
-//    protected UserRepository userRepo;
-//    
-//    @CrossOrigin(origins="http://localhost:4200")
-//    @ResponseBody
-//    @RequestMapping(method=RequestMethod.GET, path="/api/1/teachers")
-//    public List teacherList (Model model) {
-//
-//List<User> users = (List<User>) this.userRepo.findAll();
-//        return users;
-//    }
-//    
+    @Autowired
+    protected UserRepository userRepo;
+    
+    @CrossOrigin(origins="http://localhost:4200")
+    @ResponseBody
+    @RequestMapping(method=RequestMethod.GET, path="/api/1/teachers")
+    public List teacherList (Model model) {
+
+List<User> users = (List<User>) this.userRepo.findAll();
+        return users;
+    }
+    
     
     
 
@@ -202,48 +202,7 @@ public class TeacherController {
 //	}		
 //	
 //	}
-	
-	
-	
-		////////////////////////////////////////////////
-		///////creer un nouveau sujet//////////////////
-	
-	protected SubjectRepository subjectRepo;
-	
-	@RequestMapping(method=RequestMethod.POST, path="/createSubject")
-	public String createSubject(
-			@RequestParam (name="title")
-			String title,
-			@RequestParam (name="deadline")
-			Date deadline,
-			@RequestParam (name="createAt")
-			Date createAt,
-			@RequestParam (name="description")
-			String description,
-			@RequestParam (name="constraint")
-			String constraint,
-			Model model){
-	
-		Subject subject = this.subjectRepo.findByTitle(title);
-		
-	 
-		if ((title!= null)&&(deadline!=null)&&(description!=null)){
-			model.addAttribute("subject", subject);
-			model.addAttribute("succes", true);
-			subjectRepo.save(subject);
-	      return "teacher_view1";
-	      
-	     
-	    }
-	else{
-		model.addAttribute("fail2",true);
-	    return "teacher_view2";
-	    
-}
-			
-	}
-		
-	
+
 
 	}
 
