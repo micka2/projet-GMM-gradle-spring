@@ -1,53 +1,24 @@
-package fr.imie.gmm;
-
-
+/*package fr.imie.gmm.interoperabilite;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.CommandLineRunner;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-import com.fasterxml.jackson.core.JsonParseException;
-import com.fasterxml.jackson.databind.JsonMappingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.type.TypeFactory;
-
+import org.codehaus.jackson.JsonParseException;
+import org.codehaus.jackson.map.JsonMappingException;
+import org.codehaus.jackson.map.ObjectMapper;
+import org.codehaus.jackson.map.type.TypeFactory;
 import fr.imie.gmm.entities.User;
-import fr.imie.gmm.interoperabilite.UserJsonLdap;
-import fr.imie.gmm.repositories.UserRepository;
 
-@SpringBootApplication
-public class Main implements CommandLineRunner {
 
+public class AddUserLdap {
 	
-	@Autowired
-	private UserRepository repository;
 	private static List<User> listUser= new ArrayList<User>();
 	
-	
 	public static void main(String[] args) {
-		SpringApplication.run(Main.class, args);
-		
-	}
-
-	@Override
-	public void run(String...args) throws Exception {
-		/*User user = new User ();
-		User prof =new User();
-		user.setFirstname("Administrator");
-		prof.setFirstname("LUNA");
-		User[] data = { prof, user };
-		List<User> users=new ArrayList<User>();
-	    for (User s : data){
-		
-		users.add(s);
-	    }
-		this.repository.save(users);*/
+		// TODO Auto-generated method stub
+				
 		List<UserJsonLdap> ldap=null;	
 		ObjectMapper mapper = new ObjectMapper();
 		
@@ -74,11 +45,8 @@ public class Main implements CommandLineRunner {
 			e.printStackTrace();
 		}
 				
-		this.repository.save(listUser);
-			
-		
-	}
-	
+		System.out.println(listUser);
+		}
 	public static void addUser(UserJsonLdap use,List<User>users)
 	{
 		
@@ -105,9 +73,5 @@ public class Main implements CommandLineRunner {
 		}
 			
 	}
-			
 
-}	
-			
-
-
+}*/

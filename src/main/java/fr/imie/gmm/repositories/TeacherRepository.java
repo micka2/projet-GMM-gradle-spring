@@ -11,5 +11,7 @@ import fr.imie.gmm.entities.Teacher;
 public interface TeacherRepository extends CrudRepository<Teacher, Long> {
 
 	Teacher findByLogin (String login);
-	Teacher findByLastname (List teachers);
-}
+
+
+	}
+

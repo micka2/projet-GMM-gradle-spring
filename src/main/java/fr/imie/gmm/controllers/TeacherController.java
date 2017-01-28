@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -22,10 +23,12 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import fr.imie.gmm.entities.Grade;
 import fr.imie.gmm.entities.Subject;
 import fr.imie.gmm.entities.Teacher;
+
 import fr.imie.gmm.entities.base.EntityBase;
 import fr.imie.gmm.repositories.GradeRepository;
 import fr.imie.gmm.repositories.SubjectRepository;
 import fr.imie.gmm.repositories.TeacherRepository;
+import fr.imie.gmm.repositories.UserRepository;
 
 @Controller
 public class TeacherController {
@@ -52,15 +55,6 @@ public class TeacherController {
   	  return "teacher_view1";
     }
 
-    ////////////////////////////////
-//    
-//    @RequestMapping(method=RequestMethod.GET, path="teacherlist")
-//    public List getAll() {
-//		return EntityBase.createQuery(
-//				"select e from " + Teacher.getFirstname() + " e")
-//				.getResultList();
-//    	
-//    }
     
     
     
@@ -74,6 +68,26 @@ public class TeacherController {
   	  return "teacher_view2";
     }
     
+
+	
+    /////////////////////////////////////
+
+    
+//    @Autowired
+//    protected UserRepository userRepo;
+//    
+//    @CrossOrigin(origins="http://localhost:4200")
+//    @ResponseBody
+//    @RequestMapping(method=RequestMethod.GET, path="/api/1/teachers")
+//    public List teacherList (Model model) {
+//
+//List<User> users = (List<User>) this.userRepo.findAll();
+//        return users;
+//    }
+//    
+    
+    
+
 
 	/////////////////////////////////////////////////////////////////////////
 	//////Recherche de promotion et affichage des sujets correspondants//////
