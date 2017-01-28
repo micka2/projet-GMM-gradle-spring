@@ -26,6 +26,14 @@ public class Student extends User{
     	super();   	
     }
     
+    /**
+     * constructor for creating a Student entity with parameters
+     * @param firstname : String 
+     * @param lastname
+     * @param login
+     * @param password
+     * @param category
+     */
     public Student(String firstname,String lastname,String login,String password,int category){
     	super(firstname, lastname, login, password, password, 2);
     }

@@ -3,10 +3,12 @@ package fr.imie.gmm.controllers;
 import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
+import java.util.Date;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.metadata.GenericTableMetaDataProvider;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,6 +18,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import fr.imie.gmm.entities.Homework;
 import fr.imie.gmm.entities.Student;
+import fr.imie.gmm.entities.Subject;
 import fr.imie.gmm.repositories.HomeworkRepository;
 
 
@@ -24,7 +27,11 @@ public class HomeworkController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(HomeworkController.class);
 	
+	private static final String separatorNameFile = "##";
+	
 	protected HomeworkRepository homeworkRepo;
+	
+	protected Homework homeworkEntity;
 	
 	@Autowired
     public HomeworkController(HomeworkRepository homeworkRepository) {
@@ -60,7 +67,7 @@ public class HomeworkController {
 
 				// Create the file on server.
 				File serverFile = new File(dir.getAbsolutePath()
-						+ File.separator + name);
+						+ File.separator + ( file.getOriginalFilename() + separatorNameFile + new java.util.Date().getTime()) );
 				BufferedOutputStream stream = new BufferedOutputStream(
 						new FileOutputStream(serverFile));
 				stream.write(bytes);
@@ -69,15 +76,20 @@ public class HomeworkController {
 //				Homework homework = this.homeworkRepo.save(serverFile);
 				
 				logger.info("Chemin d'accès du fichier="
-						+ serverFile.getAbsolutePath());
+						+ serverFile.getAbsolutePath().split(separatorNameFile)[0]);
 				
 				// Get the current time.
 				java.util.Date date = new java.util.Date();
 				
-				model.addAttribute("fileName", name);
-				model.addAttribute(bytes);
-				model.addAttribute(date);
+				model.addAttribute("fileName", serverFile.getName().split(separatorNameFile)[0]);
 				
+				homeworkEntity = new Homework();
+				homeworkEntity.setTitle(serverFile.getName());
+				homeworkEntity.setDeposedAt(date);
+				
+				logger.info(homeworkEntity.toString());
+				
+				homeworkEntity = homeworkRepo.save(homeworkEntity);
 								
 				return "student-deposite_view";
 			} catch (Exception e) {

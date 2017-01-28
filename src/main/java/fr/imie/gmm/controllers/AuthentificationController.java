@@ -61,17 +61,17 @@ public class AuthentificationController {
 			//model.addAttribute(password);
 			return "admin_view";
 		}
-	  else if((user!=null)&&(user.getPassword().equals(password))&&(user.getCategoryId()==1)){
+	  else if((user!=null)&&(user.getPassword().equals(password))&&(user.getCategoryId()==2)){
 		  
 		  model.addAttribute("login", login);
 		 // model.addAttribute(password);
 		  return "teacher_view1";
 	  }
-	  else if((user!=null)&&(user.getPassword().equals(password))&&(user.getCategoryId()==2)){
+	  else if((user!=null)&&(user.getPassword().equals(password))&&(user.getCategoryId()==1)){
 		  
 		  model.addAttribute("login", login);
 		  //model.addAttribute(password);
-		  return "student_view";
+		  return "student-deposite_view";
 	  }
 		else{
 			model.addAttribute("fail", true);

@@ -5,12 +5,8 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.Inheritance;
-import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import javax.persistence.Transient;
 
 import fr.imie.gmm.entities.base.EntityBase;
 
@@ -20,14 +16,12 @@ import fr.imie.gmm.entities.base.EntityBase;
 @Table(name="Homework")
 public class Homework extends EntityBase {
 
-	@Column(name = "title", nullable = false, length = 100)
+	@Column(name = "title", nullable = false)
 	private String title;
 
 	@Column(name = "date", nullable = false)
 	private Date deposedAt;
 	
-	@Transient
-	private byte[] data;
 
 //	@ManyToMany(targetEntity=Student.class, fetch=FetchType.EAGER)
 	@ManyToOne
@@ -86,19 +80,6 @@ public class Homework extends EntityBase {
 	public void setSubjectReference(Subject subjectReference) {
 		this.subjectReference = subjectReference;
 	}
-	/**
-	 * @return the data
-	 */
-	public byte[] getData() {
-		return data;
-	}
-	/**
-	 * @param data the data to set
-	 */
-	public void setData(byte[] data) {
-		this.data = data;
-	}
-	
 	
 
 }
