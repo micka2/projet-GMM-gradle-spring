@@ -20,13 +20,13 @@ public class UserController {
     protected UserRepository userRepo;
     
     
-    @RequestMapping(method=RequestMethod.GET, value="/api/1/teachers")
-    public List TestAngular(Model model) {
-
-    	List<User> users = (List<User>) this.userRepo.findAll();
-        return users;
-    }
-    
+//    @RequestMapping(method=RequestMethod.GET, value="/api/1/teachers")
+//    public List TestAngular(Model model) {
+//
+//    	List<User> users = (List<User>) this.userRepo.findAll();
+//        return users;
+//    }
+//    
     
     
    
