@@ -91,8 +91,8 @@ public class Main implements CommandLineRunner {
 			e.printStackTrace();
 		}
 		
-		//this.trepo.save(listTeacher);
-		//this.repository.save(listUser1);
+		this.trepo.save(listTeacher);
+		this.repository.save(listUser1);
 		this.srepo.save(listStudent);
 		this.repository.save(listUser2);
 	}
