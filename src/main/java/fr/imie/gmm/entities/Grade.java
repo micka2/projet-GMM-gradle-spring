@@ -15,7 +15,8 @@ import fr.imie.gmm.entities.base.EntityBase;
 @Table(name="Grade")
 public class Grade extends EntityBase {
 
-	
+	@Column( name = "id",nullable = false, unique = true) 
+	private Long id;
     @Column(nullable = false, length = 20, name = "promotionName")
     private String name;
     @Column 
@@ -64,6 +65,20 @@ public class Grade extends EntityBase {
 
 	public void setSubjects(List<Subject> subjects) {
 		this.subjects = subjects;
+	}
+
+	/**
+	 * @return the id
+	 */
+	public Long getId() {
+		return id;
+	}
+
+	/**
+	 * @param id the id to set
+	 */
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	}

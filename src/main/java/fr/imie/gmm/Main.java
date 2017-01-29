@@ -27,7 +27,7 @@ public class Main implements CommandLineRunner {
 	
 	@Autowired
 	private UserRepository repository;
-	private static List<User> listUser= new ArrayList<User>();
+//	private static List<User> listUser= new ArrayList<User>();
 	
 	
 	public static void main(String[] args) {
@@ -37,72 +37,73 @@ public class Main implements CommandLineRunner {
 
 	@Override
 	public void run(String...args) throws Exception {
-		/*User user = new User ();
-		User prof =new User();
-		user.setFirstname("Administrator");
-		prof.setFirstname("LUNA");
-		User[] data = { prof, user };
-		List<User> users=new ArrayList<User>();
-	    for (User s : data){
-		
-		users.add(s);
-	    }
-		this.repository.save(users);*/
-		List<UserJsonLdap> ldap=null;	
-		ObjectMapper mapper = new ObjectMapper();
-		
-		try {
-			ldap=mapper.readValue(new File("./src/main/java/json/ldap1.json"),TypeFactory.defaultInstance().constructCollectionType(List.class,  
-			UserJsonLdap.class));	
-	
-			System.out.println(ldap.get(0).getDisplayName());
-			
-			for( UserJsonLdap use :ldap )
-			{
-			   addUser(use,listUser);
-				
-			}
-			
-		} catch (JsonParseException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (JsonMappingException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-				
-		this.repository.save(listUser);
-			
-		
-	}
-	
-	public static void addUser(UserJsonLdap use,List<User>users)
-	{
-		
-		if(use.getSn()!=null)
-		{
-			
-			User user=new User();
-			user.setFirstname(use.getSn());
-			user.setLastname(use.getGivenName());
-			user.setLogin("log"+use.getSn());
-			user.setCategoryId(1);
-			user.setEmail("myEmail");
-			user.setPassword("password");
-			users.add(user);
-			
-		}
-		if(!use.getSubItems().isEmpty())
-		{
-			for( UserJsonLdap usr :use.getSubItems() )
-			{
-			   addUser(usr,users);
-			  			
-			}
-		}
+//		
+////		/*User user = new User ();
+////		User prof =new User();
+////		user.setFirstname("Administrator");
+////		prof.setFirstname("LUNA");
+////		User[] data = { prof, user };
+////		List<User> users=new ArrayList<User>();
+////	    for (User s : data){
+////		
+////		users.add(s);
+////	    }
+////		this.repository.save(users);*/
+//		List<UserJsonLdap> ldap=null;	
+//		ObjectMapper mapper = new ObjectMapper();
+//		
+//		try {
+//			ldap=mapper.readValue(new File("./src/main/java/json/ldap1.json"),TypeFactory.defaultInstance().constructCollectionType(List.class,  
+//			UserJsonLdap.class));	
+//	
+//			System.out.println(ldap.get(0).getDisplayName());
+//			
+//			for( UserJsonLdap use :ldap )
+//			{
+//			   addUser(use,listUser);
+//				
+//			}
+//			
+//		} catch (JsonParseException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		} catch (JsonMappingException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		} catch (IOException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//				
+//		this.repository.save(listUser);
+//			
+//		
+//	}
+//	
+//	public static void addUser(UserJsonLdap use,List<User>users)
+//	{
+//		
+//		if(use.getSn()!=null)
+//		{
+//			
+//			User user=new User();
+//			user.setFirstname(use.getSn());
+//			user.setLastname(use.getGivenName());
+//			user.setLogin("log"+use.getSn());
+//			user.setCategoryId(1);
+//			user.setEmail("myEmail");
+//			user.setPassword("password");
+//			users.add(user);
+//			
+//		}
+//		if(!use.getSubItems().isEmpty())
+//		{
+//			for( UserJsonLdap usr :use.getSubItems() )
+//			{
+//			   addUser(usr,users);
+//			  			
+//			}
+//		}
 			
 	}
 			

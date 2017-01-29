@@ -14,7 +14,9 @@ public interface HomeworkRepository extends CrudRepository<Homework, Long> {
 
 	Homework findByTitle(String title);
 	
-	<S extends Homework> S save(File serverFile);
+	<S extends Homework> S save(S entity);
+	
+	void delete(Long id);
 	
 	List<Homework> findAll();
     

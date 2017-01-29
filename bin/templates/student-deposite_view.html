@@ -24,11 +24,11 @@
 		<td width="50%">
 
                <div style="border-style:solid; background-color:#d3e2f8; width: 33ex; height: 7ex; margin-left:-5ex;">
-                        <p style="font-size:16px;">
-                               <!-- th:text="${username}"<br/> 
-                                th:text="${promo}">-->
-                                Francis KUNTZ <br/>
-                                BTS Infrastructrure et Réseaux
+                        <p style="font-size:16px; text-align: center">
+                        	<br/>
+                        	<span th:text="${author.firstname}" ></span>
+                        	<span th:text="${author.lastname}" ></span>
+<!--                        		<span th:text="${author.gradeId.name}" ></span> -->
                         </p>
                 </div>
 
@@ -38,7 +38,7 @@
 					
 				<div style="margin-top:4ex;" class="row" >
                                    
-           			<h5>Ajouter un fichier :</h5>                        
+           			<h5>Ajouter le devoir :</h5>                        
 
 							<form method="POST" action="/upload" enctype="multipart/form-data">
 								<input type="file" name="file" id="file" /> <br />
@@ -56,10 +56,17 @@
                         </div>
 
 					<div>
-						<ul>
-							<li th:each="file : ${fileName}"><a th:href="${fileName}"
-								th:text="${fileName}"></a></li>
-						</ul>
+						
+							
+								<p th:text="${fileName}"> </p>
+						
+						<div th:if="${fileId}">
+							<form method="POST" action="/delete">
+								<input type="text" name="delete" style="display: none; background-color:#cf6824; border-color:#a7541d; border-style:groovy; font-weight:bold;" th:value="${fileId}"/> 
+								<button type="submit">Supprimer le devoir</button>
+							</form>
+						</div>	
+						
 					</div> <!-- 			<div> -->
 <!--                         <select size="10" style="border-style:solid; border-color:#002776; margin-top:3ex; width:60%;"> -->
 <!--  				<option value="selectedsubject">th:each="$fileName"</option> -->

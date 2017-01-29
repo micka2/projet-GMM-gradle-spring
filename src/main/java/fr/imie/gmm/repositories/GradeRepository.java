@@ -12,5 +12,7 @@ public interface GradeRepository extends CrudRepository<Grade, Long>{
 
 	Grade findByName(String Name);
 	List<Grade> findAll();
+	
+	Grade findOne(Long id);
 
 }

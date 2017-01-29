@@ -3,12 +3,12 @@ package fr.imie.gmm.controllers;
 import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
-import java.util.Date;
+
+import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.metadata.GenericTableMetaDataProvider;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,8 +18,10 @@ import org.springframework.web.multipart.MultipartFile;
 
 import fr.imie.gmm.entities.Homework;
 import fr.imie.gmm.entities.Student;
-import fr.imie.gmm.entities.Subject;
 import fr.imie.gmm.repositories.HomeworkRepository;
+import fr.imie.gmm.repositories.StudentRepository;
+
+
 
 
 @Controller
@@ -32,6 +34,12 @@ public class HomeworkController {
 	protected HomeworkRepository homeworkRepo;
 	
 	protected Homework homeworkEntity;
+		
+	protected StudentRepository studentRepo;
+
+
+	@Autowired 
+	private HttpSession httpSession;
 	
 	@Autowired
     public HomeworkController(HomeworkRepository homeworkRepository) {
@@ -58,6 +66,7 @@ public class HomeworkController {
 		if (!file.isEmpty()) {
 			try {
 				byte[] bytes = file.getBytes();
+				
 
 				// Creating the directory to store file.
 				String rootPath = "./files";
@@ -81,16 +90,20 @@ public class HomeworkController {
 				// Get the current time.
 				java.util.Date date = new java.util.Date();
 				
-				model.addAttribute("fileName", serverFile.getName().split(separatorNameFile)[0]);
-				
 				homeworkEntity = new Homework();
 				homeworkEntity.setTitle(serverFile.getName());
 				homeworkEntity.setDeposedAt(date);
 				
-				logger.info(homeworkEntity.toString());
-				
+				//get connected user from session
+				Student author = (Student) httpSession.getAttribute("authorSession");
+
 				homeworkEntity = homeworkRepo.save(homeworkEntity);
-								
+				
+				model.addAttribute("fileName", serverFile.getName().split(separatorNameFile)[0]);				
+				model.addAttribute("fileId", homeworkEntity.getId());
+				model.addAttribute("author", author);
+		
+				
 				return "student-deposite_view";
 			} catch (Exception e) {
 				return "échec !";
@@ -100,4 +113,24 @@ public class HomeworkController {
 					+ " car le fichier est vide ou manquant.";
 		}
 	}
+	
+	/**
+	 * Delete file method.
+	 */
+	@RequestMapping(value = "/delete", method = RequestMethod.POST)
+	public String deleteFile(@RequestParam("delete") 
+		String fileId,
+		Model model) {
+		
+		logger.info("id du fichier a supprimer:" + fileId);
+
+		homeworkRepo.delete(Long.valueOf(fileId));
+		
+		//get connected user from session
+		Student author = (Student) httpSession.getAttribute("authorSession");
+		model.addAttribute("author", author);
+		
+		return "student-deposite_view";
+	}
+	
 }
