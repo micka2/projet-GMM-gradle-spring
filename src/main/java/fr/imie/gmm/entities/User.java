@@ -13,7 +13,7 @@ import fr.imie.gmm.entities.base.EntityBase;
 	
 @Entity
 @Table(name="User")
-@Inheritance(strategy=InheritanceType.TABLE_PER_CLASS)
+@Inheritance(strategy=InheritanceType.JOINED)
  public class User extends EntityBase {
 
 
