@@ -76,15 +76,15 @@ public class TeacherController {
     @Autowired
     protected UserRepository userRepo;
     
-    @CrossOrigin(origins="http://localhost:4200")
-    @ResponseBody
-    @RequestMapping(method=RequestMethod.GET, path="/api/1/teachers")
-    public List teacherList (Model model) {
-
-List<User> users = (List<User>) this.userRepo.findAll();
-        return users;
-    }
-    
+//    @CrossOrigin(origins="http://localhost:4200")
+//    @ResponseBody
+//    @RequestMapping(method=RequestMethod.GET, path="/api/1/teachers")
+//    public List teacherList (Model model) {
+//
+//List<User> users = (List<User>) this.userRepo.findAll();
+//        return users;
+//    }
+//    
     
     
 

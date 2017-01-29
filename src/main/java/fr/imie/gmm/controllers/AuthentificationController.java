@@ -91,7 +91,7 @@ public class AuthentificationController {
 		  model.addAttribute("author", connectedUser);
 		  // session mappage
 		  this.httpSession.setAttribute("authorSession", connectedUser);
-		  return "student-deposite_view";
+		  return "student_view";
 	  }
 		else{
 			model.addAttribute("fail", true);

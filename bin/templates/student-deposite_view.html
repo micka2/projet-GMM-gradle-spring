@@ -12,7 +12,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
 <div style="border-style:inset; background-color:#02468b; color:white" >
-    <h3 style="padding-left :10ex;"> GMM - plateforme d'échange sujets-devois de l'IMIE </h3>
+    <h3 style="padding-left :10ex;"> GMM - plateforme d'échange sujets-devoirs de l'IMIE </h3>
 </div>
 
 </head>
@@ -55,12 +55,12 @@
 				</div>
                         </div>
 
-					<div>
+					<div style="margin-top:4ex;">
 						
 							
 								<p th:text="${fileName}"> </p>
 						
-						<div th:if="${fileId}">
+						<div th:if="${fileId}" style="margin-left:5ex;">
 							<form method="POST" action="/delete">
 								<input type="text" name="delete" style="display: none; background-color:#cf6824; border-color:#a7541d; border-style:groovy; font-weight:bold;" th:value="${fileId}"/> 
 								<button type="submit">Supprimer le devoir</button>
