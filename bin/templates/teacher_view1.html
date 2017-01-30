@@ -15,10 +15,10 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
 <div style="border-style:inset; background-color:#02468b; color:white;">
-    <h3 style="padding-left :10ex;"> GMM - plateforme d'échange sujets-devois de l'IMIE </h3>
+    <h3 style="padding-left :10ex;"> GMM - plateforme d'échange sujets-devoirs de l'IMIE </h3>
 </div>
 
-	<link rel="stylesheet" type="text/css" href="teacher-view1bis.css"/>
+	<link rel="stylesheet" type="text/css" href="teacher_view1.css"/>
 	<title>teacher</title>
 </head>
 <body>
@@ -27,8 +27,8 @@
 
 		 <tr width="100%" id="content">
       <td rowspan="2" width="15%" id="essai">
-        <div id="identifiant">	Bienevenue <span th:text="${author.lastname}" ></span>
-                <span th:text="${author.firstname}" ></span></div>
+        <div id="identifiant"><h4>	Bienvenue <b><span th:text="${author.lastname}" ></span>
+                <span th:text="${author.firstname}" ></span></b></h4></div>
       </td>
             <td class="column-left" width="85%">
 
@@ -52,7 +52,7 @@
   </div><!-- /.col-lg-6 -->
 </div><!-- /.row -->
 
-<select class="select-1" size="10">
+			<select class="select-1" size="10">
 <!-- 				<option value="selectedsubject">th:text="$subject"</option> -->
 				<option value="promo1">POE 2016-2017</option>
 				<option value="promo2">BTS Infrastrucutre Réseaux</option>

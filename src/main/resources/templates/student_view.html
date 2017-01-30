@@ -46,14 +46,14 @@
 										<span class="glyphicon glyphicon-search"></span>
 									</button>
                                                                     </span>
+                                        
 							</div>
 						</div>
 					</div>
 				</div> 
-			<form action="/student" method="GET">
-<!-- 				<ul> -->
-<!-- 					<li th:each="sujet : ${maListeDeSujets.title}">th:text="${maListeDeSujets}" </li> -->
-<!-- 				</ul> -->
+			<form action="/api/1/Subject" method="GET">
+				<p th:text="${subjectlist}"> </p>
+
 			</form>		
 <!--                         <select size="10" style="border-style:solid; border-color:#002776; width:60%;"> -->
 <!-- 				<option value="selectedsubject">th:text="$maListeDeSujets"</option> -->
@@ -64,7 +64,7 @@
                 
 			
                 <td width="50%"> 
-			<button type="submitted" style="float:right; background-color:#194c9a; color:#eaeffa; margin-top:2ex; margin-right:-5ex;"><i>se déconnecter</i></button>
+			<button id="deconnexion" onclick="self.location.href='/login'" align="right" type="submitted" style="float:right; background-color:#194c9a; color:#eaeffa; margin-top:2ex; margin-right:3ex;">Se déconnecter</button>
 			
 		<div style="margin-top:12ex;">	
 			<div>

@@ -40,52 +40,38 @@ public class SubjectController {
 	
 /////////////Récuperer les Sujets de la bd//////////////////
 	
-	@RequestMapping(method = RequestMethod.GET, path = "/api/1/Subject")
-	public List RecupSubjects(Model model) {
+	@RequestMapping(method=RequestMethod.GET, path = "/api/1/Subject")
+	public String getSubjects(Model model) {
 
-		List<Subject> subjects = (List<Subject>) this.subjectRepo.findAll();
-		return subjects;
+		List<Subject> subjects = this.subjectRepo.findAll(); 
+		model.addAttribute("subjectlist",subjects);
+		
+		return "student_view";
 	}
 
-
-/////////////////Insérer un sujet en bd//////////////////////
-
-
-@RequestMapping("/createSubject")
-@ResponseBody
-public String createSubject(String title, Date deadline,Date createAt, String description,String constraint){
- try {
-	Subject subject = new Subject (title, deadline, createAt, description, constraint);
-	subjectRepo.save(subject);
- }
- catch (Exception ex) {
-      return "Error creating the subject: " + ex.toString();
-    }
-    return "Subject succesfully created!";
-  }
 
 //////////////Poster un sujet//////////////////////////
 
 
 @RequestMapping(method=RequestMethod.POST, value="/createSubject")
 public String createSubject(
+//		@RequestParam("createSubject")
+		Model model,
+		@RequestParam (name="constraint")
+		String constraint,
 		@RequestParam (name="title")
 		String title,
 		@RequestParam (name="deadline")
 		Date deadline,
-		@RequestParam (name="createAt")
-		Date createAt,
 		@RequestParam (name="description")
-		String description,
-		@RequestParam (name="constraint")
-		String constraint,
-		Model model){
+		String description
+		){
 	
 	//get connected user from session
 	Teacher author = (Teacher) httpSession.getAttribute("authorSession");
 	model.addAttribute("author", author);
 
-	Subject subject = this.subjectRepo.findByTitle(title);
+//	Subject subject = this.subjectRepo.findByTitle(title);
 	
 	// Get the current time.
 	java.util.Date date = new java.util.Date();
@@ -107,7 +93,7 @@ public String createSubject(
 		model.addAttribute("createat", date);
 		model.addAttribute("description", description);
 		model.addAttribute("constraint", constraint);
-//		subjectRepo.save(subject);
+		
       return "teacher_view1";
       
      
