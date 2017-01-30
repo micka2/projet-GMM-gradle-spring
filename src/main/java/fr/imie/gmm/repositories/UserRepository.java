@@ -11,11 +11,10 @@ import fr.imie.gmm.entities.User;
 @Repository
 public interface UserRepository extends CrudRepository<User, Long> {
 
-<<<<<<< HEAD
+
 	User findByCategoryId(int categoryId);
-=======
 	List<User> findAll();
->>>>>>> master
+
 	User findByLogin(String login);
 
 	User findOne(Long id);
