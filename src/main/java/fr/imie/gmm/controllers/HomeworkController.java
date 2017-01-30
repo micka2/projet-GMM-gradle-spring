@@ -36,6 +36,9 @@ public class HomeworkController {
 	protected Homework homeworkEntity;
 		
 	protected StudentRepository studentRepo;
+	
+	
+	private static final String ROOTPATH = "./files";
 
 
 	@Autowired 
@@ -49,7 +52,9 @@ public class HomeworkController {
 	
 	@RequestMapping("/studentdepot")
 	public String studentDeposite(Model model){
-		
+		//get connected user from session
+				Student author = (Student) httpSession.getAttribute("authorSession");
+				model.addAttribute("author", author);
 		return "student-deposite_view";
 	}
 	
@@ -69,8 +74,8 @@ public class HomeworkController {
 				
 
 				// Creating the directory to store file.
-				String rootPath = "./files";
-				File dir = new File(rootPath + File.separator);
+				
+				File dir = new File(ROOTPATH + File.separator);
 				if (!dir.exists())
 					dir.mkdirs();
 
@@ -124,6 +129,14 @@ public class HomeworkController {
 		
 		logger.info("id du fichier a supprimer:" + fileId);
 
+		homeworkEntity = homeworkRepo.findOne(Long.valueOf(fileId));
+		File file = new File(ROOTPATH + File.separator + homeworkEntity.getTitle());
+		logger.info(file.getAbsolutePath());
+		if(file.delete()){
+			logger.info(file.getName() + " is deleted!");
+		}else{
+			logger.info("Delete operation is failed.");
+		}
 		homeworkRepo.delete(Long.valueOf(fileId));
 		
 		//get connected user from session

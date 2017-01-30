@@ -84,9 +84,7 @@ public class TeacherController {
 //List<User> users = (List<User>) this.userRepo.findAll();
 //        return users;
 //    }
-    
-    
-    
+  
 
 
 	/////////////////////////////////////////////////////////////////////////

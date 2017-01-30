@@ -50,9 +50,11 @@
 						</div>
 					</div>
 				</div> 
-				<ul>
-					<li th:each="sujet : ${maListeDeSujets.title}">th:text="${maListeDeSujets}" </li>
-				</ul>
+			<form action="/student" method="GET">
+<!-- 				<ul> -->
+<!-- 					<li th:each="sujet : ${maListeDeSujets.title}">th:text="${maListeDeSujets}" </li> -->
+<!-- 				</ul> -->
+			</form>		
 <!--                         <select size="10" style="border-style:solid; border-color:#002776; width:60%;"> -->
 <!-- 				<option value="selectedsubject">th:text="$maListeDeSujets"</option> -->
 				
@@ -99,8 +101,11 @@
                         Utiliser le langage Python.
 			</p>
 			</div>
-			
-			<button type="submitted" style="background-color:#cf6824; border-color:#a7541d; border-style:groovy; margin-top:5ex; "><b>Editer les devoirs</b></button>
+			<form method="POST" action="/studentdepot">
+			<button type="submitted" style="background-color:#cf6824; border-color:#a7541d; border-style:groovy; margin-top:5ex; ">
+				<b>Editer les devoirs</b>
+			</button>
+			</form>
 		</div>	
 	
  		</td>
