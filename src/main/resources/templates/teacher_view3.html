@@ -18,26 +18,20 @@
     <h3 style="padding-left :10ex;"> GMM - plateforme d'échange sujets-devois de l'IMIE </h3>
 </div>
 
-	<link rel="stylesheet" type="text/css" href="teacher-view1bis.css"/>
+	<link rel="stylesheet" type="text/css" href="teacher-view3bis.css"/>
 	<title>teacher</title>
 </head>
 <body>
 
 <table width="100%">
 
-		 <tr width="100%" id="content">
-      <td rowspan="2" width="15%" id="essai">
-        <div id="identifiant">	Bienevenue <span th:text="${author.lastname}" ></span>
-                <span th:text="${author.firstname}" ></span></div>
-      </td>
-            <td class="column-left" width="85%">
-
-            <div th:if="${fail}" class="alert alert-danger" role="alert">
-            <p> Please select a grade !</p></div>
+		 <tr id="content">
+      
+            <td class="column-left" width="50%">
             
             
-            <p id="prom"> Choisir une promotion</p><br/>
-            <button id="deconnexion" type="submitted" ><i>Se déconnecter</i></button>
+            <p id="sub"> Selectionner un sujet</p><br/>
+            
 <div class="row">
  <div class="col-lg-4">
 
@@ -52,28 +46,47 @@
   </div><!-- /.col-lg-6 -->
 </div><!-- /.row -->
 
-<select class="select-1" size="10">
+<select id="list" class="select-1" size="10" width="45%">
 <!-- 				<option value="selectedsubject">th:text="$subject"</option> -->
-				<option value="promo1">POE 2016-2017</option>
-				<option value="promo2">BTS Infrastrucutre Réseaux</option>
-				<option value="promo3">Master Java</option>
-				<option value="subject6">BTS PHP</option>
+				<option value="subject2">Algorithme de tri</option>
+        <option value="subject3">Design CSS</option>
+        <option value="subject4">Gestion d'utilisateurs HIBERNATE</option>
+        <option value="subject6">TP 4 Json</option>
+        <option value="subject7">Zoo - Java</option>
+        <option value="subject8">MonSuperGarage</option>
+        <option value="subject9">MCD - TP La Fnak</option>
+        <option value="subject10">Aéroport : diagramme de classes</option>
+        <option value="subject11">TP JQuery</option>
+        <option value="subject12">Page html Pokemon</option>
+        <option value="subject13">TP 1 - apprentissage de Git</option>
+        <option value="subject14">TP2 Spring Build avec Gradle</option>
 			</select>
+      <button  id="b1" type="button" class="btn btn-default btn-lg">
+  <span class="glyphicon glyphicon-ok" aria-hidden="true">Ok</span>
+</button>
 	            </td>
-        </tr>
-        <tr width="30%">
+        
+        
 
-            	<td id="buttons" class="column-right" width="85%">
-            	
-            		
-			<button  id="b1" type="button" onclick="self.location.href='/teacher/creationdesujet'" class="btn btn-default btn-lg">
-  <span class="glyphicon glyphicon-pencil" aria-hidden="true">Creer / Modifier sujet</span>
-</button>
-			<button id ="b2" type="button" onclick="self.location.href='/teacher/telechargerdevoirs'" class="btn btn-default btn-lg">
-  <span class="glyphicon glyphicon-download" aria-hidden="true"></span> Télécharger des devoirs
-</button>
-<button id ="b2" type="button" onclick="self.location.href='/archives'" class="btn btn-default btn-lg">
-  <span class="glyphicon glyphicon-book" aria-hidden="true"></span> accès aux archives
+            	<td id="buttons" class="column-right" width="50%">
+            	<button id="deconnexion" type="submitted" ><i>Se déconnecter</i></button>
+
+              <p id="rendus">Sujets rendus</p>
+            		<select id="list2" class="select-2" size="10" width="45%">
+<!--        <option value="selectedsubject">th:text="$subject"</option> -->
+        <option value="subject2">rendu groupe GMM</option>
+        <option value="subject3">rendu groupe 2</option>
+        <option value="subject4">rendu gourpe Geek</option>
+        <option value="subject6"></option>
+        <option value="subject7"></option>
+        <option value="subject8"></option>
+        <option value="subject9"></option>
+        
+      </select><br/>
+
+			
+<button id ="b2" type="button" class="btn btn-default btn-lg">
+  <span class="glyphicon glyphicon-save" aria-hidden="true"></span> Telecharger
 </button><br/>
 
             	</td>

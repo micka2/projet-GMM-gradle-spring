@@ -81,6 +81,11 @@ public class AuthentificationController {
 		  
 		  model.addAttribute("login", login);
 		 // model.addAttribute(password);
+		  Teacher connectedUser =  new Teacher(user);
+		  
+		  model.addAttribute("author", connectedUser);
+		  // session mappage
+		  this.httpSession.setAttribute("authorSession", connectedUser);
 		  return "teacher_view1";
 	  }
 	  else if((user!=null)&&(user.getPassword().equals(password))&&(user.getCategoryId()==2)){		  
@@ -128,7 +133,7 @@ public class AuthentificationController {
 	@ResponseBody
 	public String createTeacher(String firstname,String lastname, String login, String password, String email, int categoryId){
 	 try {
-		Teacher teacher = new Teacher (firstname, lastname, login, password, email, 1);
+		Teacher teacher = new Teacher (firstname, lastname, login, password, 1);
 		teacherRepo.save(teacher);
 	 }
 	 catch (Exception ex) {

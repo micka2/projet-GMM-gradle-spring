@@ -18,27 +18,30 @@
     <h3 style="padding-left :10ex;"> GMM - plateforme d'échange sujets-devois de l'IMIE </h3>
 </div>
 
-	<link rel="stylesheet" type="text/css" href="teacher_view1.css"/>
+	<link rel="stylesheet" type="text/css" href="teacher-view1bis.css"/>
 	<title>teacher</title>
 </head>
-<body style="background-color:#9caec9; font-family:sans-serif, helvetica">
+<body>
 
 <table width="100%">
 
-		 <tr id="content">
-            <td class="column-left" width="50%">
+		 <tr width="100%" id="content">
+      <td rowspan="2" width="15%" id="essai">
+        <div id="identifiant">	Bienevenue <span th:text="${author.lastname}" ></span>
+                <span th:text="${author.firstname}" ></span></div>
+      </td>
+            <td class="column-left" width="85%">
 
-            <div id="identifiant">Nom Prénom</div>
+            <div th:if="${fail}" class="alert alert-danger" role="alert">
+            <p> Please select a grade !</p></div>
             
-           
-   			<div th:if="${fail}" class="alert alert-danger" role="alert">
-            <p> Bad Mail or password !!!</p></div>
             
-            <p id="prom">Promotion</p><br/>
+            <p id="prom"> Choisir une promotion</p><br/>
+            <button id="deconnexion" type="submitted" ><i>Se déconnecter</i></button>
 <div class="row">
  <div class="col-lg-4">
 
-    <div class="input-group" >
+    <div id="input" class="input-group" >
       <input type="text" class="form-control" placeholder="Rechercher..."/>
 
 
@@ -57,46 +60,21 @@
 				<option value="subject6">BTS PHP</option>
 			</select>
 	            </td>
+        </tr>
+        <tr width="30%">
 
-
-
-
-            	<td class="column-right" width="50%">
-            	<button type="submitted" style="float:right; background-color:#194c9a; color:#eaeffa; margin-top:2ex; margin-right:3ex;"><i>Se déconnecter</i></button>
-            		<p id="subject" align="center"> Sujet</p>
-            		<div class="row">
- <div class="col-lg-3">
-    <div class="input-group" >
-      <input type="text" class="form-control" placeholder="Search for..."/>
-      <span class="input-group-btn">
-        <button class="btn btn-default" type="button">Go!</button>
-      </span>
-    </div><!-- /input-group -->
-  </div><!-- /.col-lg-6 -->
-</div><!-- /.row -->
-
-<select class="select-2" size="10">
-<!-- 				<option value="selectedsubject">th:text="$subject"</option> -->
-				<option value="subject2">Algorithme de tri</option>
-				<option value="subject3">Design CSS</option>
-				<option value="subject4">Gestion d'utilisateurs HIBERNATE</option>
-				<option value="subject6">TP 4 Json</option>
-				<option value="subject7">Zoo - Java</option>
-				<option value="subject8">MonSuperGarage</option>
-				<option value="subject9">MCD - TP La Fnak</option>
-				<option value="subject10">Aéroport : diagramme de classes</option>
-				<option value="subject11">TP JQuery</option>
-				<option value="subject12">Page html Pokemon</option>
-				<option value="subject13">TP 1 - apprentissage de Git</option>
-				<option value="subject14">TP2 Spring Build avec Gradle</option>
-			</select><br/>
+            	<td id="buttons" class="column-right" width="85%">
+            	
+            		
 			<button  id="b1" type="button" onclick="self.location.href='/teacher/creationdesujet'" class="btn btn-default btn-lg">
-  <span class="glyphicon glyphicon-ok" aria-hidden="true">Creer</span>
+  <span class="glyphicon glyphicon-pencil" aria-hidden="true">Creer / Modifier sujet</span>
 </button>
-			<button id ="b2" type="button" class="btn btn-default btn-lg">
-  <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Modifier
+			<button id ="b2" type="button" onclick="self.location.href='/teacher/telechargerdevoirs'" class="btn btn-default btn-lg">
+  <span class="glyphicon glyphicon-download" aria-hidden="true"></span> Télécharger des devoirs
+</button>
+<button id ="b2" type="button" onclick="self.location.href='/archives'" class="btn btn-default btn-lg">
+  <span class="glyphicon glyphicon-book" aria-hidden="true"></span> accès aux archives
 </button><br/>
-<div id="archives" align="right">Archives</div>
 
             	</td>
 	        </tr>

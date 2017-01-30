@@ -23,19 +23,31 @@ public class Teacher extends User {
 	
 	
 //******************************************************************************************************************
-    // constructor
-	
-//	public Teacher() {
-//		
-//	}
-	public Teacher(String firstname, String lastname, String login, 
+	// redefinition du(des) constructeur(s) de la classe Teacher
 
-			  String password,String email, int categoryId) {
-    	super(firstname, lastname, login, password,email, 1);
-    }
-    public Teacher(){
-    	
-    }
+	public Teacher() {
+		super();
+	}
+	/**
+	 * constructor for creating a Teacher entity with parameters
+	 * 
+	 * @param firstname : String
+	 * @param lastname : String
+	 * @param login : String
+	 * @param password : String
+	 * @param category : int
+	 */
+	public Teacher(String firstname, String lastname, String login, String password, int category) {
+		super(firstname, lastname, login, password, password, 2);
+	}
+
+	/**
+	 * empty constructor for creating a Teacher entity
+	 * 
+	 */
+	public Teacher(User user) {
+		super(user.getFirstname(), user.getLastname(), user.getLogin(), user.getPassword(), user.getPassword(), 2);
+	}
     
   //*****************************************************************************************************************
 

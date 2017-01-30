@@ -1,16 +1,14 @@
 package fr.imie.gmm.controllers;
 
-import java.util.List;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
 
-import fr.imie.gmm.entities.User;
+import fr.imie.gmm.entities.Teacher;
 import fr.imie.gmm.repositories.TeacherRepository;
 import fr.imie.gmm.repositories.UserRepository;
 
@@ -26,15 +24,23 @@ public class TeacherController {
     /**
      * Path of the file to be downloaded, relative to application's directory.
      */
-   // private String filePath = "./downloads/file.zip";
+   // private String filePath = "./files";
     
     @Autowired
     protected TeacherRepository teacherRepo;
     
+	@Autowired 
+	private HttpSession httpSession;
+    
     public TeacherController() {
     }
-    @RequestMapping(method=RequestMethod.GET, path="/teacher")
+    
+    
+    @RequestMapping("/teacher")
     public String teacherAccess (Model model){
+		//get connected user from session
+		Teacher author = (Teacher) httpSession.getAttribute("authorSession");
+		model.addAttribute("author", author);
   	  
   	  return "teacher_view1";
     }
@@ -48,6 +54,9 @@ public class TeacherController {
     
     @RequestMapping(method=RequestMethod.GET, path="/teacher/creationdesujet")
     public String creationsubject (Model model){
+    	//get connected user from session
+    			Teacher author = (Teacher) httpSession.getAttribute("authorSession");
+    			model.addAttribute("author", author);
   	  
   	  return "teacher_view2";
     }

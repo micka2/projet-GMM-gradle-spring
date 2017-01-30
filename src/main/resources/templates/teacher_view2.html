@@ -34,31 +34,33 @@
 			
 			
 		<form method="post" action="createSubject">
-			<h1 align="center"><b>TITRE</b></h1>
+			<h1 align="center"><b>Création / Modification des sujets</b></h1>
 			<label for="inputtitle">Titre</label>
-			<input type="text" name="title" id="title" class="form-control" placeholder="Titre..." />
-<!-- 			th:text="$title" -->
+			<input type="text" name="title" id="title" class="form-control" placeholder="Titre..." th:value="${title}" />
+			
 			
 			<br/>
 			
-			<label for="inputdeadline">Date Limite</label>
-			<input type="text" name="deadline" id="deadline" class="form-control" placeholder="Date limite..." />
-
+			<label for="inputdeadline">Date Limite (yyyy/mm/dd)</label>
+			<input type="text" name="deadline" id="deadline" class="form-control" placeholder="Date limite..." th:value="${deadline}" />
+			
+			
 			<br/>
 			
 			<label for="inputdescription">Description du sujet</label>
-			<input type="text" name="description" id="description" class="form-control" placeholder="Description..." />
+			<input type="text" name="description" id="description"  class="form-control" placeholder="Description..." th:value="${description}" />
 
 			<br/>
 			
 			<label for="inputconstraint">Contraintes</label>
-			<input type="text" name="constraint" id="constraint" class="form-control" placeholder="Contraintes..." />
+			<input type="text" name="constraint" id="constraint" class="form-control" placeholder="Contraintes..." th:value="${constraint}" />
 
 			<br/>
-			
-			<button id="button" class="btn btn-lg btn-primary btn-block" type="submit">Valider</button>
+			<form method="POST" action="/createSubject" th:value="${subjectId}">
+			<input type="text" name="createSubject" style="display: none" th:value="${subjectId}"/> 
+				<button id="button" class="btn btn-lg btn-primary btn-block" type="submit">Valider</button>
 			</form>
-			
+			</form>
 		</div>
 
 	 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
