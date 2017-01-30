@@ -95,9 +95,9 @@ public class Main implements CommandLineRunner {
 		}
 		
 		//this.trepo.save(listTeacher);
-		//this.repository.save(listUser1);
-		this.srepo.save(listStudent);
-		this.repository.save(listUser2);
+		this.repository.save(listTeacher);
+		//this.srepo.save(listStudent);
+		this.repository.save(listStudent);
 	}
 	
 	
@@ -107,16 +107,16 @@ public class Main implements CommandLineRunner {
 		Teacher teach=new Teacher();
 		if(use.getFirstName()!=null)
 		{	
-			teach.setFirstname(use.getFirstName());
-			user.setFirstname(use.getFirstName());
-			teach.setLastname(use.getLastName());
-			user.setLastname(use.getLastName());
-			teach.setLogin(use.getLastName()+use.getFirstName());
-			user.setLogin(use.getLastName()+use.getFirstName());
+			teach.setFirstname(use.getLastName());
+			user.setFirstname(use.getLastName());
+			teach.setLastname(use.getFirstName());
+			user.setLastname(use.getFirstName());
+			teach.setLogin(use.getFirstName()+use.getLastName());
+			user.setLogin(use.getFirstName()+use.getLastName());
 			teach.setCategoryId(1);
 			user.setCategoryId(1);
-			teach.setEmail(use.getLastName()+"."+use.getFirstName()+"@imie.fr");
-			user.setEmail(use.getLastName()+"."+use.getFirstName()+"@imie.fr");
+			teach.setEmail(use.getFirstName()+"."+use.getLastName()+"@imie.fr");
+			user.setEmail(use.getFirstName()+"."+use.getLastName()+"@imie.fr");
 			teach.setPassword(use.getPassword());
 			user.setPassword(use.getPassword());
 			teachers.add(teach);			
@@ -131,16 +131,16 @@ public class Main implements CommandLineRunner {
 		Student stud=new Student();
 		if(use.getFirstName()!=null)
 		{		
-			stud.setFirstname(use.getFirstName());
-			user.setFirstname(use.getFirstName());
-			stud.setLastname(use.getLastName());
-			user.setLastname(use.getLastName());
-			stud.setLogin(use.getLastName()+use.getFirstName());
-			user.setLogin(use.getLastName()+use.getFirstName());
+			stud.setFirstname(use.getLastName());
+			user.setFirstname(use.getLastName());
+			stud.setLastname(use.getFirstName());
+			user.setLastname(use.getFirstName());
+			stud.setLogin(use.getFirstName()+use.getLastName());
+			user.setLogin(use.getFirstName()+use.getLastName());
 			stud.setCategoryId(2);
 			user.setCategoryId(2);
-			stud.setEmail(use.getLastName()+"."+use.getFirstName()+"@imie.fr");
-			user.setEmail(use.getLastName()+"."+use.getFirstName()+"@imie.fr");
+			stud.setEmail(use.getFirstName()+"."+use.getLastName()+"@imie.fr");
+			user.setEmail(use.getFirstName()+"."+use.getLastName()+"@imie.fr");
 			stud.setPassword(use.getPassword());
 			user.setPassword(use.getPassword());
 			students.add(stud);			
