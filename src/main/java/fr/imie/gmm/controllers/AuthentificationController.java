@@ -77,13 +77,13 @@ public class AuthentificationController {
 			//model.addAttribute(password);
 			return "admin_view";
 		}
-	  else if((user!=null)&&(user.getPassword().equals(password))&&(user.getCategoryId()==2)){
+	  else if((user!=null)&&(user.getPassword().equals(password))&&(user.getCategoryId()==1)){
 		  
 		  model.addAttribute("login", login);
 		 // model.addAttribute(password);
 		  return "teacher_view1";
 	  }
-	  else if((user!=null)&&(user.getPassword().equals(password))&&(user.getCategoryId()==1)){		  
+	  else if((user!=null)&&(user.getPassword().equals(password))&&(user.getCategoryId()==2)){		  
 		  model.addAttribute("login", login);
 		  //model.addAttribute(password);
 		  Student connectedUser =  new Student(user);
@@ -91,7 +91,7 @@ public class AuthentificationController {
 		  model.addAttribute("author", connectedUser);
 		  // session mappage
 		  this.httpSession.setAttribute("authorSession", connectedUser);
-		  return "student-deposite_view";
+		  return "student_view";
 	  }
 		else{
 			model.addAttribute("fail", true);

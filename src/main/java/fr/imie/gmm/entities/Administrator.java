@@ -1,11 +1,13 @@
 package fr.imie.gmm.entities;
 
 import javax.persistence.Entity;
+import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
 
 @Entity
 @Table(name="Administrator")
+@PrimaryKeyJoinColumn(name="id")
 public class Administrator extends User {
 	
 

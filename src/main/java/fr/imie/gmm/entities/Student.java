@@ -2,11 +2,14 @@ package fr.imie.gmm.entities;
 
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
+import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Student")
-public class Student extends User {
+@Table(name="Student")
+@PrimaryKeyJoinColumn(name="id")
+public class Student extends User{
+	
 
 	@ManyToOne
 	private WorkingGroup groupId;

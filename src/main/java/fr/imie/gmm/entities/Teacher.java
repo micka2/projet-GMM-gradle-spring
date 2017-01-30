@@ -3,11 +3,13 @@ package fr.imie.gmm.entities;
 import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.ManyToMany;
+import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
 
 @Entity
 @Table(name="Teacher")
+@PrimaryKeyJoinColumn(name="id")
 public class Teacher extends User {
 
 	@ManyToMany
