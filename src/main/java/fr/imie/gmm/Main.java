@@ -1,4 +1,4 @@
-package fr.imie.gmm;
+﻿package fr.imie.gmm;
 
 
 
@@ -17,8 +17,15 @@ import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.type.TypeFactory;
 
+
 import fr.imie.gmm.entities.Student;
 import fr.imie.gmm.entities.Teacher;
+
+
+import fr.imie.gmm.entities.Student;
+import fr.imie.gmm.entities.Teacher;
+
+
 import fr.imie.gmm.entities.User;
 import fr.imie.gmm.interoperabilite.InGradeJson;
 import fr.imie.gmm.interoperabilite.StudentJsonLdap;
