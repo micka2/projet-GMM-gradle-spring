@@ -1,7 +1,7 @@
 package fr.imie.gmm.repositories;
 
 import java.io.File;
-
+import java.util.List;
 
 import org.springframework.data.repository.CrudRepository;
 
@@ -14,9 +14,12 @@ public interface HomeworkRepository extends CrudRepository<Homework, Long> {
 
 	Homework findByTitle(String title);
 	
-	<S extends Homework> S save(File serverFile);
+	<S extends Homework> S save(S entity);
 	
-	//Homework delete(File serverFile);
+	void delete(Long id);
+	
+	List<Homework> findAll();
+    
 
 	
 	

@@ -107,9 +107,10 @@ public class Subject extends EntityBase {
 			
 		}
 		
-		public Subject(String title, Date deadline, String description,String constraint) {
+		public Subject(String title, Date deadline,Date createAt, String description,String constraint) {
 				this.title= title;
 				this.deadline = deadline;
+				this.createAt = new Date();
 				this.description = description;
 				this.contsraint = constraint;
 				

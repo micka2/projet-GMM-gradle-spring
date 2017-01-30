@@ -1,28 +1,16 @@
 package fr.imie.gmm.controllers;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.OutputStream;
-import java.util.Date;
-
-import javax.servlet.ServletContext;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 
-import fr.imie.gmm.entities.Grade;
-import fr.imie.gmm.entities.Subject;
-import fr.imie.gmm.repositories.GradeRepository;
-import fr.imie.gmm.repositories.SubjectRepository;
+import fr.imie.gmm.entities.Teacher;
 import fr.imie.gmm.repositories.TeacherRepository;
+import fr.imie.gmm.repositories.UserRepository;
 
 @Controller
 public class TeacherController {
@@ -31,34 +19,71 @@ public class TeacherController {
 	/**
      * Size of a byte buffer to read/write file.
      */
-    private static final int BUFFER_SIZE = 4096;
+  //  private static final int BUFFER_SIZE = 4096;
              
     /**
      * Path of the file to be downloaded, relative to application's directory.
      */
-   // private String filePath = "./downloads/file.zip";
+   // private String filePath = "./files";
     
     @Autowired
     protected TeacherRepository teacherRepo;
     
+	@Autowired 
+	private HttpSession httpSession;
+    
     public TeacherController() {
     }
-    @RequestMapping(method=RequestMethod.GET, path="/teacher")
+    
+    
+    @RequestMapping("/teacher")
     public String teacherAccess (Model model){
+		//get connected user from session
+		Teacher author = (Teacher) httpSession.getAttribute("authorSession");
+		model.addAttribute("author", author);
   	  
   	  return "teacher_view1";
     }
+
+    
+    
+    
+    
+    
+    /////////cliquer sur le bouton creer un sujet///////////
+    
+    @RequestMapping(method=RequestMethod.GET, path="/teacher/creationdesujet")
+    public String creationsubject (Model model){
+    	//get connected user from session
+    			Teacher author = (Teacher) httpSession.getAttribute("authorSession");
+    			model.addAttribute("author", author);
+  	  
+  	  return "teacher_view2";
+    }
+    
+
 	
+    /////////////////////////////////////
+
+
+    @Autowired
+    protected UserRepository userRepo;
+    
+
+
+//    @CrossOrigin(origins="http://localhost:4200")
+//    @ResponseBody
+//    @RequestMapping(method=RequestMethod.GET, path="/api/1/teachers")
+//    public List teacherList (Model model) {
+//
+//List<User> users = (List<User>) this.userRepo.findAll();
+//        return users;
+//    }
+
 
 	/////////////////////////////////////////////////////////////////////////
 	//////Recherche de promotion et affichage des sujets correspondants//////
 	
-
-	protected GradeRepository gradeRepo;
-	
-	@Autowired
-    public TeacherController(GradeRepository gradeRepository) {
-        this.gradeRepo = gradeRepository;}
 
 //	/**
 //	 * Method for handling file download request from client.
@@ -113,50 +138,55 @@ public class TeacherController {
 //
 //	}
 	
-	@RequestMapping(method=RequestMethod.GET, path="/recherchepromotion")
-	public String checkGrade (
-			@RequestParam(name="Name")
-			String Name,
-			Model model){
-		
-		Grade gradeRepo = new Grade(Name);
-		Grade grade = this.gradeRepo.findByName(Name);
-		
-		if(grade==null){
-			return ("teacher_view1");
-		}
-		else if ((grade!=null)&&(grade.getName().equals(Name))){
-			model.addAttribute("NamePromo", grade);
-		return ("teacher_view1");
-	}
-		else{
-			model.addAttribute("fail", true);
-			return "teacher_view1";
-	}		
 	
-	}
+
 	
 	
+///////////////////////clique sur le bouton modifier/////////////////
 	
-		////////////////////////////////////////////////
-		///////creer un nouveau sujet//////////////////
-	@Autowired
-	protected SubjectRepository subjectRepo;
-	
-	@RequestMapping("/createSubject")
-	@ResponseBody
-	public String createSubject(String title, Date deadline, String description, String constraint){
-	 try {
-		Subject subject = new Subject (title, deadline, description, constraint);
-		subjectRepo.save(subject);
-	 }
-	 catch (Exception ex) {
-	      return "Error creating the subject: " + ex.toString();
-	    }
-	    return "Subject succesfully created!";
-	  }
-		
-	
+//	
+//	@RequestMapping(method=RequestMethod.POST, path="teacher/affichersujet")
+//		public String recupsujet( 
+//				@RequestParam (name="title")
+//				String title,
+//				Model model){
+//		Subject subject = this.subjectRepo.findByTitle(title);
+//	if ((subject!= null)){
+//		return "teacher_view2";
+//	}else{
+//		model.addAttribute("fail", true);
+//		return "teacher_view1";
+//	}
+//}
+//	
+//	@RequestMapping(method=RequestMethod.GET, path="/teacher/modificationsujet")
+//		public String sendmodifpage (
+//				Model model){
+//		return "teacher_view2";
+//	}
+//	
+
+//	@RequestMapping(method=RequestMethod.GET, path="/recherchepromotion")
+//	public String checkGrade (
+//			@RequestParam(name="Name")
+//			String Name,
+//			Model model){
+//		
+//		Grade gradeRepo = new Grade(Name);
+//		Grade grade = this.gradeRepo.findByName(Name);
+//		
+//	
+//		if ((grade!=null)&&(grade.getName().equals(Name))){
+//			model.addAttribute("NamePromo", grade);
+//		return ("teacher_view1");
+//	}
+//		else{
+//			model.addAttribute("fail", true);
+//			return "teacher_view1";
+//	}		
+//	
+//	}
+
 
 	}
 

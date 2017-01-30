@@ -1,6 +1,7 @@
 package fr.imie.gmm.entities;
 
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
@@ -29,9 +30,7 @@ import fr.imie.gmm.entities.base.EntityBase;
 //	@NotNull
 	private String email;
 	protected int categoryId;
-	
-	
-	
+		
 
 
 	  // Public methods
@@ -137,6 +136,7 @@ import fr.imie.gmm.entities.base.EntityBase;
 	public void setCategoryId(int categoryId) {
 		this.categoryId = categoryId;
 	}
+
 	
 }
 

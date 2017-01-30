@@ -1,35 +1,45 @@
 body {
-	background-color: #4db5f4;
+	background-color: #9caec9;
+	font-family: sans-serif;
 }
 
+#essai {
+	background-color:#02468b;
+	border-style: inset;
+	color: white;
+
+}
 
 #identifiant {
-	border-style: solid;
-	border-color: blue;
+	
 	float: left;
 	margin-left: 50px;
-	margin-top: -60px
+	margin-top: -50px;
 }
 #deconnexion{
+	float: right;
+	background-color: #194c9a;
+	color: #eaeffa;
 	margin-right: 50px;
-	margin-top: 40px;
+	margin-top: -70px;
 }
 #prom{
 	margin-top: 40px;
-	margin-left: 150px;
+	margin-left: 300px;
 	
 }
-
-#content div.input-group{
-	margin-left: 150px;
-	margin-right: -200px;
+#input{
+	
+	margin-left: 450px;
+	margin-right: -400px;
 	margin-bottom: 20px;
-	margin-top: -10px;
-
 }
+
 #content select.select-1{
-	margin-left: 150px;
-	width: 45%;
+	margin-left: 450px;
+	margin-top: 30px;
+	margin-bottom: 80px;
+	width: 30%;
 }
 #subject{
 	margin-top: 80px;
@@ -37,23 +47,10 @@ body {
 
 }
 
-#content div.input-group2{
-	margin-left: 100px;
-	margin-right: -30px;
-	margin-bottom: 20px;
+#buttons{
+	padding-bottom: 50px;
 }
-#content select.select-2{
-	margin-left: 100px;
-	width: 45%;
-}
-#b1{
-	margin-left: 100px;
-	margin-top: 15px;
-}
-#b2{
-	margin-left: 150px;
-	margin-top: 15px;
-}
+
 #archives{
 	margin-right: 50px;
 	margin-top: 50px;

@@ -1,7 +1,9 @@
 package fr.imie.gmm.controllers;
 
-import java.util.Date;
+import javax.servlet.http.HttpSession;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,13 +12,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import fr.imie.gmm.entities.Subject;
+import fr.imie.gmm.entities.Student;
 import fr.imie.gmm.entities.Teacher;
 import fr.imie.gmm.entities.User;
-import fr.imie.gmm.repositories.SubjectRepository;
+import fr.imie.gmm.repositories.GradeRepository;
 import fr.imie.gmm.repositories.TeacherRepository;
 import fr.imie.gmm.repositories.UserRepository;
-
 
 
 @Controller
@@ -30,6 +31,13 @@ public class AuthentificationController {
 	private static final String stud_password="stpass";*/
 	
 	protected UserRepository userRepo;
+	
+	protected GradeRepository gradeRepo;
+		
+	@Autowired 
+	private HttpSession httpSession;
+	
+	private static final Logger logger = LoggerFactory.getLogger(AuthentificationController.class);
 	
 //******************* constructor ****************************************
 	public AuthentificationController(){
@@ -49,8 +57,10 @@ public class AuthentificationController {
       return "connection_view";
   }
 
+
   @RequestMapping(method=RequestMethod.POST, path="/checklogin")
   public String loginCheck(
+		  
           @RequestParam(name="login")
           String login,
           @RequestParam(name="password")
@@ -71,12 +81,21 @@ public class AuthentificationController {
 		  
 		  model.addAttribute("login", login);
 		 // model.addAttribute(password);
+		  Teacher connectedUser =  new Teacher(user);
+		  
+		  model.addAttribute("author", connectedUser);
+		  // session mappage
+		  this.httpSession.setAttribute("authorSession", connectedUser);
 		  return "teacher_view1";
 	  }
-	  else if((user!=null)&&(user.getPassword().equals(password))&&(user.getCategoryId()==2)){
-		  
+	  else if((user!=null)&&(user.getPassword().equals(password))&&(user.getCategoryId()==2)){		  
 		  model.addAttribute("login", login);
 		  //model.addAttribute(password);
+		  Student connectedUser =  new Student(user);
+		  
+		  model.addAttribute("author", connectedUser);
+		  // session mappage
+		  this.httpSession.setAttribute("authorSession", connectedUser);
 		  return "student_view";
 	  }
 		else{
@@ -114,7 +133,7 @@ public class AuthentificationController {
 	@ResponseBody
 	public String createTeacher(String firstname,String lastname, String login, String password, String email, int categoryId){
 	 try {
-		Teacher teacher = new Teacher (firstname, lastname, login, password, email, 1);
+		Teacher teacher = new Teacher (firstname, lastname, login, password, 1);
 		teacherRepo.save(teacher);
 	 }
 	 catch (Exception ex) {

@@ -26,11 +26,11 @@
 		<td width="50%">
 
                <div style="border-style:solid; background-color:#d3e2f8; width: 33ex; height: 7ex; margin-left:-5ex;">
-                        <p style="font-size:16px;">
-                               <!-- th:text="${username}"<br/> 
-                                th:text="${promo}">-->
-                                Francis KUNTZ <br/>
-                                BTS Infrastructrure et Réseaux
+                        <p style="font-size:16px; text-align: center">
+                        	<br/>
+                        	<span th:text="${author.firstname}" ></span>
+                        	<span th:text="${author.lastname}" ></span>
+<!--                        		<span th:text="${author.gradeId.name}" ></span> -->
                         </p>
                 </div>
 
@@ -50,21 +50,15 @@
 						</div>
 					</div>
 				</div> 
-                        <select size="10" style="border-style:solid; border-color:#002776; width:60%;">
-<!-- 				<option value="selectedsubject">th:text="$subject"</option> -->
-				<option value="subject2">Algorithme de tri</option>
-				<option value="subject3">Design CSS</option>
-				<option value="subject4">Gestion d'utilisateurs HIBERNATE</option>
-				<option value="subject6">TP 4 Json</option>
-				<option value="subject7">Zoo - Java</option>
-				<option value="subject8">MonSuperGarage</option>
-				<option value="subject9">MCD - TP La Fnak</option>
-				<option value="subject10">Aéroport : diagramme de classes</option>
-				<option value="subject11">TP JQuery</option>
-				<option value="subject12">Page html Pokemon</option>
-				<option value="subject13">TP 1 - apprentissage de Git</option>
-				<option value="subject14">TP2 Spring Build avec Gradle</option>
-			</select>
+			<form action="/student" method="GET">
+<!-- 				<ul> -->
+<!-- 					<li th:each="sujet : ${maListeDeSujets.title}">th:text="${maListeDeSujets}" </li> -->
+<!-- 				</ul> -->
+			</form>		
+<!--                         <select size="10" style="border-style:solid; border-color:#002776; width:60%;"> -->
+<!-- 				<option value="selectedsubject">th:text="$maListeDeSujets"</option> -->
+				
+<!-- 			</select> -->
 
                 </td>
                 
@@ -107,8 +101,11 @@
                         Utiliser le langage Python.
 			</p>
 			</div>
-			
-			<button type="submitted" style="background-color:#cf6824; border-color:#a7541d; border-style:groovy; margin-top:5ex; "><b>Editer les devoirs</b></button>
+			<form method="POST" action="/studentdepot">
+			<button type="submitted" style="background-color:#cf6824; border-color:#a7541d; border-style:groovy; margin-top:5ex; ">
+				<b>Editer les devoirs</b>
+			</button>
+			</form>
 		</div>	
 	
  		</td>

@@ -12,7 +12,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
 <div style="border-style:inset; background-color:#02468b; color:white" >
-    <h3 style="padding-left :10ex;"> GMM - plateforme d'échange sujets-devois de l'IMIE </h3>
+    <h3 style="padding-left :10ex;"> GMM - plateforme d'échange sujets-devoirs de l'IMIE </h3>
 </div>
 
 </head>
@@ -24,11 +24,11 @@
 		<td width="50%">
 
                <div style="border-style:solid; background-color:#d3e2f8; width: 33ex; height: 7ex; margin-left:-5ex;">
-                        <p style="font-size:16px;">
-                               <!-- th:text="${username}"<br/> 
-                                th:text="${promo}">-->
-                                Francis KUNTZ <br/>
-                                BTS Infrastructrure et Réseaux
+                        <p style="font-size:16px; text-align: center">
+                        	<br/>
+                        	<span th:text="${author.firstname}" ></span>
+                        	<span th:text="${author.lastname}" ></span>
+<!--                        		<span th:text="${author.gradeId.name}" ></span> -->
                         </p>
                 </div>
 
@@ -37,29 +37,50 @@
 				<h4>Algorithme de tri</h4>
 					
 				<div style="margin-top:4ex;" class="row" >
-                                    <form method="post" action="uploadFile" enctype="multipart/form-data" >
-                                        <input type="submit" value="Upload" name="upload" style="background-color:#cf6824; border-color:#a7541d; border-style:groovy; font-weight:bold;"/>
-                                    </form>
-					<!--<button action="uploadFile" type="submit" value="upload" name="upload" id="upload" style="background-color:#cf6824; border-color:#a7541d; border-style:groovy;">
-				                    <b>Ajouter un fichier</b>
-                                        </button>-->
-					<button type="submit" style="background-color:#cf6824; border-color:#a7541d; border-style:groovy; margin-left:5ex; ">
-                                                   <b>Supprimer un fichier</b>
-                                               </button>						
+                                   
+           			<h5>Ajouter le devoir :</h5>                        
+
+							<form method="POST" action="/upload" enctype="multipart/form-data">
+								<input type="file" name="file" id="file" /> <br />
+								<input type="submit" value="Upload" name="upload" id="file"
+								style="background-color:#cf6824; border-color:#a7541d; border-style:groovy; font-weight:bold;"/>
+							
+<!-- 							<button type="submit" value="upload">Upload le fichier</button> -->
+							
+							</form>
+							
+<!-- 							<button type="submit" style="background-color:#cf6824; border-color:#a7541d; border-style:groovy; margin-left:5ex; "> -->
+<!--                                                    <b>Supprimer un fichier</b> -->
+<!--                                                </button>						 -->
 				</div>
-                        </div> 
-			
-			<div>
-                        <select size="10" style="border-style:solid; border-color:#002776; margin-top:3ex; width:60%;">
- 				<option value="selectedsubject">th:each="$fileName"</option>
-				<option value="subject2">tri.py</option>
-				<option value="subject3">compte-rendu.pdf</option>
-			</select>
-			</div>
-			
-			<div  style="margin-top:3ex;" >
-			<button type="submit" style="background-color:#cf6824; border-color:#a7541d; border-style:groovy;"><b>Soumettre le devoir</b></button>
                         </div>
+
+					<div style="margin-top:4ex;">
+						
+							
+								<p th:text="${fileName}"> </p>
+						
+						<div th:if="${fileId}" style="margin-left:5ex;">
+							<form method="POST" action="/delete">
+								<input type="text" name="delete" style="display: none; background-color:#cf6824; border-color:#a7541d; border-style:groovy; font-weight:bold;" th:value="${fileId}"/> 
+								<button type="submit">Supprimer le devoir</button>
+							</form>
+						</div>	
+						
+					</div> <!-- 			<div> -->
+<!--                         <select size="10" style="border-style:solid; border-color:#002776; margin-top:3ex; width:60%;"> -->
+<!--  				<option value="selectedsubject">th:each="$fileName"</option> -->
+<!-- 				<option value="subject2">tri.py</option> -->
+<!-- 				<option value="subject3">compte-rendu.pdf</option> -->
+<!-- 			</select> -->
+<!-- 			</div> -->
+
+
+
+
+<!-- 							<div  style="margin-top:3ex;" > -->
+<!-- 			<button type="submit" style="background-color:#cf6824; border-color:#a7541d; border-style:groovy;"><b>Soumettre le devoir</b></button> -->
+<!--                         </div> -->
                         
                 </td>
                 
