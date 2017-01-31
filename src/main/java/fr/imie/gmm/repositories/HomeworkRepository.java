@@ -1,10 +1,8 @@
 package fr.imie.gmm.repositories;
 
-import java.io.File;
 import java.util.List;
 
 import org.springframework.data.repository.CrudRepository;
-
 
 import fr.imie.gmm.entities.Homework;
 

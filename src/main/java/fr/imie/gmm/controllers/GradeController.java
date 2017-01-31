@@ -10,9 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import fr.imie.gmm.entities.Grade;
-import fr.imie.gmm.entities.Teacher;
 import fr.imie.gmm.repositories.GradeRepository;
-import fr.imie.gmm.repositories.TeacherRepository;
 
 @Controller
 public class GradeController {

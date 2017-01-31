@@ -14,10 +14,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import fr.imie.gmm.entities.Student;
 import fr.imie.gmm.entities.Subject;
-import fr.imie.gmm.entities.User;
 import fr.imie.gmm.repositories.StudentRepository;
 import fr.imie.gmm.repositories.SubjectRepository;
-import fr.imie.gmm.repositories.UserRepository;
 
 
 @Controller

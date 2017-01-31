@@ -11,16 +11,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 
-import fr.imie.gmm.entities.Grade;
-import fr.imie.gmm.entities.Homework;
-import fr.imie.gmm.entities.Student;
 import fr.imie.gmm.entities.Subject;
 import fr.imie.gmm.entities.Teacher;
-import fr.imie.gmm.repositories.GradeRepository;
 import fr.imie.gmm.repositories.SubjectRepository;
-import fr.imie.gmm.repositories.TeacherRepository;
 
 @Controller
 public class SubjectController {
