@@ -2,34 +2,11 @@
 
 
 
-import java.io.File;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import com.fasterxml.jackson.core.JsonParseException;
-import com.fasterxml.jackson.databind.JsonMappingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.type.TypeFactory;
-
-
-import fr.imie.gmm.entities.Student;
-import fr.imie.gmm.entities.Teacher;
-
-
-import fr.imie.gmm.entities.Student;
-import fr.imie.gmm.entities.Teacher;
-
-
-import fr.imie.gmm.entities.User;
-import fr.imie.gmm.interoperabilite.InGradeJson;
-import fr.imie.gmm.interoperabilite.StudentJsonLdap;
-import fr.imie.gmm.interoperabilite.TeacherJsonLdap;
 import fr.imie.gmm.repositories.StudentRepository;
 import fr.imie.gmm.repositories.TeacherRepository;
 import fr.imie.gmm.repositories.UserRepository;
