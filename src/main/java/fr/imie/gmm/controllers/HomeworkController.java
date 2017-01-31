@@ -6,8 +6,6 @@ import java.io.FileOutputStream;
 
 import javax.servlet.http.HttpSession;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -27,7 +25,7 @@ import fr.imie.gmm.repositories.StudentRepository;
 @Controller
 public class HomeworkController {
 	
-	private static final Logger logger = LoggerFactory.getLogger(HomeworkController.class);
+ // private static final Logger logger = LoggerFactory.getLogger(HomeworkController.class);
 	
 	private static final String separatorNameFile = "##";
 	
@@ -49,6 +47,11 @@ public class HomeworkController {
         this.homeworkRepo = homeworkRepository;
     }
 
+	@RequestMapping("/teacher/telechargerdevoirs")
+	public String downlodHomework (Model model){
+		return "teacher_view3";
+	}
+	
 	
 	@RequestMapping("/studentdepot")
 	public String studentDeposite(Model model){
@@ -89,8 +92,8 @@ public class HomeworkController {
 				
 //				Homework homework = this.homeworkRepo.save(serverFile);
 				
-				logger.info("Chemin d'accès du fichier="
-						+ serverFile.getAbsolutePath().split(separatorNameFile)[0]);
+				//logger.info("Chemin d'accès du fichier="
+					//	+ serverFile.getAbsolutePath().split(separatorNameFile)[0]);
 				
 				// Get the current time.
 				java.util.Date date = new java.util.Date();
@@ -127,16 +130,16 @@ public class HomeworkController {
 		String fileId,
 		Model model) {
 		
-		logger.info("id du fichier a supprimer:" + fileId);
+	//	logger.info("id du fichier a supprimer:" + fileId);
 
 		homeworkEntity = homeworkRepo.findOne(Long.valueOf(fileId));
 		File file = new File(ROOTPATH + File.separator + homeworkEntity.getTitle());
-		logger.info(file.getAbsolutePath());
-		if(file.delete()){
-			logger.info(file.getName() + " is deleted!");
-		}else{
-			logger.info("Delete operation is failed.");
-		}
+//		logger.info(file.getAbsolutePath());
+//		if(file.delete()){
+//			logger.info(file.getName() + " is deleted!");
+//		}else{
+//			logger.info("Delete operation is failed.");
+//		}
 		homeworkRepo.delete(Long.valueOf(fileId));
 		
 		//get connected user from session

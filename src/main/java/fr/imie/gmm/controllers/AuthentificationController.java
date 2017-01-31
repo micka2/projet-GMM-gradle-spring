@@ -2,8 +2,6 @@ package fr.imie.gmm.controllers;
 
 import javax.servlet.http.HttpSession;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,6 +16,8 @@ import fr.imie.gmm.entities.User;
 import fr.imie.gmm.repositories.GradeRepository;
 import fr.imie.gmm.repositories.TeacherRepository;
 import fr.imie.gmm.repositories.UserRepository;
+
+import java.util.logging.Logger;
 
 
 @Controller
@@ -37,7 +37,7 @@ public class AuthentificationController {
 	@Autowired 
 	private HttpSession httpSession;
 	
-	private static final Logger logger = LoggerFactory.getLogger(AuthentificationController.class);
+	//private static final logger = LoggerFactory.getLogger(AuthentificationController.class);
 	
 //******************* constructor ****************************************
 	public AuthentificationController(){
