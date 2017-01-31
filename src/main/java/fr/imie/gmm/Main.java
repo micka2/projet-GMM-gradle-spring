@@ -2,17 +2,27 @@
 
 
 
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.codehaus.jackson.map.JsonMappingException;
+import org.codehaus.jackson.map.ObjectMapper;
+import org.codehaus.jackson.map.type.TypeFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import com.fasterxml.jackson.core.JsonParseException;
+
 import fr.imie.gmm.entities.Student;
 import fr.imie.gmm.entities.Teacher;
 import fr.imie.gmm.entities.User;
+import fr.imie.gmm.interoperabilite.InGradeJson;
+import fr.imie.gmm.interoperabilite.StudentJsonLdap;
+import fr.imie.gmm.interoperabilite.TeacherJsonLdap;
 import fr.imie.gmm.repositories.StudentRepository;
 import fr.imie.gmm.repositories.TeacherRepository;
 import fr.imie.gmm.repositories.UserRepository;
@@ -49,7 +59,7 @@ public class Main implements CommandLineRunner {
 	public void run(String...args) throws Exception {
 
 		
-		/*List<TeacherJsonLdap> ldap=null;
+		List<TeacherJsonLdap> ldap=null;
 		List<StudentJsonLdap> ldap2=null;
 		InGradeJson ldapGrade=new InGradeJson();
 		ObjectMapper mapper1 = new ObjectMapper();
@@ -90,11 +100,11 @@ public class Main implements CommandLineRunner {
 		//this.trepo.save(listTeacher);
 		this.repository.save(listTeacher);
 		//this.srepo.save(listStudent);
-		this.repository.save(listStudent); */
+		this.repository.save(listStudent); 
 	}
 	
 	
-	/*public static void addTeacher(TeacherJsonLdap use,List<Teacher>teachers,List<User>users)
+	public static void addTeacher(TeacherJsonLdap use,List<Teacher>teachers,List<User>users)
 	{
 		User user=new User();
 		Teacher teach=new Teacher();
@@ -142,14 +152,14 @@ public class Main implements CommandLineRunner {
 		}
 		//if(use.getInGrade()!=null)
 		{
-			stud.setGradeId(grade.getCreatAt());
+		//	stud.setGradeId(grade.getCreatAt());
 			
 			//Le type de gradeId me pose un probleme car c'est un type Objet,pour charger automatiquement
 			 // à part ça c'est ok.
 	}
 
 			
-	}*/
+	}
 			
 
 }	

@@ -26,6 +26,7 @@
     <![endif]-->
 </head>
 <body>
+		<img id="img" alt="" src="https://imie-ecole-informatique.fr/sites/default/files/logo-imie_1.png"></img>
         <div class="container">
         
 		<div th:if="${fail}" class="alert alert-danger" role="alert">
@@ -44,11 +45,14 @@
 <!--             <input type="checkbox" value="remember-me"> Remember me -->
           
 <!--         </div> -->
-        <button id="button" class="btn btn-lg btn-primary btn-block" type="submit">Se connecter</button>
+        <button id="button" class="btn btn-lg btn-primary btn-block" type="submit"> <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>  Se connecter</button>
       </form>
 
-    </div> <!-- /container -->
-
+    </div> <!-- /container --><br/>
+	<div id="warning">
+	<span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span>
+	Ne communiquez jamais votre mot-de-passe suite à une sollicitation par email
+	</div>
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="js/ie10-viewport-bug-workaround.js"></script>
