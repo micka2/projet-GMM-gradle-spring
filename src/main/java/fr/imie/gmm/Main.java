@@ -2,6 +2,7 @@
 
 
 
+
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -10,10 +11,13 @@ import java.util.List;
 import org.codehaus.jackson.map.JsonMappingException;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.codehaus.jackson.map.type.TypeFactory;
+
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+
 
 import com.fasterxml.jackson.core.JsonParseException;
 
@@ -25,7 +29,9 @@ import fr.imie.gmm.interoperabilite.StudentJsonLdap;
 import fr.imie.gmm.interoperabilite.TeacherJsonLdap;
 import fr.imie.gmm.repositories.StudentRepository;
 import fr.imie.gmm.repositories.TeacherRepository;
+
 import fr.imie.gmm.repositories.UserRepository;
+
 
 
 
@@ -49,6 +55,7 @@ public class Main implements CommandLineRunner {
 	private static List<User> listUser2= new ArrayList<User>();
 	private static List<Teacher> listTeacher= new ArrayList<Teacher>();
 	private static List<Student> listStudent= new ArrayList<Student>();
+
 	
 	public static void main(String[] args) {
 		SpringApplication.run(Main.class, args);
