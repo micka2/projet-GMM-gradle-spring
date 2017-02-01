@@ -17,80 +17,68 @@ import fr.imie.gmm.entities.Subject;
 import fr.imie.gmm.repositories.StudentRepository;
 import fr.imie.gmm.repositories.SubjectRepository;
 
-
 @Controller
 public class StudentController {
 
-	List<Subject>listsujets= new ArrayList<Subject>();
-	Subject sujet= new Subject(); 
-	
+	List<Subject> listsujets = new ArrayList<Subject>();
+	Subject sujet = new Subject();
+
 	protected SubjectRepository subjrep;
 
-
-    @Autowired
-    public StudentController(SubjectRepository subjrep) {
-        this.subjrep = subjrep;
-    }
-    
-
-    public StudentController() {
-		// TODO Auto-generated constructor stub
+	@Autowired
+	public StudentController(SubjectRepository subjrep) {
+		this.subjrep = subjrep;
 	}
 
-//****************************************************************************************	
-    
+	public StudentController() {
 
-	@RequestMapping(method=RequestMethod.GET, path="/student")
-	public String affichListSujet(
-			Model model){		
-		listsujets = this.subjrep.findAll();	
-		
-		model.addAttribute("maListeDeSujets",listsujets);
-		
+	}
+
+	// ****************************************************************************************
+
+	@RequestMapping(method = RequestMethod.GET, path = "/student")
+	public String affichListSujet(Model model) {
+		listsujets = this.subjrep.findAll();
+
+		model.addAttribute("maListeDeSujets", listsujets);
+
 		return "student_view";
-		
+
 	}
-	
-	@RequestMapping(method=RequestMethod.POST, path="/choix")
-	public String affichSujet(
-			@RequestParam(name="titre_sujet")
-			String titre,
-			Model model){		
-        
+
+	@RequestMapping(method = RequestMethod.POST, path = "/choix")
+	public String affichSujet(@RequestParam(name = "titre_sujet") String titre, Model model) {
+
 		sujet = this.subjrep.findByTitle(titre);
-		
-		if(sujet!=null){
-		
-		model.addAttribute("monSujet",sujet);
-		
-		return "student";
-		}
-		else {
+
+		if (sujet != null) {
+
+			model.addAttribute("monSujet", sujet);
+
+			return "student";
+		} else {
 			model.addAttribute("aucun sujets ne correspond à votre recherche", true);
 			return "student_view";
 		}
 	}
-	
-	
+
 	@RequestMapping("/depotDevoirs")
-	public String depot(Model model){
+	public String depot(Model model) {
 		return "student-deposite_view";
 	}
-	//******************************************************************************************
-//////////////recuperation des etudiants////////////////////
-	
-    @Autowired
-    protected StudentRepository studentRepo;
-    
-    @CrossOrigin(origins="http://localhost:4200")
-    @ResponseBody
-    @RequestMapping(method=RequestMethod.GET, path="/api/1/student")
-    public List studentList (Model model) {
+	// ******************************************************************************************
+	////////////// recuperation des etudiants////////////////////
 
-List<Student> students = (List<Student>) this.studentRepo.findAll();
-        return students;
-    }
+	@Autowired
+	protected StudentRepository studentRepo;
+
+	@CrossOrigin(origins = "http://localhost:4200")
+	@ResponseBody
+	@RequestMapping(method = RequestMethod.GET, path = "/api/1/student")
+	public List studentList(Model model) {
+
+		List<Student> students = (List<Student>) this.studentRepo.findAll();
+		return students;
+	}
 
 }
-
-

@@ -16,41 +16,32 @@ import fr.imie.gmm.repositories.GradeRepository;
 public class GradeController {
 
 	protected GradeRepository gradeRepo;
-	
+
 	@Autowired
-	public GradeController (GradeRepository gradeRepository){
-		this.gradeRepo= gradeRepository;
+	public GradeController(GradeRepository gradeRepository) {
+		this.gradeRepo = gradeRepository;
 	}
-	
-	
-/////////////Récuperer les promotions//////////////////
-	
-	@RequestMapping (method=RequestMethod.GET, path="/api/1/Grade")
-    public List recupGrade(Model model) {
 
-List<Grade> grades = (List<Grade>) this.gradeRepo.findAll();
-        return grades;
-    }
-	
-	
-/////////////////Insérer une promotion//////////////////////
-	
-	 
-		
-		@RequestMapping("/createGrade")
-		@ResponseBody
-		public String createGrade(String name,Integer year){
-		 try {
-			Grade grade = new Grade (name, year);
+	///////////// Récuperer les promotions//////////////////
+
+	@RequestMapping(method = RequestMethod.GET, path = "/api/1/Grade")
+	public List recupGrade(Model model) {
+
+		List<Grade> grades = (List<Grade>) this.gradeRepo.findAll();
+		return grades;
+	}
+
+	///////////////// Insérer une promotion//////////////////////
+
+	@RequestMapping("/createGrade")
+	@ResponseBody
+	public String createGrade(String name, Integer year) {
+		try {
+			Grade grade = new Grade(name, year);
 			gradeRepo.save(grade);
-		 }
-		 catch (Exception ex) {
-		      return "Error creating the grade: " + ex.toString();
-		    }
-		    return "Grade succesfully created!";
-		  }
-	}	
-
-	
-	
-
+		} catch (Exception ex) {
+			return "Error creating the grade: " + ex.toString();
+		}
+		return "Grade succesfully created!";
+	}
+}

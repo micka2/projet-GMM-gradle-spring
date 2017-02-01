@@ -5,21 +5,15 @@ import javax.persistence.Table;
 
 import fr.imie.gmm.entities.base.EntityBase;
 
-
-
 @Entity
-@Table(name="Notification")
+@Table(name = "Notification")
 public class Notification extends EntityBase {
 
-//	@Column (nullable = false, length = 300)
-    private String message;
-//	@Column (nullable =  false, length = 50)
-    private String titleMessage;
-    
-    
-    
+	private String message;
 
-	   /**
+	private String titleMessage;
+
+	/**
 	 * @return the message
 	 */
 	public String getMessage() {
@@ -27,7 +21,8 @@ public class Notification extends EntityBase {
 	}
 
 	/**
-	 * @param message the message to set
+	 * @param message
+	 *            the message to set
 	 */
 	public void setMessage(String message) {
 		this.message = message;
@@ -41,23 +36,24 @@ public class Notification extends EntityBase {
 	}
 
 	/**
-	 * @param titleMessage the titleMessage to set
+	 * @param titleMessage
+	 *            the titleMessage to set
 	 */
 	public void setTitleMessage(String titleMessage) {
 		this.titleMessage = titleMessage;
 	}
 
 	/**
-     * constructor
-     */
-    public Notification(String message, String titleMessage) {
-    	this.message= message;
-    	this.titleMessage= titleMessage;
-    }
-    
-    //Empty constructor
-    public Notification(){
-    	
-    }
-	
+	 * constructor
+	 */
+	public Notification(String message, String titleMessage) {
+		this.message = message;
+		this.titleMessage = titleMessage;
+	}
+
+	// Empty constructor
+	public Notification() {
+
+	}
+
 }

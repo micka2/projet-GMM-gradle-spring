@@ -8,6 +8,6 @@ import fr.imie.gmm.entities.Storage;
 @Repository
 public interface StorageRepository extends CrudRepository<Storage, Long> {
 	
-//	Storage, s
+
 
 }

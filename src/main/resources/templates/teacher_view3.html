@@ -8,98 +8,115 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
 <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+	crossorigin="anonymous" />
 <!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"/>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+	integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+	crossorigin="anonymous" />
 <!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+	integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+	crossorigin="anonymous"></script>
 
-<div style="border-style:inset; background-color:#02468b; color:white;">
-    <h3 style="padding-left :10ex;"> GMM - plateforme d'échange sujets-devois de l'IMIE </h3>
+<div
+	style="border-style: inset; background-color: #02468b; color: white;">
+	<h3 style="padding-left: 10ex;">GMM - plateforme d'échange
+		sujets-devois de l'IMIE</h3>
 </div>
 
-	<link rel="stylesheet" type="text/css" href="css/teacher_view3.css"/>
-	<title>teacher</title>
+<link rel="stylesheet" type="text/css" href="css/teacher_view3.css" />
+<title>teacher</title>
 </head>
-<body style="background-color:#9caec9;">
+<body style="background-color: #9caec9;">
 
-<table width="100%">
+	<table width="100%">
 
-		 <tr id="content">
-      
-            <td class="column-left" width="50%">
-            
-            
-            <p id="sub"> Selectionner un sujet</p><br/>
-            
-<div class="row">
- <div class="col-lg-4">
+		<tr id="content">
 
-    <div id="input" class="input-group" >
-      <input type="text" class="form-control" placeholder="Rechercher..."/>
+			<td class="column-left" width="50%">
 
 
-      <span class="input-group-btn">
-        <button class="btn btn-default" type="button">Go!</button>
-      </span>
-    </div><!-- /input-group -->
-  </div><!-- /.col-lg-6 -->
-</div><!-- /.row -->
+				<p id="sub">Selectionner un sujet</p>
+				<br />
 
-<select id="list" class="select-1" size="10" width="45%">
-<!-- 				<option value="selectedsubject">th:text="$subject"</option> -->
-				<option value="subject2">Algorithme de tri</option>
-        <option value="subject3">Design CSS</option>
-        <option value="subject4">Gestion d'utilisateurs HIBERNATE</option>
-        <option value="subject6">TP 4 Json</option>
-        <option value="subject7">Zoo - Java</option>
-        <option value="subject8">MonSuperGarage</option>
-        <option value="subject9">MCD - TP La Fnak</option>
-        <option value="subject10">Aéroport : diagramme de classes</option>
-        <option value="subject11">TP JQuery</option>
-        <option value="subject12">Page html Pokemon</option>
-        <option value="subject13">TP 1 - apprentissage de Git</option>
-        <option value="subject14">TP2 Spring Build avec Gradle</option>
+				<div class="row">
+					<div class="col-lg-4">
+
+						<div id="input" class="input-group">
+							<input type="text" class="form-control"
+								placeholder="Rechercher..." /> <span class="input-group-btn">
+								<button class="btn btn-default" type="button">Go!</button>
+							</span>
+						</div>
+						<!-- /input-group -->
+					</div>
+					<!-- /.col-lg-6 -->
+				</div>
+				<!-- /.row --> <select id="list" class="select-1" size="10"
+				width="45%">
+					<!-- 				<option value="selectedsubject">th:text="$subject"</option> -->
+					<option value="subject2">Algorithme de tri</option>
+					<option value="subject3">Design CSS</option>
+					<option value="subject4">Gestion d'utilisateurs HIBERNATE</option>
+					<option value="subject6">TP 4 Json</option>
+					<option value="subject7">Zoo - Java</option>
+					<option value="subject8">MonSuperGarage</option>
+					<option value="subject9">MCD - TP La Fnak</option>
+					<option value="subject10">Aéroport : diagramme de classes</option>
+					<option value="subject11">TP JQuery</option>
+					<option value="subject12">Page html Pokemon</option>
+					<option value="subject13">TP 1 - apprentissage de Git</option>
+					<option value="subject14">TP2 Spring Build avec Gradle</option>
 			</select>
-      <button  id="b1" type="button" class="btn btn-default btn-lg">
-  <span class="glyphicon glyphicon-ok" aria-hidden="true">Ok</span>
-</button>
-	            </td>
-        
-        
+				<button id="b1" type="button" class="btn btn-default btn-lg">
+					<span class="glyphicon glyphicon-ok" aria-hidden="true">Ok</span>
+				</button>
+			</td>
 
-            	<td id="buttons" class="column-right" width="50%">
-            	<button id="deconnexion" type="submitted" ><i>Se déconnecter</i></button>
 
-              <p id="rendus">Sujets rendus</p>
-            		<select id="list2" class="select-2" size="10" width="45%">
-<!--        <option value="selectedsubject">th:text="$subject"</option> -->
-        <option value="subject2">rendu groupe GMM</option>
-        <option value="subject3">rendu groupe 2</option>
-        <option value="subject4">rendu gourpe Geek</option>
-        <option value="subject6"></option>
-        <option value="subject7"></option>
-        <option value="subject8"></option>
-        <option value="subject9"></option>
-        
-      </select><br/>
 
-			
-<button id ="b2" type="button" class="btn btn-default btn-lg">
-  <span class="glyphicon glyphicon-save" aria-hidden="true"></span> Telecharger
-</button><br/>
+			<td id="buttons" class="column-right" width="50%">
+				<button id="deconnexion" type="submitted">
+					<i>Se déconnecter</i>
+				</button>
 
-            	</td>
-	        </tr>
-	  </table>
-	  
-<!-- Bootstrap core JavaScript
+				<p id="rendus">Sujets rendus</p> <select id="list2" class="select-2"
+				size="10" width="45%">
+					<!--        <option value="selectedsubject">th:text="$subject"</option> -->
+					<option value="subject2">rendu groupe GMM</option>
+					<option value="subject3">rendu groupe 2</option>
+					<option value="subject4">rendu gourpe Geek</option>
+					<option value="subject6"></option>
+					<option value="subject7"></option>
+					<option value="subject8"></option>
+					<option value="subject9"></option>
+
+			</select><br />
+
+
+				<button id="b2" type="button" class="btn btn-default btn-lg">
+					<span class="glyphicon glyphicon-save" aria-hidden="true"></span>
+					Telecharger
+				</button>
+				<br />
+
+			</td>
+		</tr>
+	</table>
+
+	<!-- Bootstrap core JavaScript
     ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!-- script>window.jQuery || document.write('<script src="js/vendor/jquery.min.js"><\/script>')</script>
+	<!-- Placed at the end of the document so the pages load faster -->
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<!-- script>window.jQuery || document.write('<script src="js/vendor/jquery.min.js"><\/script>')</script>
     <script src="js/bootstrap.min.js"></script -->
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="js/ie10-viewport-bug-workaround.js"></script>
+	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+	<script src="js/ie10-viewport-bug-workaround.js"></script>
 </body>
 </html>
