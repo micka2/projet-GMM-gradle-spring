@@ -6,17 +6,16 @@ import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="Student")
-@PrimaryKeyJoinColumn(name="id")
-public class Student extends User{
-	
+@Table(name = "Student")
+@PrimaryKeyJoinColumn(name = "id")
+public class Student extends User {
 
 	@ManyToOne
 	private WorkingGroup groupId;
-	
+
 	@ManyToOne
 	private Grade gradeId;
-	
+
 	// ************************************************************************************************************
 	// redefinition du(des) constructeur(s) de la classe Student
 
@@ -27,11 +26,16 @@ public class Student extends User{
 	/**
 	 * constructor for creating a Student entity with parameters
 	 * 
-	 * @param firstname : String
-	 * @param lastname : String
-	 * @param login : String
-	 * @param password : String
-	 * @param category : int
+	 * @param firstname
+	 *            : String
+	 * @param lastname
+	 *            : String
+	 * @param login
+	 *            : String
+	 * @param password
+	 *            : String
+	 * @param category
+	 *            : int
 	 */
 	public Student(String firstname, String lastname, String login, String password, int category) {
 		super(firstname, lastname, login, password, password, 2);
@@ -86,7 +90,8 @@ public class Student extends User{
 	}
 
 	/**
-	 * @param gradeId the gradeId to set
+	 * @param gradeId
+	 *            the gradeId to set
 	 */
 	public void setGradeId(Grade gradeId) {
 		this.gradeId = gradeId;

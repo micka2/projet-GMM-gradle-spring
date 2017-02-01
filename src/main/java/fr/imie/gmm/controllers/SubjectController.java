@@ -18,89 +18,70 @@ import fr.imie.gmm.repositories.SubjectRepository;
 
 @Controller
 public class SubjectController {
-	
-	
+
 	protected SubjectRepository subjectRepo;
-	
+
 	protected Subject subjectEntity;
-	
+
 	@Autowired
-	public SubjectController (SubjectRepository subjectRepository){
-		this.subjectRepo= subjectRepository;
+	public SubjectController(SubjectRepository subjectRepository) {
+		this.subjectRepo = subjectRepository;
 	}
-	
-	@Autowired 
+
+	@Autowired
 	private HttpSession httpSession;
-	
-/////////////Récuperer les Sujets de la bd//////////////////
-	
-	@RequestMapping(method=RequestMethod.GET, path = "/api/1/Subject")
+
+	///////////// Récuperer les Sujets de la bd//////////////////
+
+	@RequestMapping(method = RequestMethod.GET, path = "/api/1/Subject")
 	public String getSubjects(Model model) {
 
-		List<Subject> subjects = this.subjectRepo.findAll(); 
-		model.addAttribute("subjectlist",subjects);
-		
+		List<Subject> subjects = this.subjectRepo.findAll();
+		model.addAttribute("subjectlist", subjects);
+
 		return "student_view";
 	}
 
+	////////////// Poster un sujet//////////////////////////
 
-//////////////Poster un sujet//////////////////////////
+	@RequestMapping(method = RequestMethod.POST, value = "/createSubject")
+	public String createSubject(
+			//
+			Model model, @RequestParam(name = "constraint") String constraint,
+			@RequestParam(name = "title") String title, @RequestParam(name = "deadline") Date deadline,
+			@RequestParam(name = "description") String description) {
 
+		// get connected user from session
+		Teacher author = (Teacher) httpSession.getAttribute("authorSession");
+		model.addAttribute("author", author);
 
-@RequestMapping(method=RequestMethod.POST, value="/createSubject")
-public String createSubject(
-//		@RequestParam("createSubject")
-		Model model,
-		@RequestParam (name="constraint")
-		String constraint,
-		@RequestParam (name="title")
-		String title,
-		@RequestParam (name="deadline")
-		Date deadline,
-		@RequestParam (name="description")
-		String description
-		){
-	
-	//get connected user from session
-	Teacher author = (Teacher) httpSession.getAttribute("authorSession");
-	model.addAttribute("author", author);
+		// Get the current time.
+		java.util.Date date = new java.util.Date();
 
-//	Subject subject = this.subjectRepo.findByTitle(title);
-	
-	// Get the current time.
-	java.util.Date date = new java.util.Date();
-	
-	subjectEntity = new Subject();
-	subjectEntity.setTitle(title);
-	subjectEntity.setDeadline(deadline);
-	subjectEntity.setCreateAt(date);
-	subjectEntity.setDescription(description);
-	subjectEntity.setContsraint(constraint);
-	
+		subjectEntity = new Subject();
+		subjectEntity.setTitle(title);
+		subjectEntity.setDeadline(deadline);
+		subjectEntity.setCreateAt(date);
+		subjectEntity.setDescription(description);
+		subjectEntity.setContsraint(constraint);
 
-	subjectEntity = subjectRepo.save(subjectEntity);
- 
-	if ((title!= null)&&(description!=null)){
-		model.addAttribute("subjectId", subjectEntity.getId());
-		model.addAttribute("title", title);
-		model.addAttribute("deadline", deadline);
-		model.addAttribute("createat", date);
-		model.addAttribute("description", description);
-		model.addAttribute("constraint", constraint);
-		
-      return "teacher_view1";
-      
-     
-    }
-else{
-	model.addAttribute("fail2",true);
-    return "teacher_view2";
-    
+		subjectEntity = subjectRepo.save(subjectEntity);
+
+		if ((title != null) && (description != null)) {
+			model.addAttribute("subjectId", subjectEntity.getId());
+			model.addAttribute("title", title);
+			model.addAttribute("deadline", deadline);
+			model.addAttribute("createat", date);
+			model.addAttribute("description", description);
+			model.addAttribute("constraint", constraint);
+
+			return "teacher_view1";
+
+		} else {
+			model.addAttribute("fail2", true);
+			return "teacher_view2";
+
+		}
+
+	}
 }
-		
-}
-}	
-
-
-
-

@@ -94,7 +94,7 @@ public class DbConfiguration {
 
   // Private fields
   
-  @Autowired  // permet de lier avec le bean
+  @Autowired  
   private Environment env;
 
   @Autowired

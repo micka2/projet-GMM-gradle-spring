@@ -10,6 +10,6 @@ import fr.imie.gmm.entities.WorkingGroup;
 @Repository
 public interface WorkingGroupRepository extends CrudRepository<WorkingGroup, Long>{
 	
-	//WorkingGroup findByName(String groupName);
 	List<WorkingGroup> findAll();
+	
 }
